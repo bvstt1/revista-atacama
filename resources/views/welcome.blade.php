@@ -52,36 +52,7 @@
     <section 
         x-data="{
             current: 0, 
-            slides: [
-            {
-                img: 'https://images.unsplash.com/photo-1526498460520-4c246339dccb?q=80&w=2000&auto=format&fit=crop',
-                title: 'Historia Viva de Atacama',
-                desc: 'Procesos, pueblos y memorias que forjaron la identidad del desierto.',
-                url: '{{ url("/historia") }}',
-                alt: 'Paisaje del Desierto de Atacama con cordillera y cielo despejado'
-            },
-            {
-                img: 'https://images.unsplash.com/photo-1600550379229-42a1b6f3b43b?q=80&w=2000&auto=format&fit=crop',
-                title: 'Educación y Patrimonio',
-                desc: 'Prácticas educativas que preservan memoria y cultura regional.',
-                url: '{{ url("/educacion") }}',
-                alt: 'Aula con estudiantes observando piezas patrimoniales'
-            },
-            {
-                img: 'https://images.unsplash.com/photo-1581093588401-22d2296d1e51?q=80&w=2000&auto=format&fit=crop',
-                title: 'Ciencia, Medioambiente y Territorio',
-                desc: 'Cambio climático, minería y sustentabilidad en el norte de Chile.',
-                url: '{{ url("/ciencia") }}',
-                alt: 'Investigadora en laboratorio observando muestra con equipo científico'
-            },
-            {
-                img: 'https://images.unsplash.com/photo-1519682337058-a94d519337bc?q=80&w=2000&auto=format&fit=crop',
-                title: 'Reflexiones y Pensamiento Crítico',
-                desc: 'Ensayos para debatir el presente desde la historia y la cultura.',
-                url: '{{ url("/ensayos") }}',
-                alt: 'Mesa con cuadernos y pluma, luz cálida para escribir ensayos'
-            }
-            ],
+            slides: @js($slides),
             interval: null,
             start() { this.interval = setInterval(() => { this.current = (this.current === this.slides.length - 1) ? 0 : this.current + 1 }, 5000) },
             stop() { clearInterval(this.interval); this.interval = null }
@@ -90,11 +61,11 @@
         class="relative w-full h-[35vh] overflow-hidden group"
     >
         <template x-for="(slide, index) in slides" :key="index">
-            <div x-show="current === index" x-transition.opacity class="cursor-pointer absolute inset-0" @click="window.location.href = slide.url" role="link" :aria-label="slide.title">
+            <div x-show="current === index" x-transition.opacity class="cursor-pointer absolute inset-0" @click="window.location.href = slide.ctaUrl" role="link" :aria-label="slide.title">
                 <img :src="slide.img" :alt="slide.alt" class="w-full h-full object-cover" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex flex-col justify-end p-8 text-white">
                     <h2 class="text-3xl md:text-5xl font-bold" x-text="slide.title"></h2>
-                    <p class="mt-2 text-lg md:text-xl" x-text="slide.desc"></p>
+                    <p class="mt-2 text-lg md:text-xl" x-text="slide.description"></p>
                 </div>
             </div>
         </template>
@@ -177,29 +148,17 @@
         <!-- Columna derecha: Índice con animación suave -->
         <aside
         x-data="{
-            sections: [
-            {
-                title: 'Artículos o Ensayos Historicos',
-                open: false,
-                items: [
-                { title: 'Educación Ambiental y Participación Ciudadana: una mirada desde el SNCAE', author: 'Felipe Kong López', url: '#' },
-                { title: 'Transición socioecológica justa, transformación social y educación ambiental', author: 'Valeria Fuentelba Matamala', url: '#' },
-                ]
-            },
-            { title: 'Artículos o Ensayos Políticos', open: false, items: [
-                { title: 'Patrimonio e identidad regional', author: 'Autores varios', url: '#' },
-                { title: 'Historia social del desierto', author: 'Autores varios', url: '#' },
-            ]},
-            { title: 'Artículos o Ensayos Educativos', open: false, items: [
-                { title: 'Guías didácticas para aula', author: 'Equipo pedagógico', url: '#' },
-            ]},
-            { title: 'Artículos o Ensayos Científicos', open: false, items: [
-                { title: 'Libro: Atacama, memorias del salitre', author: 'M. Pérez', url: '#' },
-            ]},
-            { title: 'Reseña de libros', open: false, items: [
-                { title: 'Libro: Atacama, memorias del salitre', author: 'M. Pérez', url: '#' },
-            ]},
-            ]
+            sections: @js(
+            $sections->map(fn($s)=>[
+                'title'=>$s->title,
+                'open'=>false,
+                'items'=>$s->items->map(fn($it)=>[
+                'title'=>$it->title,
+                'author'=>$it->author,
+                'url'=>$it->url,
+                ])
+            ])
+            )
         }"
         class="space-y-4"
         >
@@ -473,44 +432,7 @@
     <section class="mt-16 px-6 md:px-12 lg:px-24"
     x-data="{
         current: 0,
-        reviews: [
-        {
-            title: 'El infinito en un junco (I. Vallejo)',
-            desc: 'Una travesía por la historia del libro y su impacto cultural, con conexiones sugerentes para el patrimonio regional.',
-            img: 'https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=1600&auto=format&fit=crop',
-            url: '{{ url("/resenas/el-infinito-en-un-junco") }}',
-            author: 'Comité de Reseñas',
-            date: 'Sep 2025',
-            read: '4 min'
-        },
-        {
-            title: 'Historia de Chile (G. Collier)',
-            desc: 'Claves interpretativas para comprender procesos sociales y políticos a escala nacional y regional.',
-            img: 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=1600&auto=format&fit=crop',
-            url: '{{ url("/resenas/historia-de-chile-collier") }}',
-            author: 'Equipo Editorial',
-            date: 'Ago 2025',
-            read: '5 min'
-        },
-        {
-            title: 'Pueblos del Desierto (Colección)',
-            desc: 'Antología comentada sobre etnografía y memoria en territorios áridos del norte chileno.',
-            img: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1600&auto=format&fit=crop',
-            url: '{{ url("/resenas/pueblos-del-desierto") }}',
-            author: 'M. Rojas',
-            date: 'Jul 2025',
-            read: '6 min'
-        },
-        {
-            title: 'Bibliotecas del polvo',
-            desc: 'Lecturas sobre archivo, desierto y conservación en contextos adversos.',
-            img: 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1600&auto=format&fit=crop',
-            url: '{{ url("/resenas/bibliotecas-del-polvo") }}',
-            author: 'C. Herrera',
-            date: 'Jun 2025',
-            read: '5 min'
-        }
-        ],
+        reviews: @js($reviews),
         next(){ this.current = (this.current + 1) % this.reviews.length },
         prev(){ this.current = (this.current - 1 + this.reviews.length) % this.reviews.length }
     }"
@@ -527,17 +449,17 @@
             <template x-for="(r, i) in reviews" :key="i">
             <img x-show="current === i"
                 x-transition.opacity
-                :src="r.img" :alt="r.title" loading="lazy"
+                :src="r.img" :alt="r.bookTitle" loading="lazy"
                 class="absolute inset-0 w-full h-full object-cover">
             </template>
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-transparent"></div>
 
             <!-- Contenido sobre imagen -->
-            <div class="absolute inset-x-0 bottom-0 p-6 md:p-8 text-white">
+            <div class="absolute inset-x-0 bottom-0 p-6 md:p-8 text-white z-20">
             <template x-for="(r, i) in reviews" :key="'txt-'+i">
                 <div x-show="current === i" x-transition.opacity>
                 <span class="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-semibold bg-amber-700">Reseña</span>
-                <h3 class="mt-3 font-serif text-2xl md:text-3xl font-bold leading-tight" x-text="r.title"></h3>
+                <h3 class="mt-3 font-serif text-2xl md:text-3xl font-bold leading-tight" x-text="r.bookTitle"></h3>
                 <p class="mt-2 text-white/90 line-clamp-2 md:line-clamp-3" x-text="r.desc"></p>
                 <div class="mt-3 text-sm text-white/80">
                     <span class="font-medium" x-text="r.author"></span> · <span x-text="r.date"></span> · <span x-text="r.read"></span>
@@ -555,11 +477,11 @@
             </div>
 
             <!-- Controles -->
-            <div class="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-3">
+            <div class="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-3 pointer-events-none">
             <button type="button" @click="prev()" aria-label="Reseña anterior"
-                    class="grid place-items-center w-9 h-9 rounded-full bg-black/35 hover:bg-black/50 text-white transition">‹</button>
+                    class="grid place-items-center w-9 h-9 rounded-full bg-black/35 hover:bg-black/50 text-white transition pointer-events-auto">‹</button>
             <button type="button" @click="next()" aria-label="Reseña siguiente"
-                    class="grid place-items-center w-9 h-9 rounded-full bg-black/35 hover:bg-black/50 text-white transition">›</button>
+                    class="grid place-items-center w-9 h-9 rounded-full bg-black/35 hover:bg-black/50 text-white transition pointer-events-auto">›</button>
             </div>
         </div>
         </article>
@@ -570,8 +492,8 @@
             <template x-for="(r, i) in reviews" :key="'mini-'+i">
             <li>
                 <button type="button" @click="current = i"
-                class="w-full flex items-center gap-3 p-3 rounded-xl hover:bg-amber-50 transition text-left"
-                :class="current === i ? 'bg-amber-50 ring-1 ring-amber-200' : ''">
+                        class="w-full flex items-center gap-3 p-3 rounded-xl hover:bg-amber-50 transition text-left"
+                        :class="current === i ? 'bg-amber-50 ring-1 ring-amber-200' : ''">
                 <img :src="r.img" :alt="r.title" loading="lazy"
                     class="w-14 h-14 rounded-md object-cover ring-1 ring-neutral-200">
                 <div class="min-w-0">
