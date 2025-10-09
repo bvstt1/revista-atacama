@@ -6,6 +6,7 @@ use App\Models\CarouselSlide;
 use App\Models\Section;
 use App\Models\Review;
 use App\Models\Efemeride;
+use App\Models\Book;
 use Illuminate\Support\Str;
 
 class HomeController extends Controller
@@ -26,9 +27,9 @@ class HomeController extends Controller
                 $read = $r->reading_minutes ?? max(3, ceil(Str::wordCount($r->excerpt ?? '') / 220)); // aprox 220 wpm
 
                 return [
-                    // ✨ Mapeo para tu Blade (sin cambiar diseño/variables):
-                    'bookTitle' => $r->book_title,          // usas r.bookTitle en el título grande
-                    'title'     => $r->book_title,          // usas r.title en la lista lateral
+                    //Mapeo para tu Blade (sin cambiar diseño/variables):
+                    'bookTitle' => $r->book_title,          // r.bookTitle en el título grande
+                    'title'     => $r->book_title,          // r.title en la lista lateral
                     'desc'      => $r->excerpt,
                     'img'       => $r->cover_url,
                     'url'       => $r->review_url,
@@ -42,7 +43,10 @@ class HomeController extends Controller
         $efemerides = Efemeride::where('is_published',1)
             ->orderBy('date','asc')->limit(10)->get();
 
-        return view('welcome', compact('slides','sections','reviews','efemerides'));
+        $books = Book::orderBy('id', 'desc')
+        ->get(['title', 'cover', 'url']);
+
+        return view('welcome', compact('slides', 'sections', 'reviews', 'efemerides', 'books'));
 
     }
 }

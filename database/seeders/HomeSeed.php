@@ -10,6 +10,7 @@ use App\Models\CarouselSlide;
 use App\Models\Section;
 use App\Models\SectionItem;
 use App\Models\Review;
+use App\Models\Book;
 
 class HomeSeed extends Seeder
 {
@@ -101,7 +102,7 @@ class HomeSeed extends Seeder
                 ]);
 
                 $secResenias = Section::create([
-                    'title'     => 'Reseña de libros',
+                    'title'     => 'Reseña de Books',
                     'order'     => 5,
                     'is_active' => true,
                 ]);
@@ -151,7 +152,7 @@ class HomeSeed extends Seeder
 
                 SectionItem::create([
                     'section_id' => $secCientificos->id,
-                    'title'      => 'Libro: Atacama, memorias del salitre',
+                    'title'      => 'Book: Atacama, memorias del salitre',
                     'author'     => 'M. Pérez',
                     'url'        => url('/cientificos/memorias-salitre'),
                     'order'      => 1,
@@ -169,7 +170,7 @@ class HomeSeed extends Seeder
                 // Reviews
                 // =========================
                 Review::create([
-                    'book_title'   => 'Atacama, memorias del salitre',
+                    'Book_title'   => 'Atacama, memorias del salitre',
                     'author'       => 'M. Pérez',
                     'cover_url'    => 'https://images.unsplash.com/photo-1759588032622-1388cf9505ad?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
                     'excerpt'      => 'Una reseña breve…',
@@ -179,13 +180,33 @@ class HomeSeed extends Seeder
                 ]);
 
                 Review::create([
-                    'book_title'   => 'Atacama, memorias del salitre',
+                    'Book_title'   => 'Atacama, memorias del salitre',
                     'author'       => 'M. Pérez',
                     'cover_url'    => 'https://images.unsplash.com/photo-1756894256833-934a85a42df9?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
                     'excerpt'      => 'Una reseña breve…',
                     'review_url'   => url('/reseñas/memorias-salitre'),
                     'order'        => 2,
                     'is_published' => true,
+                ]);
+                // =========================
+                // Books
+                // =========================
+                Book::create([
+                    'title' => 'Memorias de la Minería Salitrera',
+                    'cover' => 'https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=800&q=80',
+                    'url'   => url('/Book/memorias-de-la-mineria-salitrera'),
+                ]);
+
+                Book::create([
+                    'title' => 'Colección de Oralidades Atacameñas',
+                    'cover' => 'https://images.unsplash.com/photo-1530549387789-4c1017266635?w=800&q=80',
+                    'url'   => url('/Book/coleccion-de-oralidades-atacamenas'),
+                ]);
+
+                Book::create([
+                    'title' => 'Comic: Historia del Salitre',
+                    'cover' => 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800&q=80',
+                    'url'   => url('/Book/historia-del-salitre'),
                 ]);
             });
 
