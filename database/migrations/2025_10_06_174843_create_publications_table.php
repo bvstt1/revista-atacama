@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('section_items', function (Blueprint $table) {
+        Schema::create('publications', function (Blueprint $table) {
             $table->id();
             $table->foreignId('section_id')->constrained()->cascadeOnDelete();
             $table->string('title');
             $table->string('author')->nullable();
-            $table->string('url')->nullable();
+            $table->string('pdf_file')->nullable();
             $table->unsignedInteger('order')->default(0);
             $table->timestamps();
         });
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('section_items');
+        Schema::dropIfExists('publications');
     }
 };

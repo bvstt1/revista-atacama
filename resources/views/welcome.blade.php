@@ -69,94 +69,94 @@
         <div class="max-w-6xl mx-auto grid gap-10 lg:gap-14 md:grid-cols-2">
             <!-- Columna izquierda: Editorial -->
             <article class="space-y-6">
-            <h1 class="text-4xl md:text-5xl font-serif font-bold text-amber-800">
-                Editorial: Nacimiento de una Revista Digital
-            </h1>
+                <h1 class="text-4xl md:text-5xl font-serif font-bold text-amber-800">
+                    Editorial: Nacimiento de una Revista Digital
+                </h1>
 
-            <div class="flex items-start gap-5">
+                <div class="flex items-start gap-5">
+                    <p class="text-neutral-700 leading-relaxed">
+                    A lo largo de la historia de la difusión del conocimiento, como de la reflexión y del pensamiento crítico, han
+                    existido en el mundo muchos números uno de distintas revistas. En nuestro caso, la historia de Atacama hunde
+                    sus raíces en el lejano periodo de cazadores recolectores, hace unos 11 mil años.
+                    </p>
+                </div>
+
                 <p class="text-neutral-700 leading-relaxed">
-                A lo largo de la historia de la difusión del conocimiento, como de la reflexión y del pensamiento crítico, han
-                existido en el mundo muchos números uno de distintas revistas. En nuestro caso, la historia de Atacama hunde
-                sus raíces en el lejano periodo de cazadores recolectores, hace unos 11 mil años.
+                    Por lo tanto hay mucho que investigar, reflexionar y socializar. Nos introduciremos en los problemas que plantean
+                    la ciencia, la política y la educación, generando antecedentes e información bajo miradas críticas y propositivas
+                    para la discusión y participación ciudadana.
                 </p>
-            </div>
 
-            <p class="text-neutral-700 leading-relaxed">
-                Por lo tanto hay mucho que investigar, reflexionar y socializar. Nos introduciremos en los problemas que plantean
-                la ciencia, la política y la educación, generando antecedentes e información bajo miradas críticas y propositivas
-                para la discusión y participación ciudadana.
-            </p>
+                <p class="text-neutral-700 leading-relaxed">
+                    Además, incluiremos recomendaciones y reseñas de libros para orientar aprendizajes analíticos y reflexivos,
+                    fomentando el gusto por la lectura.
+                </p>
 
-            <p class="text-neutral-700 leading-relaxed">
-                Además, incluiremos recomendaciones y reseñas de libros para orientar aprendizajes analíticos y reflexivos,
-                fomentando el gusto por la lectura.
-            </p>
-
-            <p class="italic text-amber-700 font-semibold">— Nombre del editor/a</p>
+                <p class="italic text-amber-700 font-semibold">— Nombre del editor/a</p>
             </article>
 
             <!-- Columna derecha: Índice con acordeones -->
-            <!-- Columna derecha: Índice con animación suave -->
             <aside
-            x-data="{
-                sections: @js(
-                $sections->map(fn($s)=>[
-                    'title'=>$s->title,
-                    'open'=>false,
-                    'items'=>$s->items->map(fn($it)=>[
-                    'title'=>$it->title,
-                    'author'=>$it->author,
-                    'url'=>$it->url,
+                x-data="{
+                    sections: @js(
+                    $sections->map(fn($s)=>[
+                        'title'=>$s->title,
+                        'open'=>false,
+                        'items'=>$s->items->map(fn($it)=>[
+                        'title'=>$it->title,
+                        'author'=>$it->author,
+                        'pdf_file'=>$it->pdf_file,
+                        ])
                     ])
-                ])
-                )
-            }"
-            class="space-y-4"
-            >
-            <h2 class="text-3xl font-serif font-bold text-amber-800 mb-4">Índice de la Revista: Edición N°1</h2>
-            <p class="">26 de octubre de 2025</p>
-            <template x-for="(sec, s) in sections" :key="s">
-                <div class="overflow-hidden rounded-lg border border-neutral-200 shadow-sm">
-                <!-- Cabecera -->
-                <button
-                    class="w-full flex items-center justify-between bg-neutral-900 text-white px-5 py-4 transition hover:bg-neutral-800"
-                    @click="sec.open = !sec.open"
+                    )
+                }"
+                class="space-y-4"
                 >
-                    <span class="font-semibold" x-text="sec.title"></span>
-                    <div class="flex items-center gap-3">
-                    <span class="text-xs bg-white/10 px-2 py-0.5 rounded"
-                            x-text="sec.items.length + ' artículos'"></span>
-                    <span class="transition-transform duration-300"
-                            :class="sec.open ? 'rotate-45' : ''">+</span>
-                    </div>
-                </button>
+                <h2 class="text-3xl font-serif font-bold text-amber-800 mb-4">Índice de la Revista: Edición N°1</h2>
+                <p class="">26 de octubre de 2025</p>
+                <template x-for="(sec, s) in sections" :key="s">
+                    <div class="overflow-hidden rounded-lg border border-neutral-200 shadow-sm">
+                        <!-- Cabecera -->
+                        <button
+                            class="w-full flex items-center justify-between bg-neutral-900 text-white px-5 py-4 transition hover:bg-neutral-800"
+                            @click="sec.open = !sec.open"
+                        >
+                            <span class="font-semibold" x-text="sec.title"></span>
+                            <div class="flex items-center gap-3">
+                            <span class="text-xs bg-white/10 px-2 py-0.5 rounded"
+                                    x-text="sec.items.length + ' artículos'"></span>
+                            <span class="transition-transform duration-300"
+                                    :class="sec.open ? 'rotate-45' : ''">+</span>
+                            </div>
+                        </button>
 
-                <!-- Contenido con animación más suave -->
-                <div
-                    x-show="sec.open"
-                    x-transition:enter="transition-all ease-in-out duration-500"
-                    x-transition:enter-start="max-h-0 opacity-0"
-                    x-transition:enter-end="max-h-screen opacity-100"
-                    x-transition:leave="transition-all ease-in-out duration-400"
-                    x-transition:leave-start="max-h-screen opacity-100"
-                    x-transition:leave-end="max-h-0 opacity-0"
-                    class="overflow-hidden bg-white"
-                >
-                    <ul class="px-5 py-4 space-y-3">
-                    <template x-for="(it, i) in sec.items" :key="i">
-                        <li class="group transition-opacity duration-500 ease-in-out">
-                        <a :href="it.url"
-                            class="block leading-snug text-[15px] text-neutral-800 hover:text-red-700 underline decoration-red-600 underline-offset-4 group-hover:decoration-2">
-                            <span x-text="it.title"></span>
-                        </a>
-                        <p class="text-sm text-neutral-500" x-text="it.author"></p>
-                        <hr class="mt-3 border-neutral-200" x-show="i !== sec.items.length - 1">
-                        </li>
-                    </template>
-                    </ul>
-                </div>
-                </div>
-            </template>
+                        <!-- Contenido con animación más suave -->
+                        <div
+                            x-show="sec.open"
+                            x-transition:enter="transition-all ease-in-out duration-500"
+                            x-transition:enter-start="max-h-0 opacity-0"
+                            x-transition:enter-end="max-h-screen opacity-100"
+                            x-transition:leave="transition-all ease-in-out duration-400"
+                            x-transition:leave-start="max-h-screen opacity-100"
+                            x-transition:leave-end="max-h-0 opacity-0"
+                            class="overflow-hidden bg-white pointer-events-auto"
+                        >
+                            <ul class="px-5 py-4 space-y-3">
+                                <template x-for="(it, i) in sec.items" :key="i">
+                                    <li class="transition-opacity duration-500 ease-in-out">
+                                        <a :href="it.pdf_file"
+                                        class="block leading-snug text-[15px] text-neutral-800 hover:text-red-700 underline decoration-red-600 underline-offset-4 cursor-pointer"
+                                        target="_blank">
+                                            <span x-text="it.title"></span>
+                                        </a>
+                                        <p class="text-sm text-neutral-500" x-text="it.author"></p>
+                                        <hr class="mt-3 border-neutral-200" x-show="i !== sec.items.length - 1">
+                                    </li>
+                                </template>
+                            </ul>
+                        </div>
+                    </div>
+                </template>
             </aside>
         </div>
     </section>

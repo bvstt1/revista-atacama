@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Section extends Model {
     protected $fillable = ['title','order','is_active'];
-    public function items(){ return $this->hasMany(SectionItem::class)->orderBy('order'); }
+    public function items(){ return $this->hasMany(Publication::class)->orderBy('order'); }
 }

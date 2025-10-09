@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\CarouselSlide;
 use App\Models\Section;
-use App\Models\SectionItem;
 use App\Models\Review;
 use App\Models\Book;
 
@@ -24,7 +23,6 @@ class HomeSeed extends Seeder
             DB::statement('SET FOREIGN_KEY_CHECKS=0');
 
             // Truncar en orden: hijos -> padres
-            SectionItem::truncate();
             Review::truncate();
             Section::truncate();
             CarouselSlide::truncate();
@@ -77,93 +75,34 @@ class HomeSeed extends Seeder
                 // =========================
                 // Sections
                 // =========================
-                $secHistoricos = Section::create([
+                Section::create([
                     'title'     => 'Artículos o Ensayos Históricos',
                     'order'     => 1,
                     'is_active' => true,
                 ]);
 
-                $secPoliticos = Section::create([
+                Section::create([
                     'title'     => 'Artículos o Ensayos Políticos',
                     'order'     => 2,
                     'is_active' => true,
                 ]);
 
-                $secEducativos = Section::create([
+                Section::create([
                     'title'     => 'Artículos o Ensayos Educativos',
                     'order'     => 3,
                     'is_active' => true,
                 ]);
 
-                $secCientificos = Section::create([
+                Section::create([
                     'title'     => 'Artículos o Ensayos Científicos',
                     'order'     => 4,
                     'is_active' => true,
                 ]);
 
-                $secResenias = Section::create([
+                Section::create([
                     'title'     => 'Reseña de Books',
                     'order'     => 5,
                     'is_active' => true,
-                ]);
-
-                // =========================
-                // Section Items
-                // =========================
-                SectionItem::create([
-                    'section_id' => $secHistoricos->id,
-                    'title'      => 'Educación Ambiental y Participación Ciudadana: una mirada desde el SNCAE',
-                    'author'     => 'Felipe Kong López',
-                    'url'        => url('/articulos/educacion-ambiental-sncae'),
-                    'order'      => 1,
-                ]);
-
-                SectionItem::create([
-                    'section_id' => $secHistoricos->id,
-                    'title'      => 'Transición socioecológica justa, transformación social y educación ambiental',
-                    'author'     => 'Valeria Fuentelba Matamala',
-                    'url'        => url('/articulos/transicion-socioecologica'),
-                    'order'      => 2,
-                ]);
-
-                SectionItem::create([
-                    'section_id' => $secPoliticos->id,
-                    'title'      => 'Patrimonio e identidad regional',
-                    'author'     => 'Autores varios',
-                    'url'        => url('/politicos/patrimonio-identidad'),
-                    'order'      => 1,
-                ]);
-
-                SectionItem::create([
-                    'section_id' => $secPoliticos->id,
-                    'title'      => 'Historia social del desierto',
-                    'author'     => 'Autores varios',
-                    'url'        => url('/politicos/historia-desierto'),
-                    'order'      => 2,
-                ]);
-
-                SectionItem::create([
-                    'section_id' => $secEducativos->id,
-                    'title'      => 'Guías didácticas para aula',
-                    'author'     => 'Equipo pedagógico',
-                    'url'        => url('/educativos/guias-didacticas'),
-                    'order'      => 1,
-                ]);
-
-                SectionItem::create([
-                    'section_id' => $secCientificos->id,
-                    'title'      => 'Book: Atacama, memorias del salitre',
-                    'author'     => 'M. Pérez',
-                    'url'        => url('/cientificos/memorias-salitre'),
-                    'order'      => 1,
-                ]);
-
-                SectionItem::create([
-                    'section_id' => $secResenias->id,
-                    'title'      => 'Atacama, memorias del salitre',
-                    'author'     => 'M. Pérez',
-                    'url'        => url('/reseñas/memorias-salitre'),
-                    'order'      => 1,
                 ]);
 
                 // =========================
