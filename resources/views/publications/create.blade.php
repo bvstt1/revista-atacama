@@ -57,12 +57,35 @@
                     </select>
                 </div>
 
+                <!-- Descripción -->
+                <div>
+                    <label for="description" class="block text-sm font-semibold text-amber-800 mb-2">Descripción</label>
+                    <textarea id="description" name="description" rows="4"
+                        class="w-full p-3 rounded-lg bg-white border border-neutral-300 text-neutral-800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-amber-500 transition shadow-lg"></textarea>
+                </div>
+
+                <!-- Fecha de Publicación -->
+                <div>
+                    <label for="publication_date" class="block text-sm font-semibold text-amber-800 mb-2">Fecha de Publicación</label>
+                    <input type="date" id="publication_date" name="publication_date"
+                        class="w-full p-3 rounded-lg bg-white border border-neutral-300 text-neutral
+                        -800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-amber-500 transition shadow-lg">
+                </div>
+
+                <!-- Imagen del artículo -->
+                <div>
+                    <label for="image_file" class="block text-sm font-semibold text-amber-800 mb-2">Imagen del artículo</label>
+                    <input type="file" id="image_file" name="image_file" accept="image/*" required
+                        class="w-full p-3 rounded-lg bg-white border border-neutral-300 text-neutral-800 focus:outline-none focus:ring-2 focus:ring-amber-500 transition shadow-lg">
+                </div>
+
                 <!-- Archivo PDF -->
                 <div>
                     <label for="pdf_file" class="block text-sm font-semibold text-amber-800 mb-2">Archivo PDF</label>
                     <input type="file" id="pdf_file" name="pdf_file" accept="application/pdf" required
                         class="w-full p-3 rounded-lg bg-white border border-neutral-300 text-neutral-800 focus:outline-none focus:ring-2 focus:ring-amber-500 transition shadow-lg">
                 </div>
+                
 
                 <!-- Botón Guardar -->
                 <div class="text-center">

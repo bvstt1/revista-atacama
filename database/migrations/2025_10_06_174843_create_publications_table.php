@@ -16,8 +16,12 @@ return new class extends Migration
             $table->foreignId('section_id')->constrained()->cascadeOnDelete();
             $table->string('title');
             $table->string('author')->nullable();
+            $table->text('description')->nullable();
+            $table->string('image_file')->nullable();
             $table->string('pdf_file')->nullable();
+            $table->date('publication_date')->nullable();
             $table->unsignedInteger('order')->default(0);
+            $table->unsignedBigInteger('clicks')->default(0);
             $table->timestamps();
         });
     }

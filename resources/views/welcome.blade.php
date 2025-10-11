@@ -97,19 +97,19 @@
 
             <!-- Columna derecha: Índice con acordeones -->
             <aside
-                x-data="{
-                    sections: @js(
-                    $sections->map(fn($s)=>[
-                        'title'=>$s->title,
-                        'open'=>false,
-                        'items'=>$s->items->map(fn($it)=>[
-                        'title'=>$it->title,
-                        'author'=>$it->author,
-                        'pdf_file'=>$it->pdf_file,
-                        ])
-                    ])
-                    )
-                }"
+                x-data="{sections: @js(
+                            $sections->map(fn($s)=>[
+                                'title' => $s->title,
+                                'open' => false,
+                                'items' => $s->items->map(fn($it)=>[
+                                    'id' => $it->id,            // <- esto es clave
+                                    'title' => $it->title,
+                                    'author' => $it->author,
+                                    'pdf_file' => $it->pdf_file,
+                                ])
+                            ])
+                        )
+                    }"
                 class="space-y-4"
                 >
                 <h2 class="text-3xl font-serif font-bold text-amber-800 mb-4">Índice de la Revista: Edición N°1</h2>
@@ -144,15 +144,18 @@
                             <ul class="px-5 py-4 space-y-3">
                                 <template x-for="(it, i) in sec.items" :key="i">
                                     <li class="transition-opacity duration-500 ease-in-out">
-                                        <a :href="it.pdf_file"
-                                        class="block leading-snug text-[15px] text-neutral-800 hover:text-red-700 underline decoration-red-600 underline-offset-4 cursor-pointer"
-                                        target="_blank">
+                                        <!-- Link ajustado para incrementar clicks -->
+                                        <a 
+                                            :href="`{{ url('/publications') }}/${it.id}/click`"
+                                            class="block leading-snug text-[15px] text-neutral-800 hover:text-red-700 underline decoration-red-600 underline-offset-4 cursor-pointer"
+                                            target="_blank"
+                                        >
                                             <span x-text="it.title"></span>
                                         </a>
                                         <p class="text-sm text-neutral-500" x-text="it.author"></p>
                                         <hr class="mt-3 border-neutral-200" x-show="i !== sec.items.length - 1">
                                     </li>
-                                </template>
+                                </template>                                
                             </ul>
                         </div>
                     </div>
@@ -163,91 +166,61 @@
 
     <!-- Main Content -->
     <main class="flex-1 p-6 lg:p-8">
-        <section class="mt-12" 
-                x-data="{
-                posts: [
-                {
-                    title: 'El poblamiento temprano del Desierto de Atacama',
-                    desc: 'Evidencias arqueológicas y rutas de movilidad en ambientes hiperáridos.',
-                    img: 'https://images.unsplash.com/photo-1526498460520-4c246339dccb?q=80&w=1600&auto=format&fit=crop',
-                    url: '{{ url("/historia/poblamiento-temprano") }}',
-                    author: 'Equipo Editorial',
-                    date: 'Mar 2025',
-                    read: '6 min'
-                },
-                {
-                    title: 'Educación y patrimonio: aprender con el territorio',
-                    desc: 'Prácticas pedagógicas para resignificar memoria y cultura regional.',
-                    img: 'https://images.unsplash.com/photo-1600550379229-42a1b6f3b43b?q=80&w=1600&auto=format&fit=crop',
-                    url: '{{ url("/educacion/patrimonio-aprender") }}',
-                    author: 'M. Rojas',
-                    date: 'Feb 2025',
-                    read: '5 min'
-                },
-                {
-                    title: 'Minería, agua y comunidad: tensiones del presente',
-                    desc: 'Un análisis sobre gestión hídrica y participación ciudadana en Atacama.',
-                    img: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop',
-                    url: '{{ url("/politica/mineria-agua-comunidad") }}',
-                    author: 'C. Herrera',
-                    date: 'Ene 2025',
-                    read: '7 min'
-                }
-                ]
-                }">
+
+        <!-- Artículos destacados -->
+        <section x-data="{ posts: @js($featured) }">
             <div class="flex items-end justify-between mb-6">
                 <h2 class="text-3xl font-bold text-amber-800">Artículos destacados</h2>
                 <a href="{{ url('/ediciones') }}" class="text-sm font-semibold text-amber-700 hover:text-amber-900">
                 Ver todos →
                 </a>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <template x-for="(p, i) in posts" :key="i">
-                <article class="group bg-white rounded-xl shadow-sm overflow-hidden ring-1 ring-neutral-200/70 hover:ring-neutral-300 transition">
-                    <!-- Imagen con overlay y zoom -->
-                    <a :href="p.url" class="relative block aspect-[16/10] overflow-hidden">
-                    <img :src="p.img" :alt="p.title" 
-                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-90"></div>
-                    </a>
-
-                    <!-- Texto -->
-                    <div class="p-4">
-                    <a :href="p.url" class="block">
-                        <h3 class="font-serif text-xl font-bold leading-tight text-neutral-900 group-hover:text-amber-800 transition"
-                            x-text="p.title"></h3>
-                        <p class="mt-2 text-neutral-600 line-clamp-2" x-text="p.desc"></p>
-                    </a>
-
-                    <!-- Meta -->
-                    <div class="mt-4 flex items-center justify-between text-sm text-neutral-500">
-                        <span>
-                        <span class="font-medium text-neutral-700" x-text="p.author"></span>
-                        · <span x-text="p.date"></span>
-                        </span>
-                        <span class="inline-flex items-center gap-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6l4 2" />
-                        </svg>
-                        <span x-text="p.read"></span>
-                        </span>
-                    </div>
-
-                    <!-- CTA -->
-                    <div class="mt-4">
-                        <a :href="p.url" class="text-amber-700 font-semibold inline-flex items-center gap-1 hover:gap-2 transition-all">
-                        Leer más
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
-                            <path d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 01-1.414 1.414L12 6.414V17a1 1 0 11-2 0V6.414L6.707 9.707A1 1 0 015.293 8.293l5-5z"/>
-                        </svg>
+                    <article class="group bg-white rounded-xl shadow-sm overflow-hidden ring-1 ring-neutral-200/70 hover:ring-neutral-300 transition">
+                        <a :href="p.url" target="_blank" class="relative block aspect-[16/10] overflow-hidden">
+                            <img :src="p.img || '/img/default.jpg'" :alt="p.title" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-90"></div>
                         </a>
-                    </div>
-                    </div>
-                </article>
+        
+                        <div class="p-4">
+                            <a :href="p.url" target="_blank" class="block">
+                                <h3 class="font-serif text-xl font-bold leading-tight text-neutral-900 group-hover:text-amber-800 transition" x-text="p.title"></h3>
+                                <p class="mt-2 text-neutral-600 line-clamp-2" x-text="p.desc"></p>
+                            </a>
+        
+                            <div class="mt-4 flex items-center justify-between text-sm text-neutral-500">
+                                <span>
+                                    <span class="font-medium text-neutral-700" x-text="p.author"></span>
+    
+                                </span>
+                                <p x-text="p.date"></p>
+                            </div>  
+                            <!--
+                                <span class="inline-flex items-center gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6l4 2" />
+                                    </svg>
+                                    <span x-text="p.clicks"></span>
+                            </div>
+                            -->
+                            
+        
+                            <div class="mt-4">
+                                <a :href="p.url" target="_blank" class="text-amber-700 font-semibold inline-flex items-center gap-1 hover:gap-2 transition-all">
+                                    Leer más
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 01-1.414 1.414L12 6.414V17a1 1 0 11-2 0V6.414L6.707 9.707A1 1 0 015.293 8.293l5-5z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
                 </template>
             </div>
         </section>
+        
+
 
 
         <!-- Secciones por Categoría -->

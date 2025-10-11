@@ -15,6 +15,12 @@ class PublicationController extends Controller
         //
     }
 
+    public function incrementClicks(Publication $publication)
+    {
+        $publication->increment('clicks');
+        return redirect()->away(asset('storage/' . $publication->pdf_file));
+    }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -36,16 +42,27 @@ class PublicationController extends Controller
             'title' => 'required|string|max:255',
             'author' => 'nullable|string|max:255',
             'pdf_file' => 'required|file|mimes:pdf|max:10240', // máximo 10MB
+            'description' => 'nullable|string',
+            'publication_date' => 'nullable|date',
+            'order' => 'nullable|integer',
+            'clicks' => 'nullable|integer',
+            'image_file' => 'required|image|mimes:jpg,jpeg,png,webp|max:5120', // máximo 5MB
             'section_id' => 'required|exists:sections,id',
         ]);
 
-        $path = $request->file('pdf_file')->store('pdfs', 'public');
+        $pdfPath = $request->file('pdf_file')->store('pdfs', 'public');
+        $imagePath = $request->file('image_file')->store('img/publications', 'public');
 
         Publication::create([
             'title' => $request->title,
             'author' => $request->author,
+            'description' => $request->description,
+            'publication_date' => $request->publication_date,
+            'order' => $request->order ?? 0,
+            'clicks' => $request->clicks ?? 0,
             'section_id' => $request->section_id,
-            'pdf_file' => '/storage/' . $path,
+            'image_file' => $imagePath,  // solo "img/publications/archivo.jpg"
+            'pdf_file' => $pdfPath,      // solo "pdfs/archivo.pdf"
         ]);
 
         return redirect()->back()->with('success', 'Archivo subido correctamente');

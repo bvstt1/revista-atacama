@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CarouselSlide;
 use App\Models\Section;
+use App\Models\Publication;
 use App\Models\Review;
 use App\Models\Efemeride;
 use App\Models\Book;
@@ -20,6 +21,22 @@ class HomeController extends Controller
         // Armamos la estructura del “índice” con items
         $sections = Section::with('items')->where('is_active',1)->orderBy('order')->get();
 
+        // Publicaciones destacadas (más clickeadas)
+        $featured = Publication::popular()->get()->map(function ($p) {
+            return [
+                'title' => $p->title,
+                'desc'  => $p->description,
+                'img' => $p->image_file ? asset('storage/' . $p->image_file) : null,
+                'url'   => route('publications.click', $p->id),
+                'author'=> $p->author ?? 'Equipo Editorial',
+                'date'  => $p->publication_date ? $p->publication_date->format('M Y') : '',
+                'read'  => '6 min',
+                'clicks'=> $p->clicks,
+            ];
+        })->toArray();   
+
+        
+        // Últimas publicaciones (de todas las secciones)
         $reviews = Review::where('is_published', 1)
             ->orderBy('order')
             ->get(['book_title','author','cover_url','excerpt','review_url','created_at'])
@@ -46,7 +63,7 @@ class HomeController extends Controller
         $books = Book::orderBy('id', 'desc')
         ->get(['title', 'cover', 'url']);
 
-        return view('welcome', compact('slides', 'sections', 'reviews', 'efemerides', 'books'));
+        return view('welcome', compact('slides', 'sections', 'reviews', 'efemerides', 'books', 'featured'));
 
     }
 }

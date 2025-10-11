@@ -100,7 +100,7 @@ class HomeSeed extends Seeder
                 ]);
 
                 Section::create([
-                    'title'     => 'Reseña de Books',
+                    'title'     => 'Reseña de Libros',
                     'order'     => 5,
                     'is_active' => true,
                 ]);

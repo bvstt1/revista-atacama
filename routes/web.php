@@ -14,4 +14,7 @@ Route::get('/contacto', function () {
     return view('info.contacto');
 });
 
+Route::get('/publications/{publication}/click', [PublicationController::class, 'incrementClicks'])
+    ->name('publications.click');
+
 Route::resource('publications', PublicationController::class);
