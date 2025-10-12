@@ -1,4 +1,4 @@
-<x-layout.app>
+<x-components.layout.app>
     <!-- Carrusel Principal -->
     <section 
         x-data="{
@@ -423,4 +423,4 @@
 
     </main>
 
-</x-layout.app>
+</x-components.layout.app>
