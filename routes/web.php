@@ -1,25 +1,34 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\PublicationController;
-use App\Http\Controllers\ReviewController;
-use App\Http\Controllers\BookController;
-use App\Http\Controllers\EfemerideController;
-use App\Http\Controllers\AdminController;
-use App\Http\Middleware\AdminMiddleware;
+use App\Http\Controllers\{
+    HomeController,
+    ProfileController,
+    PublicationController,
+    ReviewController,
+    BookController,
+    EfemerideController,
+    AdminController
+};
+use App\Models\Publication;
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::middleware(['auth', 'verified', 'admin'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+    Route::get('/books/panel', [BookController::class, 'panel'])->name('books.panel');
+    Route::get('/publications/panel', [PublicationController::class, 'panel'])->name('publications.panel');
+    Route::get('/reviews/panel', [ReviewController::class, 'panel'])->name('reviews.panel');
+    Route::get('/efemerides/panel', [EfemerideController::class, 'panel'])->name('efemerides.panel');
+    
+    Route::resource('publications', PublicationController::class);
+    Route::resource('reviews', ReviewController::class);
+    Route::resource('books', BookController::class);
+    Route::resource('efemerides', EfemerideController::class);
 });
-
-
-Route::get('/', [HomeController::class, 'index']);
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -27,21 +36,15 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/nosotros', function () {
-    return view('info.nosotros');
-});
+Route::get('/featured', [PublicationController::class, 'featured']);
 
-Route::get('/contacto', function () {
-    return view('info.contacto');
-});
+Route::get('/articulos', [PublicationController::class, 'indexPublic'])->name('publications.public_index');
 
+Route::view('/nosotros', 'info.nosotros')->name('nosotros');
+Route::view('/contacto', 'info.contacto')->name('contacto');
+
+//Contador de clics en publicaciones (no restringido)
 Route::get('/publications/{publication}/click', [PublicationController::class, 'incrementClicks'])
     ->name('publications.click');
-
-Route::resource('publications', PublicationController::class);
-Route::resource('reviews', ReviewController::class);
-ROute::resource('books', BookController::class);
-Route::resource('efemerides', EfemerideController::class);
-
 
 require __DIR__.'/auth.php';

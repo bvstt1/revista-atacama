@@ -26,7 +26,7 @@ class HomeController extends Controller
             return [
                 'title' => $p->title,
                 'desc'  => $p->description,
-                'img' => $p->image_file ? asset('storage/' . $p->image_file) : null,
+                'img' => $p->image_file ? asset('storage/' . $p->image_file) : asset('/img/default.jpg'),
                 'url'   => route('publications.click', $p->id),
                 'author'=> $p->author ?? 'Equipo Editorial',
                 'date'  => $p->publication_date ? $p->publication_date->format('M Y') : '',
@@ -60,8 +60,8 @@ class HomeController extends Controller
         $efemerides = Efemeride::where('is_published',1)
             ->orderBy('date','asc')->limit(10)->get();
 
-        $books = Book::orderBy('id', 'desc')
-        ->get(['title', 'cover', 'url']);
+        $books = Book::orderBy('id', 'asc')
+        ->get(['title','author','cover','pdf_file','publication_date']);
 
         return view('welcome', compact('slides', 'sections', 'reviews', 'efemerides', 'books', 'featured'));
 

@@ -10,9 +10,15 @@ class AdminMiddleware
 {
     public function handle(Request $request, Closure $next)
     {
-        // Si no está logueado o no es admin, lo redirige
         if (!Auth::check() || Auth::user()->role !== 'admin') {
-            return redirect('/'); // Puedes cambiar por página de error
+
+            Auth::logout();
+
+            $request->session()->invalidate();
+            $request->session()->regenerateToken();
+
+            abort(403, 'Acceso denegado');
+
         }
 
         return $next($request);

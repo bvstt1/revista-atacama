@@ -170,10 +170,19 @@
     <main class="flex-1 p-6 lg:p-8">
 
         <!-- Artículos destacados -->
-        <section x-data="{ posts: @js($featured) }">
+        <section x-data="{ 
+                    posts: @js($featured),
+                    refreshPosts() {
+                        fetch('/featured')
+                            .then(res => res.json())
+                            .then(data => this.posts = data)
+                    }
+                }"
+                x-init="refreshPosts()"
+            >
             <div class="flex items-end justify-between mb-6">
                 <h2 class="text-3xl font-bold text-amber-800">Artículos destacados</h2>
-                <a href="{{ url('/ediciones') }}" class="text-sm font-semibold text-amber-700 hover:text-amber-900">
+                <a href="{{ url('/articulos') }}" class="text-sm font-semibold text-amber-700 hover:text-amber-900">
                 Ver todos →
                 </a>
             </div>
@@ -221,11 +230,8 @@
                 </template>
             </div>
         </section>
-        
 
-
-
-        <!-- Secciones por Categoría -->
+        <!-- Biblioteca -->
         <section class="mt-16">
             <div class="bg-neutral-900 text-white rounded-md px-4 md:px-6 py-6">
                 <!-- Título -->
@@ -236,19 +242,25 @@
                 <p class="mt-1 text-white/70">
                     Biblioteca digital de libros y artículos sobre la región.
                 </p>
-        
+
                 <!-- Carrusel horizontal -->
                 <div class="mt-6 overflow-x-auto no-scrollbar">
                     <ul class="flex gap-6 min-w-max snap-x snap-mandatory">
                         @foreach ($books as $book)
                             <li class="snap-start">
-                                <a href="{{ $book->url }}" class="group block w-[150px] md:w-[180px]">
+                                <a href="{{ asset('storage/' . $book->pdf_file) }}" target="_blank" class="group block w-[150px] md:w-[180px]">
                                     <div class="relative rounded-md overflow-hidden shadow-md ring-1 ring-white/5 transition-transform duration-300 group-hover:-translate-y-1 group-hover:shadow-lg">
-                                        <img src="{{ $book->cover }}" alt="{{ $book->title }}" class="h-[200px] md:h-[230px] w-full object-cover" />
+                                        <img src="{{ asset('storage/' . $book->cover) }}" alt="{{ $book->title }}" class="h-[200px] md:h-[230px] w-full object-cover" />
                                     </div>
-                                    <h3 class="mt-4 text-[13px] md:text-sm font-extrabold uppercase leading-tight tracking-wide line-clamp-2 group-hover:text-amber-700 transition-colors">
+                                    <h3 class="mt-2 text-[13px] md:text-sm font-extrabold uppercase leading-snug tracking-wide group-hover:text-amber-700 transition-colors break-words">
                                         {{ $book->title }}
                                     </h3>
+                                    <p class="text-[11px] md:text-xs text-white/70 mt-1">
+                                        {{ $book->author ?? 'Desconocido' }}
+                                        @if($book->publication_date)
+                                            ({{ \Carbon\Carbon::parse($book->publication_date)->format('Y') }})
+                                        @endif
+                                    </p>
                                 </a>
                             </li>
                         @endforeach
@@ -256,8 +268,8 @@
                 </div>
             </div>
         </section>
-        
 
+        
         <!-- Resúmenes de tesis de Magíster -->
         <!-- 
         <section class="mt-12"

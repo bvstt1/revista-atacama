@@ -127,26 +127,6 @@ class HomeSeed extends Seeder
                     'order'        => 2,
                     'is_published' => true,
                 ]);
-                // =========================
-                // Books
-                // =========================
-                Book::create([
-                    'title' => 'Memorias de la Minería Salitrera',
-                    'cover' => 'https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=800&q=80',
-                    'url'   => url('/Book/memorias-de-la-mineria-salitrera'),
-                ]);
-
-                Book::create([
-                    'title' => 'Colección de Oralidades Atacameñas',
-                    'cover' => 'https://images.unsplash.com/photo-1530549387789-4c1017266635?w=800&q=80',
-                    'url'   => url('/Book/coleccion-de-oralidades-atacamenas'),
-                ]);
-
-                Book::create([
-                    'title' => 'Comic: Historia del Salitre',
-                    'cover' => 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800&q=80',
-                    'url'   => url('/Book/historia-del-salitre'),
-                ]);
             });
 
             DB::commit();

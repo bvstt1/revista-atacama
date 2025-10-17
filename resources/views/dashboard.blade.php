@@ -12,22 +12,22 @@
 
             <!-- Opciones -->
             <div class="flex flex-col items-center space-y-4 text-sm font-medium">
-                <a href="{{ route('publications.create') }}" 
+                <a href="{{ route('publications.panel') }}" 
                    class="bg-amber-700 hover:bg-amber-800 text-white py-2 px-6 rounded-xl shadow-md transition inline-block px-6">
                     Crear Publicación
                 </a>
 
-                <a href="{{ route('reviews.create') }}" 
+                <a href="{{ route('reviews.panel') }}" 
                    class="bg-amber-700 hover:bg-amber-800 text-white py-2 px-6 rounded-xl shadow-md transition inline-block">
                     Crear Reseña
                 </a>
 
-                <a href="{{ route('books.create') }}" 
+                <a href="{{ route('books.panel') }}" 
                    class="bg-amber-700 hover:bg-amber-800 text-white py-2 px-6 rounded-xl shadow-md transition inline-block">
                     Añadir Libro
                 </a>
 
-                <a href="{{ route('efemerides.create') }}" 
+                <a href="{{ route('efemerides.panel') }}" 
                    class="bg-amber-700 hover:bg-amber-800 text-white py-2 px-6 rounded-xl shadow-md transition inline-block">
                     Añadir Efeméride
                 </a>
