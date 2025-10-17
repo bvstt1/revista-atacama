@@ -46,7 +46,7 @@
         <a href="{{ url('/efemerides') }}" class="block py-2 text-amber-700 font-semibold">EFÉMERIDES</a>
     </div>
 
-    {{ $slot }}
+    @yield('content')
 
     <!-- Footer -->
     <footer class="bg-stone-950 text-stone-200 mt-16">

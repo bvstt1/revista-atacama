@@ -1,4 +1,6 @@
-<x-layout.app>
+@extends('layouts.hf')
+
+@section('content')
     <!-- Carrusel Principal -->
     <section 
         x-data="{
@@ -422,5 +424,5 @@
 
 
     </main>
-
-</x-layout.app>
+    
+@endsection
