@@ -13,8 +13,13 @@ return new class extends Migration
     {
         Schema::create('editions', function (Blueprint $table) {
             $table->id();
+            $table->string('title');           // Ej: "Edición Octubre 2025"
+            $table->date('publication_date'); // Fecha de publicación de la edición
+            $table->string('cover_image')->nullable(); // Imagen de portada
+            $table->text('description')->nullable(); // Descripción o resumen de la edición
             $table->timestamps();
         });
+
     }
 
     /**

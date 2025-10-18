@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Publication;
-use App\Models\Section;
+use App\Models\Edition;
 use Illuminate\Http\Request;
 
 class PublicationController extends Controller
@@ -47,19 +47,19 @@ class PublicationController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'author' => 'nullable|string|max:255',
-            'pdf_file' => 'required|file|mimes:pdf|max:10240', // máximo 10MB
+            'pdf_file' => 'required|file|mimes:pdf|max:10240',
             'description' => 'nullable|string',
             'publication_date' => 'nullable|date',
             'order' => 'nullable|integer',
             'clicks' => 'nullable|integer',
-            'image_file' => 'required|image|mimes:jpg,jpeg,png,webp|max:5120', // máximo 5MB
+            'image_file' => 'required|image|mimes:jpg,jpeg,png,webp|max:5120',
             'section_id' => 'required|exists:sections,id',
         ]);
 
         $pdfPath = $request->file('pdf_file')->store('pdfs', 'public');
         $imagePath = $request->file('image_file')->store('img/publications', 'public');
 
-        Publication::create([
+        $publication = Publication::create([
             'title' => $request->title,
             'author' => $request->author,
             'description' => $request->description,
@@ -67,9 +67,19 @@ class PublicationController extends Controller
             'order' => $request->order ?? 0,
             'clicks' => $request->clicks ?? 0,
             'section_id' => $request->section_id,
-            'image_file' => $imagePath,  // solo "img/publications/archivo.jpg"
-            'pdf_file' => $pdfPath,      // solo "pdfs/archivo.pdf"
+            'image_file' => $imagePath,
+            'pdf_file' => $pdfPath,
         ]);
+
+        // ✅ Crear la edición automáticamente si no existe
+        if ($publication->publication_date) {
+            $date = \Carbon\Carbon::parse($publication->publication_date)->toDateString();
+
+            Edition::firstOrCreate(
+                ['date' => $date],
+                ['title' => 'Edición del ' . \Carbon\Carbon::parse($date)->format('d/m/Y')]
+            );
+        }
 
         return redirect()->back()->with('success', 'Archivo subido correctamente');
     }
@@ -127,6 +137,15 @@ class PublicationController extends Controller
 
         // Actualizar
         $publication->update($data);
+
+        if ($publication->publication_date) {
+            $date = \Carbon\Carbon::parse($publication->publication_date)->toDateString();
+
+            Edition::firstOrCreate(
+                ['publication_date' => $date],
+                ['title' => 'Edición del ' . \Carbon\Carbon::parse($date)->format('d/m/Y')]
+            );
+        }
 
         return redirect()->route('publications.index')->with('success', 'Publicación actualizada correctamente');
     }

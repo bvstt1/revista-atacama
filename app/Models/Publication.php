@@ -30,7 +30,14 @@ class Publication extends Model {
         return $query->orderByDesc('clicks')->limit(3);
     }    
 
-    public function section(){
-         return $this->belongsTo(Section::class); 
-        }
+    public function section()
+    {
+        return $this->belongsTo(Section::class); 
+    }
+
+    public function edition()
+    {
+        return $this->belongsTo(Edition::class);
+    }
+
 }

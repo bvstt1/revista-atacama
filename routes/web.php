@@ -8,7 +8,7 @@ use App\Http\Controllers\{
     ReviewController,
     BookController,
     EfemerideController,
-    AdminController
+    EditionController   
 };
 use App\Models\Publication;
 
@@ -39,6 +39,9 @@ Route::middleware('auth')->group(function () {
 Route::get('/featured', [PublicationController::class, 'featured']);
 
 Route::get('/articulos', [PublicationController::class, 'indexPublic'])->name('publications.public_index');
+
+Route::get('/editions', [EditionController::class, 'index'])->name('editions.index');
+Route::get('/editions/{edition}', [EditionController::class, 'show'])->name('editions.show');
 
 Route::view('/nosotros', 'info.nosotros')->name('nosotros');
 Route::view('/contacto', 'info.contacto')->name('contacto');

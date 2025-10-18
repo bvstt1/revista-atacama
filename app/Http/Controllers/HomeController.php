@@ -65,5 +65,8 @@ class HomeController extends Controller
 
         return view('welcome', compact('slides', 'sections', 'reviews', 'efemerides', 'books', 'featured'));
 
+
     }
+
+    
 }

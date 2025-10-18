@@ -1,6 +1,14 @@
-<x-layout.app>
+@extends('layouts.hf')
+
+@section('content')
+<div class="mt-12 text-right px-6 md:px-6 lg:px-24 mb-6 mt-6">
+    <a href="{{ url('/') }}" 
+        class="inline-flex items-center gap-2 px-4 py-2 bg-neutral-900 text-white font-semibold rounded-full hover:bg-neutral-800 transition">
+        ← Volver al inicio
+    </a>
+</div>
     <!-- Sección Contacto -->
-    <section class="mt-16 px-6 md:px-12 lg:px-24">
+    <section class="bg-white pt-6 px-6 md:px-12 lg:px-24">
         <div class="max-w-4xl mx-auto text-center">
             <h2 class="text-3xl md:text-4xl font-bold text-amber-800 mb-4">Contáctanos</h2>
             <p class="text-neutral-600 text-[15px] leading-relaxed mb-10">
@@ -61,4 +69,4 @@
             </p>
         </div>
     </section>
-</x-layout.app>
+@endsection

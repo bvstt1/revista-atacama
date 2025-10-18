@@ -21,7 +21,7 @@
         <!-- Navegación principal -->
         <nav class="hidden md:flex space-x-6 text-stone-700 font-medium">
             <a href="{{ url('/normas') }}" class="hover:text-amber-700">NORMAS EDITORIALES</a>
-            <a href="{{ url('/ediciones') }}" class="hover:text-amber-700">EDICIONES PUBLICADAS</a>
+            <a href="{{ url('/editions') }}" class="hover:text-amber-700">EDICIONES PUBLICADAS</a>
             <a href="{{ url('/nosotros') }}" class="hover:text-amber-700">NOSOTROS</a>
             <a href="{{ url('/contacto') }}" class="hover:text-amber-700">CONTACTO</a>
         </nav>
@@ -125,7 +125,7 @@
             <h4 class="text-sm font-semibold uppercase tracking-wider text-stone-400 mb-3">Información</h4>
             <ul class="space-y-2 text-sm">
                 <li><a href="{{ url('/normas') }}" class="hover:text-amber-500 transition">Normas Editoriales</a></li>
-                <li><a href="{{ url('/ediciones') }}" class="hover:text-amber-500 transition">Ediciones Publicadas</a></li>
+                <li><a href="{{ url('/editions') }}" class="hover:text-amber-500 transition">Ediciones Publicadas</a></li>
                 <li><a href="{{ url('/archivo') }}" class="hover:text-amber-500 transition">Archivo de Historia de Atacama</a></li>
                 <li><a href="{{ url('/efemerides') }}" class="hover:text-amber-500 transition">Efemérides</a></li>
                 <li><a href="{{ url('/contacto') }}" class="hover:text-amber-500 transition">Contacto</a></li>
