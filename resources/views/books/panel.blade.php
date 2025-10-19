@@ -5,17 +5,17 @@
         </h2>
     </x-slot>
 
-    <div class="py-6 max-w-4xl mx-auto sm:px-6 lg:px-8 space-y-6">
-        <div class="bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg p-6 flex flex-col md:flex-row gap-4 justify-center">
+    <div class="py-6 max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
             
-            <a href="{{ route('books.index') }}" 
-               class="flex-1 px-6 py-4 bg-amber-700 text-white font-semibold rounded-lg text-center hover:bg-amber-800 transition">
-               Ver todos los libros
+            <a href="{{ route('books.create') }}" 
+               class="flex flex-col items-center justify-center px-6 py-8 bg-amber-700 text-white rounded-lg shadow hover:bg-amber-800 transition">
+               <span class="font-bold"> Crear nuevo libro </span>
             </a>
 
-            <a href="{{ route('books.create') }}" 
-               class="flex-1 px-6 py-4 bg-green-600 text-white font-semibold rounded-lg text-center hover:bg-green-700 transition">
-               Crear nuevo libro
+            <a href="{{ route('books.index') }}" 
+               class="flex flex-col items-center justify-center px-6 py-8 bg-gray-100 text-gray-800 rounded-lg shadow hover:bg-gray-200 transition p-6">
+               <span class="font-bold"> Ver/Editar/Eliminar libros </span>
             </a>
 
         </div>

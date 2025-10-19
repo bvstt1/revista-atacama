@@ -27,5 +27,47 @@ class EditionController extends Controller
     }
 
 
+    public function adminIndex()
+    {
+        $editions = Edition::orderByDesc('publication_date')->get();
+        return view('editions.admin_index', compact('editions'));
+    }
+
+    public function toggleActive(Edition $edition)
+    {
+        if ($edition->is_active) {
+            // Desactivar si ya estaba activa
+            $edition->is_active = false;
+            $edition->save();
+        } else {
+            // Activar solo esta edición y desactivar todas las demás
+            Edition::query()->update(['is_active' => false]);
+
+            $edition->is_active = true;
+            $edition->save();
+        }
+
+        return redirect()->back()->with('success', 'Estado de la edición actualizado.');
+    }
+
+    public function deleteOrphanedEditions()
+    {
+        // Obtener todas las ediciones
+        $editions = Edition::all();
+
+        foreach ($editions as $edition) {
+            // Verificar si tiene publicaciones
+            $hasPublications = Publication::whereDate('publication_date', $edition->publication_date)->exists();
+
+            // Si no tiene publicaciones, eliminarla
+            if (!$hasPublications) {
+                $edition->delete();
+            }
+        }
+
+        return redirect()->back()->with('success', 'Ediciones sin publicaciones eliminadas automáticamente.');
+    }
+
+
 
 }

@@ -17,7 +17,7 @@
             <!-- Botón Ver todas las publicaciones -->
             <a href="{{ route('publications.index') }}"
                class="flex flex-col items-center justify-center px-6 py-8 bg-gray-100 text-gray-800 rounded-lg shadow hover:bg-gray-200 transition p-6">
-                <span class="font-bold">Ver todas las publicaciones</span>
+                <span class="font-bold">Ver/Editar/Eliminar todas las publicaciones</span>
             </a>
 
         </div>

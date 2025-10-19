@@ -1,16 +1,23 @@
 @extends('layouts.hf')
 
 @section('content')
-<!-- Botón Volver -->
-<div class="mt-12 text-right px-6 md:px-6 lg:px-24 mb-6 mt-6">
-    <a href="{{ url('/') }}" 
-    class="inline-flex items-center gap-2 px-4 py-2 bg-amber-700 text-white font-semibold rounded-full hover:bg-amber-800 transition">
-        ← Volver
-    </a>
+<div class="flex items-center justify-between px-6 md:px-6 lg:px-24 mb-6 mt-6">
+    @if(isset($editionDate))
+        <div class="text-3xl font-bold text-amber-800">
+            <p class="italic">Edición del {{ \Carbon\Carbon::parse($editionDate)->format('d \d\e F \d\e\l Y') }}</p>
+        </div>
+    @endif
+
+    <div>
+        <a href="{{ url('/') }}" 
+            class="inline-flex items-center gap-2 px-4 py-2 bg-amber-700 text-white font-semibold rounded-full hover:bg-amber-800 transition">
+            ← Volver
+        </a>
+    </div>
 </div>
-<section class="bg-white pt-6 px-6 md:px-12 lg:px-24">
+<section class="bg-white px-6 md:px-12 lg:px-24">
         @foreach ($sections as $section)
-                <h2 class="text-2xl md:text-3xl font-bold text-amber-700 mb-6">{{ $section->title }}</h2>
+                <h2 class="text-2xl md:text-1xl font-bold text-amber-700 pt-6 mb-6">{{ $section->title }}</h2>
 
                 @if ($section->items->isEmpty())
                     <p class="text-neutral-500 italic">No hay artículos publicados en esta sección para esta edición.</p>

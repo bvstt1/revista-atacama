@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Publication;
 use App\Models\Edition;
+use App\Models\Section;
 use Illuminate\Http\Request;
 
 class PublicationController extends Controller
@@ -76,8 +77,13 @@ class PublicationController extends Controller
 
             Edition::firstOrCreate(
                 ['publication_date' => $date],
-                ['title' => 'Edición del ' . \Carbon\Carbon::parse($date)->format('d/m/Y')]
+                [
+                    'title' => 'Edición del ' . \Carbon\Carbon::parse($date)->format('d/m/Y'),
+                    'is_active' => false, // por defecto la edición se crea como inactiva
+                ]
             );
+
+            $this->deleteOrphanedEditions();
         }
 
         return redirect()->back()->with('success', 'Archivo subido correctamente');
@@ -142,8 +148,13 @@ class PublicationController extends Controller
 
             Edition::firstOrCreate(
                 ['publication_date' => $date],
-                ['title' => 'Edición del ' . \Carbon\Carbon::parse($date)->format('d/m/Y')]
+                [
+                    'title' => 'Edición del ' . \Carbon\Carbon::parse($date)->format('d/m/Y'),
+                    'is_active' => false,
+                ]
             );
+
+            $this->deleteOrphanedEditions();
         }
 
         return redirect()->route('publications.index')->with('success', 'Publicación actualizada correctamente');
@@ -152,17 +163,30 @@ class PublicationController extends Controller
 
     public function featured()
     {
-        $featured = Publication::popular()->get()->map(function ($p) {
-            return [
-                'title'  => $p->title,
-                'desc'   => $p->description,
-                'img'    => $p->image_file ? asset('storage/' . $p->image_file) : asset('/img/default.jpg'),
-                'url'    => route('publications.click', $p->id),
-                'author' => $p->author ?? 'Equipo Editorial',
-                'date'   => $p->publication_date ? $p->publication_date->format('M Y') : '',
-                'clicks' => $p->clicks,
-            ];
-        });
+        $activeEdition = Edition::where('is_active', true)
+            ->orderBy('publication_date', 'asc')
+            ->first();
+
+        if ($activeEdition) {
+            $editionDate = $activeEdition->publication_date;
+
+            $featured = Publication::popular()
+                ->whereDate('publication_date', $editionDate)
+                ->get()
+                ->map(function ($p) {
+                    return [
+                        'title'  => $p->title,
+                        'desc'   => $p->description,
+                        'img'    => $p->image_file ? asset('storage/' . $p->image_file) : asset('/img/default.jpg'),
+                        'url'    => route('publications.click', $p->id),
+                        'author' => $p->author ?? 'Equipo Editorial',
+                        'date'   => $p->publication_date ? $p->publication_date->format('M Y') : '',
+                        'clicks' => $p->clicks,
+                    ];
+                });
+        } else {
+            $featured = collect();
+        }
 
         return response()->json($featured);
     }
@@ -177,14 +201,46 @@ class PublicationController extends Controller
 
     public function indexPublic()
     {
-        $sections = \App\Models\Section::with(['items' => function($query){
-            $query->orderBy('publication_date', 'desc');
-        }])->where('is_active', true)
-        ->orderBy('order')
-        ->get();
+        // Determinar la edición activa más próxima
+        $activeEdition = Edition::where('is_active', true)
+            ->orderBy('publication_date', 'asc')
+            ->first();
 
-        return view('publications.public_index', compact('sections'));
+        if ($activeEdition) {
+            $editionDate = $activeEdition->publication_date;
+
+            // Traer secciones activas con publicaciones solo de esa edición
+            $sections = Section::with(['items' => function ($query) use ($editionDate) {
+                $query->whereDate('publication_date', $editionDate)
+                    ->orderBy('order')
+                    ->orderByDesc('publication_date');
+            }])
+            ->where('is_active', true)
+            ->orderBy('order')
+            ->get()
+            ->filter(fn($s) => $s->items->isNotEmpty())
+            ->values();
+        } else {
+            $editionDate = null;
+            $sections = collect();
+        }
+
+        return view('publications.public_index', compact('sections', 'editionDate'));
     }
 
-    
+    private function deleteOrphanedEditions()
+    {
+        // Buscar todas las ediciones
+        $editions = Edition::all();
+
+        foreach ($editions as $edition) {
+            $hasPublications = Publication::whereDate('publication_date', $edition->publication_date)->exists();
+            if (!$hasPublications) {
+                $edition->delete();
+            }
+        }
+    }
+
+
+
 }

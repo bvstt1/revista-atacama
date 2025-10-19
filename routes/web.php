@@ -19,6 +19,9 @@ Route::middleware(['auth', 'verified', 'admin'])->group(function () {
         return view('dashboard');
     })->name('dashboard');
 
+    Route::get('/editions-admin', [EditionController::class, 'adminIndex'])->name('editions.admin.index');
+    Route::post('/editions-admin/{edition}/toggle', [EditionController::class, 'toggleActive'])->name('editions.admin.toggle');
+
     Route::get('/books/panel', [BookController::class, 'panel'])->name('books.panel');
     Route::get('/publications/panel', [PublicationController::class, 'panel'])->name('publications.panel');
     Route::get('/reviews/panel', [ReviewController::class, 'panel'])->name('reviews.panel');

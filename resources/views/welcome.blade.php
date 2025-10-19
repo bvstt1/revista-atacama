@@ -115,7 +115,10 @@
                 class="space-y-4"
                 >
                 <h2 class="text-3xl font-serif font-bold text-amber-800 mb-4">Índice de la Revista: Edición N°1</h2>
-                <p class="">26 de octubre de 2025</p>
+                @if(isset($editionDate))
+                    <p class="text-sm text-neutral-500">Edición: 
+                        {{ \Carbon\Carbon::parse($editionDate)->locale('es')->isoFormat('D [de] MMMM YYYY') }}</p>
+                @endif
                 <template x-for="(sec, s) in sections" :key="s">
                     <div class="overflow-hidden rounded-lg border border-neutral-200 shadow-sm">
                         <!-- Cabecera -->

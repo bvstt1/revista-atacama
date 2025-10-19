@@ -1,17 +1,21 @@
 @extends('layouts.hf')
 
 @section('content')
-<div class="mt-12 text-right px-6 md:px-6 lg:px-24 mb-6 mt-6">
-    <a href="{{ route('editions.index') }}"
-        class="inline-flex items-center gap-2 px-4 py-2 bg-amber-700 text-white font-semibold rounded-full hover:bg-amber-800 transition">
-        ← Volver a ediciones
-    </a>
-</div>
-<section class="bg-white py-16 px-6 md:px-12 lg:px-24">
-    <h1 class="text-4xl font-bold text-amber-800 mb-10">{{ $edition->title }}</h1>
+<div class="flex items-center justify-between px-6 md:px-6 lg:px-24 mb-6 mt-6">
+    <div class="text-3xl font-bold text-amber-800">
+        <p class="italic">{{ $edition->title }}</h1>
+    </div>
 
+    <div>
+        <a href="{{ route('editions.index') }}"
+            class="inline-flex items-center gap-2 px-4 py-2 bg-amber-700 text-white font-semibold rounded-full hover:bg-amber-800 transition">
+            ← Volver a ediciones
+        </a>
+    </div>
+</div>
+<section class="bg-white ppx-6 md:px-12 lg:px-24">
     @foreach($sections as $sectionName => $articles)
-        <h2 class="text-2xl font-semibold text-amber-700 mt-12 mb-6">{{ $sectionName }}</h2>
+        <h2 class="text-2xl pt-6 font-semibold text-amber-700 mb-6">{{ $sectionName }}</h2>
 
         @if($articles->isEmpty())
             <p class="text-neutral-500 italic">No hay artículos para esta sección en esta edición.</p>
