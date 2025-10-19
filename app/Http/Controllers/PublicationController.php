@@ -71,12 +71,11 @@ class PublicationController extends Controller
             'pdf_file' => $pdfPath,
         ]);
 
-        // ✅ Crear la edición automáticamente si no existe
         if ($publication->publication_date) {
             $date = \Carbon\Carbon::parse($publication->publication_date)->toDateString();
 
             Edition::firstOrCreate(
-                ['date' => $date],
+                ['publication_date' => $date],
                 ['title' => 'Edición del ' . \Carbon\Carbon::parse($date)->format('d/m/Y')]
             );
         }
