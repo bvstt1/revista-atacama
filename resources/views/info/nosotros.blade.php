@@ -10,7 +10,7 @@
 <!-- Nosotros -->    
 <section class="bg-white pt-6 px-6 md:px-12 lg:px-24">
     <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold text-amber-700 mb-8">Nosotros</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-amber-800 mb-8">Nosotros</h2>
         <p class="mb-10 text-neutral-900 leading-relaxed text-[20px]">
             El equipo de la Revista Digital de Atacama está compuesto por profesionales comprometidos con la investigación,
             la educación y la difusión del patrimonio histórico y cultural de la región.

@@ -12,11 +12,15 @@
     <div class="max-w-6xl mx-auto">
 
         <!-- Título principal -->
-        <div class="text-center mb-12">
-            <h1 class="text-4xl md:text-5xl font-serif font-bold text-amber-800">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-serif font-extrabold text-amber-800 drop-shadow-sm">
                 Ediciones publicadas
             </h1>
-            <p class="mt-3 text-neutral-700 max-w-2xl mx-auto">
+            
+            <!-- Línea decorativa -->
+            <div class="w-24 h-1 bg-amber-700 rounded-full mx-auto my-4"></div>
+
+            <p class="mt-4 text-neutral-600 md:text-lg max-w-3xl mx-auto leading-relaxed">
                 Explora las ediciones anteriores de la revista, con los artículos y publicaciones correspondientes a cada fecha.
             </p>
         </div>

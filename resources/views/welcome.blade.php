@@ -7,63 +7,85 @@
             current: 0, 
             slides: @js($slides),
             interval: null,
-            start() { this.interval = setInterval(() => { this.current = (this.current === this.slides.length - 1) ? 0 : this.current + 1 }, 5000) },
-            stop() { clearInterval(this.interval); this.interval = null }
+            start() { 
+                this.interval = setInterval(() => { 
+                    this.current = (this.current === this.slides.length - 1) ? 0 : this.current + 1 
+                }, 5000) 
+            },
+            stop() { 
+                clearInterval(this.interval); 
+                this.interval = null 
+            }
         }"
-        x-init="start()" @mouseenter="stop()" @mouseleave="start()" 
+        x-init="start()" 
+        @mouseenter="stop()" 
+        @mouseleave="start()" 
         class="relative w-full h-[35vh] overflow-hidden group"
         >
             <template x-for="(slide, index) in slides" :key="index">
-                <div x-show="current === index" x-transition.opacity class="cursor-pointer absolute inset-0" @click="window.location.href = slide.ctaUrl" role="link" :aria-label="slide.title">
-                    <img :src="slide.img" :alt="slide.alt" class="w-full h-full object-cover" />
+                <div 
+                    x-show="current === index" 
+                    x-transition.opacity 
+                    class="absolute inset-0"
+                >
+                    <img 
+                        :src="slide.img" 
+                        :alt="slide.alt" 
+                        class="w-full h-full object-cover" 
+                    />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex flex-col justify-end p-8 text-white">
                         <h2 class="text-3xl md:text-5xl font-bold" x-text="slide.title"></h2>
                         <p class="mt-2 text-lg md:text-xl" x-text="slide.description"></p>
                     </div>
                 </div>
             </template>
-            <!-- Botones -->
-            <button @click="current = (current === 0) ? slides.length - 1 : current - 1" class="absolute top-1/2 left-6 -translate-y-1/2 bg-white/50 hover:bg-white/70 text-3xl p-2 rounded-full shadow transition">‹</button>
-            <button @click="current = (current === slides.length - 1) ? 0 : current + 1" class="absolute top-1/2 right-6 -translate-y-1/2 bg-white/50 hover:bg-white/70 text-3xl p-2 rounded-full shadow transition">›</button>
-            
+
+        <!-- Botones -->
+        <button 
+            @click="current = (current === 0) ? slides.length - 1 : current - 1" 
+            class="absolute top-1/2 left-6 -translate-y-1/2 bg-white/50 hover:bg-white/70 text-3xl p-2 rounded-full shadow transition">
+            ‹
+        </button>
+        <button 
+            @click="current = (current === slides.length - 1) ? 0 : current + 1" 
+            class="absolute top-1/2 right-6 -translate-y-1/2 bg-white/50 hover:bg-white/70 text-3xl p-2 rounded-full shadow transition">
+            ›
+        </button>
     </section>
 
     <!-- Efeméride Crítica Semanal -->
     <section 
         class="mt-10 mb-14 md:mt-14 px-6 md:px-12 lg:px-24"
-        x-data="{ 
-            efemeride: {
-            fecha: '26 de octubre de 1540',
-            titulo: 'Acta fundacional de la posesión del Valle de Copiapó',
-            resumen: 'En esta fecha, Pedro de Valdivia toma posesión de la zona mediante acta notarial firmada por Luis de Cartagena. Este documento es considerado uno de los hitos fundacionales del territorio atacameño.',
-            url: '{{ url("/efemerides/26-10-1540") }}'
-            } 
-        }"
+        x-data="{efemeride: @js($efemeride)}"
         >
         <div class="bg-amber-50 border border-amber-200 rounded-xl p-6 md:p-8 shadow-sm flex flex-col md:flex-row items-start md:items-center gap-6 hover:shadow-md transition">
             
             <!-- Fecha + etiqueta -->
             <div class="shrink-0 text-center md:text-left">
-            <span class="inline-block px-3 py-1 text-xs font-semibold bg-amber-700 text-white rounded-full uppercase tracking-wide">
-                Efeméride crítica semanal
-            </span>
-            <p class="mt-3 text-amber-900 font-semibold text-sm" x-text="efemeride.fecha"></p>
+                <span class="inline-block px-3 py-1 text-xs font-semibold bg-amber-700 text-white tracking-wide rounded-lg">
+                    <span 
+                        class="text-2xl md:text-3xl font-bold"
+                        x-text="(() => {
+                            const [y, m, d] = efemeride.date.split('-');
+                            const date = new Date(y, m - 1, d);
+                            const day = date.getDate();
+                            const month = date.toLocaleString('es-ES', { month: 'long' });
+                            return `${day} de ${month.charAt(0).toUpperCase() + month.slice(1)}`;
+                        })()">
+                    </span>
+                </span>
+                <!-- Efeméride crítica semanal -->
+                <p class="mt-3 text-center md:text-left text-base md:text-lg font-bold text-amber-800">
+                    Efeméride crítica semanal
+                </p>
             </div>
+
 
             <!-- Contenido principal -->
             <div class="flex-1">
-            <h3 class="font-serif text-2xl font-bold text-stone-900 leading-snug" x-text="efemeride.titulo"></h3>
-            <p class="mt-2 text-stone-700 text-[15px] leading-relaxed" x-text="efemeride.resumen"></p>
+            <h3 class="font-serif text-3xl font-bold text-stone-900 leading-snug" x-text="efemeride.title"></h3>
+            <p class="mt-2 text-stone-700 font-bold text-[15px] leading-relaxed" x-text="efemeride.description"></p>
             </div>
-
-            <!-- Botón -->
-            <div class="self-end md:self-center">
-            <a :href="efemeride.url"
-                class="inline-block px-5 py-2 bg-amber-700 text-white text-sm font-semibold rounded-full hover:bg-amber-800 transition">
-                Ver más
-            </a>
-            </div>
-        </div>
     </section>
 
     <!-- Índice estilo revista -->
@@ -93,8 +115,11 @@
                     Además, incluiremos recomendaciones y reseñas de libros para orientar aprendizajes analíticos y reflexivos,
                     fomentando el gusto por la lectura.
                 </p>
-
-                <p class="italic text-amber-700 font-semibold">— Nombre del editor/a</p>
+                
+                <div>
+                    <p class="italic text-amber-700 font-semibold">— Guillermo Cortés Luts</p>
+                    <p class="italic font-semibold opacity-50" >Doctor en Historia</p>
+                </div>
             </article>
 
             <!-- Columna derecha: Índice con acordeones -->
@@ -155,6 +180,8 @@
                                             class="block leading-snug text-[15px] text-neutral-800 hover:text-red-700 underline decoration-red-600 underline-offset-4 cursor-pointer"
                                             target="_blank"
                                         >
+                                            <span class="font-medium">
+                                                Artículo <span x-text="i + 1"></span>:
                                             <span x-text="it.title"></span>
                                         </a>
                                         <p class="text-sm text-neutral-500" x-text="it.author"></p>

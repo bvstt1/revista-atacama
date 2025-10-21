@@ -16,7 +16,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        // Slides activos
+        // CARRUSEL
         $slides = CarouselSlide::where('is_active',1)
             ->orderBy('order')
             ->get(['image_url as img', 'title', 'description', 'cta_url as ctaUrl']);
@@ -26,6 +26,8 @@ class HomeController extends Controller
             ->orderBy('publication_date', 'asc')
             ->first();
 
+
+        // SECCIONES Y ARTÍCULOS
         if ($activeEdition) {
             $editionDate = $activeEdition->publication_date;
 
@@ -62,7 +64,7 @@ class HomeController extends Controller
             $featured = [];
         }
 
-        // Reviews, efemérides y libros (sin cambios)
+        // RESEÑAS DE LIBROS
         $reviews = Review::where('is_published', 1)
             ->orderBy('order')
             ->get(['book_title','author','cover_url','excerpt','review_url','created_at'])
@@ -80,12 +82,34 @@ class HomeController extends Controller
                 ];
             });
 
-        $efemerides = Efemeride::where('is_published',1)
-            ->orderBy('date','asc')->limit(10)->get();
 
+    // EFEMÉRIDE MÁS PRÓXIMA
+    $today = now();
+
+    $efemeride = Efemeride::where('is_published', 1)
+        ->get()
+        ->sortBy(function ($efemeride) use ($today) {
+            $date = \Carbon\Carbon::parse($efemeride->date)->setYear($today->year);
+
+            // Si la fecha ya pasó este año, la movemos al siguiente
+            if ($date->isBefore($today, 'day')) {
+                $date->addYear();
+            }
+
+            return $today->diffInDays($date);
+        })
+        ->first();
+
+    if ($efemeride) {
+        // Mostramos solo día y mes (ejemplo: "20 de octubre")
+        $efemeride->formatted_date = \Carbon\Carbon::parse($efemeride->date)
+            ->translatedFormat('j \d\e F');
+    }
+
+        // BIBLIOTECA DIGITAL
         $books = Book::orderBy('id', 'asc')
             ->get(['title','author','cover','pdf_file','publication_date']);
 
-        return view('welcome', compact('slides', 'sections', 'reviews', 'efemerides', 'books', 'featured', 'editionDate'));
+        return view('welcome', compact('slides', 'sections', 'reviews', 'efemeride', 'books', 'featured', 'editionDate'));
     }
 }

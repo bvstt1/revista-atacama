@@ -10,7 +10,6 @@ use App\Http\Controllers\{
     EfemerideController,
     EditionController   
 };
-use App\Models\Publication;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -31,6 +30,7 @@ Route::middleware(['auth', 'verified', 'admin'])->group(function () {
     Route::resource('reviews', ReviewController::class);
     Route::resource('books', BookController::class);
     Route::resource('efemerides', EfemerideController::class);
+    Route::view('/contacto', 'info.contacto')->name('contacto');
 });
 
 Route::middleware('auth')->group(function () {
@@ -43,11 +43,12 @@ Route::get('/featured', [PublicationController::class, 'featured']);
 
 Route::get('/articulos', [PublicationController::class, 'indexPublic'])->name('publications.public_index');
 
+Route::get('/efemerides-public', [EfemerideController::class, 'indexPublic'])->name('efemerides.public_index');
+
 Route::get('/editions', [EditionController::class, 'index'])->name('editions.index');
 Route::get('/editions/{edition}', [EditionController::class, 'show'])->name('editions.show');
 
 Route::view('/nosotros', 'info.nosotros')->name('nosotros');
-Route::view('/contacto', 'info.contacto')->name('contacto');
 
 //Contador de clics en publicaciones (no restringido)
 Route::get('/publications/{publication}/click', [PublicationController::class, 'incrementClicks'])

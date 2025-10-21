@@ -20,18 +20,26 @@
 
         <!-- Navegación principal -->
         <nav class="hidden md:flex space-x-6 text-stone-700 font-medium">
-            <a href="{{ url('/normas') }}" class="hover:text-amber-700">NORMAS EDITORIALES</a>
-            <a href="{{ url('/editions') }}" class="hover:text-amber-700">EDICIONES PUBLICADAS</a>
-            <a href="{{ url('/nosotros') }}" class="hover:text-amber-700">NOSOTROS</a>
-            <a href="{{ url('/contacto') }}" class="hover:text-amber-700">CONTACTO</a>
+            <a href="{{ url('/normas') }}" 
+            class="px-4 py-2 hover:bg-amber-700 hover:text-white rounded transition">
+                Normas Editoriales
+            </a>
+            <a href="{{ url('/editions') }}" 
+            class="px-4 py-2 hover:bg-amber-700 hover:text-white rounded transition">
+                Ediciones Publicadas
+            </a>
+            <a href="{{ url('/nosotros') }}" 
+            class="px-4 py-2 hover:bg-amber-700 hover:text-white rounded transition">
+                Nosotros
+            </a>
+            <a href="{{ url('/efemerides-public') }}"
+            class="px-4 py-2 text-amber-700 hover:bg-amber-700 hover:text-white rounded transition">
+                Efemérides
+            </a>
         </nav>
-
-        <!-- Botón destacado -->
-        <a href="{{ url('/efemerides') }}"
-            class="hidden md:block ml-6 px-4 py-2 bg-amber-700 text-white rounded-full hover:bg-amber-800 transition-colors">
-            Efémerides
-        </a>
-
+        <div>
+            
+        </div>
         <!-- Botón menú móvil -->
         <button class="md:hidden text-2xl text-amber-800" id="mobile-menu-button">☰</button>
     </header>
@@ -39,11 +47,10 @@
     <!-- Menú móvil -->
     <div class="md:hidden hidden flex-col space-y-2 bg-white px-6 py-4 shadow-md" id="mobile-menu">
         <a href="{{ url('/') }}" class="block py-2 text-stone-700 hover:text-amber-700">Inicio</a>
-        <a href="{{ url('/normas') }}" class="block py-2 text-stone-700 hover:text-amber-700">NORMAS EDITORIALES</a>
-        <a href="{{ url('/ediciones') }}" class="block py-2 text-stone-700 hover:text-amber-700">EDICIONES PUBLICADAS</a>
-        <a href="{{ url('/nosotros') }}" class="block py-2 text-stone-700 hover:text-amber-700">NOSOTROS</a>
-        <a href="{{ url('/contacto') }}" class="block py-2 text-stone-700 hover:text-amber-700">CONTACTO</a>
-        <a href="{{ url('/efemerides') }}" class="block py-2 text-amber-700 font-semibold">EFÉMERIDES</a>
+        <a href="{{ url('/normas') }}" class="block py-2 text-stone-700 hover:text-amber-700">Normas Editoriales</a>
+        <a href="{{ url('/editions') }}" class="block py-2 text-stone-700 hover:text-amber-700">Ediciones Publicadas</a>
+        <a href="{{ url('/nosotros') }}" class="block py-2 text-stone-700 hover:text-amber-700">Nosotros</a>
+        <a href="{{ url('/efemerides-public') }}" class="block py-2 text-amber-700 font-semibold">Efemérides</a>
     </div>
 
     @yield('content')
@@ -109,12 +116,6 @@
                 <span class="block">Bastián Velásquez</span>
                 </li>
 
-                <li>
-                <span class="block font-semibold text-amber-500">Correo Editorial:</span>
-                <a href="mailto:revista@historiaatacama.cl" class="block text-[13px] text-amber-500 hover:text-amber-400 transition">
-                    revista@historiaatacama.cl
-                </a>
-                </li>
 
             </ul>
             </div>
@@ -126,9 +127,7 @@
             <ul class="space-y-2 text-sm">
                 <li><a href="{{ url('/normas') }}" class="hover:text-amber-500 transition">Normas Editoriales</a></li>
                 <li><a href="{{ url('/editions') }}" class="hover:text-amber-500 transition">Ediciones Publicadas</a></li>
-                <li><a href="{{ url('/archivo') }}" class="hover:text-amber-500 transition">Archivo de Historia de Atacama</a></li>
                 <li><a href="{{ url('/efemerides') }}" class="hover:text-amber-500 transition">Efemérides</a></li>
-                <li><a href="{{ url('/contacto') }}" class="hover:text-amber-500 transition">Contacto</a></li>
             </ul>
             </div>
 
@@ -143,8 +142,7 @@
             </div>
 
             <p class="text-xs text-stone-500 leading-relaxed">
-                Desarrollado por el equipo de la <span class="text-amber-600">Revista de Historia de Atacama</span>.<br>
-                Plataforma digital creada en Laravel · {{ date('Y') }}
+                Desarrollado por el equipo de la <span class="text-amber-600">Revista de Historia de Atacama</span>.<br> {{ date('Y') }}
             </p>
             </div>
         </div>
@@ -160,6 +158,7 @@
             document.getElementById('mobile-menu').classList.toggle('hidden');
         });
     </script>
+    <script src="https://kit.fontawesome.com/782e1f1389.js" crossorigin="anonymous"></script>
 
 </body>
 </html>

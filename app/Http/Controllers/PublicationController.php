@@ -6,6 +6,7 @@ use App\Models\Publication;
 use App\Models\Edition;
 use App\Models\Section;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PublicationController extends Controller
 {
@@ -33,7 +34,7 @@ class PublicationController extends Controller
      */
     public function create()
     {
-        $sections = \App\Models\Section::where('is_active', true)
+        $sections = Section::where('is_active', true)
             ->orderBy('order')
             ->get();
 
@@ -194,11 +195,36 @@ class PublicationController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
-    {
-        //
+public function destroy(string $id)
+{
+    // Buscar la publicación o lanzar error 404 si no existe
+    $publication = Publication::findOrFail($id);
+
+    // Eliminar archivos asociados del almacenamiento (si existen)
+    if ($publication->image_file && Storage::disk('public')->exists($publication->image_file)) {
+        Storage::disk('public')->delete($publication->image_file);
     }
 
+    if ($publication->pdf_file && Storage::disk('public')->exists($publication->pdf_file)) {
+        Storage::disk('public')->delete($publication->pdf_file);
+    }
+
+    // Guardar la fecha antes de eliminar, para revisar luego las ediciones
+    $date = $publication->publication_date ? $publication->publication_date->toDateString() : null;
+
+    // Eliminar el registro de la base de datos
+    $publication->delete();
+
+    // Si la edición queda sin publicaciones, eliminarla también
+    if ($date) {
+        $hasPublications = Publication::whereDate('publication_date', $date)->exists();
+        if (! $hasPublications) {
+            Edition::whereDate('publication_date', $date)->delete();
+        }
+    }
+
+    return redirect()->back()->with('success', 'La publicación fue eliminada correctamente.');
+}
     public function indexPublic()
     {
         // Determinar la edición activa más próxima

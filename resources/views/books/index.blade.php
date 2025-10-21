@@ -30,7 +30,7 @@
                 </a>
             </div>
 
-            <table class="w-full table-auto border-collapse border border-gray-300">
+            <table class="text-white w-full table-auto border-collapse border border-gray-300">
                 <thead>
                     <tr class="bg-gray-100 dark:bg-gray-700">
                         <th class="border px-4 py-2 text-left">Portada</th>
