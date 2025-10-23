@@ -76,25 +76,25 @@ class HomeSeed extends Seeder
                 // Sections
                 // =========================
                 Section::create([
-                    'title'     => 'Artículos o Ensayos Históricos',
+                    'title'     => 'Artículos Históricos',
                     'order'     => 1,
                     'is_active' => true,
                 ]);
 
                 Section::create([
-                    'title'     => 'Artículos o Ensayos Políticos',
+                    'title'     => 'Artículos Políticos',
                     'order'     => 2,
                     'is_active' => true,
                 ]);
 
                 Section::create([
-                    'title'     => 'Artículos o Ensayos Educativos',
+                    'title'     => 'Artículos Educativos',
                     'order'     => 3,
                     'is_active' => true,
                 ]);
 
                 Section::create([
-                    'title'     => 'Artículos o Ensayos Científicos',
+                    'title'     => 'Artículos Científicos',
                     'order'     => 4,
                     'is_active' => true,
                 ]);
@@ -103,29 +103,6 @@ class HomeSeed extends Seeder
                     'title'     => 'Reseña de Libros',
                     'order'     => 5,
                     'is_active' => true,
-                ]);
-
-                // =========================
-                // Reviews
-                // =========================
-                Review::create([
-                    'Book_title'   => 'Atacama, memorias del salitre',
-                    'author'       => 'M. Pérez',
-                    'cover_url'    => 'https://images.unsplash.com/photo-1759588032622-1388cf9505ad?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-                    'excerpt'      => 'Una reseña breve…',
-                    'review_url'   => url('/reseñas/memorias-salitre'),
-                    'order'        => 1,
-                    'is_published' => true,
-                ]);
-
-                Review::create([
-                    'Book_title'   => 'Atacama, memorias del salitre',
-                    'author'       => 'M. Pérez',
-                    'cover_url'    => 'https://images.unsplash.com/photo-1756894256833-934a85a42df9?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-                    'excerpt'      => 'Una reseña breve…',
-                    'review_url'   => url('/reseñas/memorias-salitre'),
-                    'order'        => 2,
-                    'is_published' => true,
                 ]);
             });
 
