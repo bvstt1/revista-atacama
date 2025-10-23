@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\CarouselSlide;
 use App\Models\Section;
+use App\Models\Review;
 
 class HomeSeed extends Seeder
 {
