@@ -99,27 +99,46 @@
 
                 <div class="flex items-start gap-5">
                     <p class="text-neutral-700 leading-relaxed">
-                    A lo largo de la historia de la difusión del conocimiento, como de la reflexión y del pensamiento crítico, han
-                    existido en el mundo muchos números uno de distintas revistas. En nuestro caso, la historia de Atacama hunde
-                    sus raíces en el lejano periodo de cazadores recolectores, hace unos 11 mil años.
+                        A lo largo del tiempo, la difusión del conocimiento, la reflexión crítica y el pensamiento analítico 
+                        han dado lugar a numerosas publicaciones en diversas partes del mundo, orientadas a la socialización 
+                        del saber y al fortalecimiento de una conciencia histórica y ciudadana. En los últimos años, la región 
+                        de Atacama ha sido testigo de un notable desarrollo en los ámbitos de la investigación científica, la 
+                        creación artística, el fortalecimiento de las disciplinas históricas y la consolidación del patrimonio 
+                        cultural. Un ejemplo relevante de este proceso es la reciente construcción del Nuevo Museo Regional de 
+                        Atacama, espacio que simboliza el avance en la valorización y preservación de la memoria regional.
                     </p>
                 </div>
 
                 <p class="text-neutral-700 leading-relaxed">
-                    Por lo tanto hay mucho que investigar, reflexionar y socializar. Nos introduciremos en los problemas que plantean
-                    la ciencia, la política y la educación, generando antecedentes e información bajo miradas críticas y propositivas
-                    para la discusión y participación ciudadana.
+                    La historia de Atacama se remonta a los antiguos grupos cazadores-recolectores, conocidos como paleoindios, 
+                    que habitaron este territorio hace aproximadamente 12 mil años. Posteriormente, la llegada de los conquistadores 
+                    españoles en el siglo XVI —hecho enmarcado en un contexto de expansión del capitalismo comercial europeo— marcó 
+                    el inicio de un proceso de mestizaje cultural. El 26 de octubre de 1540 constituye, en ese sentido, un hito 
+                    fundacional para la historia mestiza de Chile y, como ha planteado el historiador Francisco Berríos, también 
+                    para el surgimiento de la historia del derecho en el territorio nacional.
                 </p>
 
                 <p class="text-neutral-700 leading-relaxed">
-                    Además, incluiremos recomendaciones y reseñas de libros para orientar aprendizajes analíticos y reflexivos,
-                    fomentando el gusto por la lectura.
+                    En este contexto, la revista <span class="italic">Historia: Ciencia, Política y Educación</span> surge como 
+                    una plataforma académica orientada a la reflexión crítica y al debate informado. Su objetivo principal es 
+                    contribuir al fortalecimiento del pensamiento histórico, científico y pedagógico, promoviendo una ciudadanía 
+                    activa y comprometida con los desafíos contemporáneos.
                 </p>
-                
-                <div>
-                    <p class="italic text-amber-700 font-semibold">— Guillermo Cortés Luts</p>
-                    <p class="italic font-semibold opacity-50" >Doctor en Historia</p>
+
+                <p class="text-neutral-700 leading-relaxed">
+                    La revista abordará también temáticas vinculadas a la ciencia, la política y la educación, con un enfoque 
+                    interdisciplinario que permita enriquecer el análisis y la producción de conocimiento. Asimismo, incluirá 
+                    reseñas y recomendaciones bibliográficas que fomenten la lectura crítica y el diálogo académico, con el fin 
+                    de aportar a la construcción de una comunidad intelectual plural, reflexiva y comprometida con el desarrollo 
+                    regional y nacional.
+                </p>
+
+                <div class="mt-6">
+                    <p class="italic text-amber-700 font-semibold">— Guillermo Cortés Lutz</p>
+                    <p class="italic font-semibold opacity-50">Doctor en Historia</p>
+                    <p class="italic font-semibold opacity-50">Director Revista de Historia de Atacama</p>
                 </div>
+
             </article>
 
             <!-- Columna derecha: Índice con acordeones -->
