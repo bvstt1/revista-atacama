@@ -98,8 +98,20 @@ class BookController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Book $book)
     {
-        //
+        // Borrar archivos si existen
+        if ($book->cover && \Storage::disk('public')->exists($book->cover)) {
+            \Storage::disk('public')->delete($book->cover);
+        }
+    
+        if ($book->pdf_file && \Storage::disk('public')->exists($book->pdf_file)) {
+            \Storage::disk('public')->delete($book->pdf_file);
+        }
+    
+        // Borrar el registro del libro
+        $book->delete();
+    
+        return redirect()->route('books.index')->with('success', 'Libro eliminado correctamente');
     }
 }

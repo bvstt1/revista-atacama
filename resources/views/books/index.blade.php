@@ -42,20 +42,26 @@
                 </thead>
                 <tbody>
                     @foreach($books as $book)
-                        <tr class="hover:bg-gray-50 dark:hover:bg-gray-700">
-                            <td class="border px-4 py-2">
-                                <img src="{{ asset('storage/' . $book->cover) }}" alt="{{ $book->title }}" class="h-16 w-12 object-cover rounded">
-                            </td>
-                            <td class="border px-4 py-2">{{ $book->title }}</td>
-                            <td class="border px-4 py-2">{{ $book->author ?? 'Desconocido' }}</td>
-                            <td class="border px-4 py-2">{{ $book->publication_date ? \Carbon\Carbon::parse($book->publication_date)->format('Y') : '-' }}</td>
-                            <td class="border px-4 py-2 flex gap-2">
-                                <a href="{{ route('books.edit', $book) }}" class="px-2 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition text-sm">
-                                    Editar
-                                </a>
-                                <!-- Botón de eliminar opcional -->
-                            </td>
-                        </tr>
+                    <tr class="hover:bg-gray-50 dark:hover:bg-gray-700">
+                                <td class="border px-4 py-2">
+                                    <img src="{{ asset('storage/' . $book->cover) }}" alt="{{ $book->title }}" class="h-16 w-12 object-cover rounded shadow-sm">
+                                </td>
+                                <td class="border px-4 py-2 font-medium">{{ $book->title }}</td>
+                                <td class="border px-4 py-2">{{ $book->author ?? 'Desconocido' }}</td>
+                                <td class="border px-4 py-2">{{ $book->publication_date ? \Carbon\Carbon::parse($book->publication_date)->format('Y') : '-' }}</td>
+                                <td class="border px-4 py-2 flex flex-wrap gap-2">
+                                    <a href="{{ route('books.edit', $book) }}" class="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition text-sm">
+                                        Editar
+                                    </a>
+                                    <form action="{{ route('books.destroy', $book) }}" method="POST" onsubmit="return confirm('¿Seguro que quieres eliminar este libro?');">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="px-3 py-1 bg-red-600 text-white rounded hover:bg-red-700 transition text-sm">
+                                            Eliminar
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
                     @endforeach
                 </tbody>
             </table>
