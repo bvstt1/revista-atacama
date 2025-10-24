@@ -260,7 +260,7 @@
                 x-init="refreshPosts()"
             >
             <div class="flex items-end justify-between mb-6">
-                <h2 class="text-3xl font-bold text-amber-800">Artículos destacados de la edición: </h2>
+                <h2 class="text-3xl font-bold text-amber-800">Artículos Populares de la edición: </h2>
                 <a href="{{ url('/articulos') }}" class="text-sm font-semibold text-amber-700 hover:text-amber-900">
                 Ver todos →
                 </a>
