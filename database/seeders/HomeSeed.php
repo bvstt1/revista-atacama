@@ -60,7 +60,7 @@ class HomeSeed extends Seeder
                     ],
                     [
                         'image_url'   => 'https://images.unsplash.com/photo-1519682337058-a94d519337bc?q=80&w=2000&auto=format&fit=crop',
-                        'title'       => 'Turismo y Patrimonio',
+                        'title'       => 'Patrimonio y Cultura Local',
                         'description' => 'Iniciativas turísticas que valoran y difunden el patrimonio local.',
                         'cta_url'     => url('/ensayos'),
                         'order'       => 4,

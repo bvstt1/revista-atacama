@@ -73,14 +73,6 @@
                 <h3 class="font-semibold text-amber-800  text-lg">Informática y Soporte Web</h3>
                 <p class="mt-1 font-bold text-amber-700">Bastián Velásquez Egaña</p>
             </div>
-
-            <!-- Correo Editorial -->
-            <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition border border-amber-800">
-                <h3 class="font-semibold text-amber-800  text-lg">Correo Editorial</h3>
-                <a href="mailto:revista@historiaatacama.cl" class="mt-1 block text-amber-700 text-[20px] hover:text-amber-900 transition">
-                    revista@historiaatacama.cl
-                </a>
-            </div>
         </div>
     </div>
 </section>
