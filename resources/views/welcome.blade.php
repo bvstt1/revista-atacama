@@ -9,19 +9,19 @@
                 current: 0,
                 slides: [
                     {
-                        img: '/storage/img/slides/slide1.jpg',
+                        img: '/img/slides/slide1.jpg',
                         alt: 'Historia Viva de Atacama',
                         title: 'Historia Viva de Atacama',
                         description: 'Procesos, pueblos y memorias que forjaron la identidad del desierto.'
                     },
                     {
-                        img: '/storage/img/slides/slide2.jpg',
+                        img: '/img/slides/slide2.jpg',
                         alt: 'Educación y Cultura',
                         title: 'Educación y Patrimonio',
                         description: 'Prácticas educativas que preservan memoria y cultura regional.'
                     },
                     {
-                        img: '/storage/img/slides/slide3.jpg',
+                        img: '/img/slides/slide3.jpg',
                         alt: 'Descripción de la imagen 3',
                         title: 'Politica y Sociedad',
                         description: 'Análisis crítico de la evolución sociopolítica en Atacama, Chile y el mundo.'
@@ -101,7 +101,7 @@
                 </p>
             </div>
 
-            
+
 
             <!-- Contenido principal -->
             <div class="flex-1">
