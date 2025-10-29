@@ -1,16 +1,16 @@
 @extends('layouts.hf')
 
 @section('content')
+<div class="mt-12 text-right px-6 md:px-6 lg:px-24 mb-6 mt-6">
+    <a href="{{ url('/') }}" 
+        class="inline-flex items-center gap-2 px-4 py-2 bg-amber-700 text-white font-semibold rounded-full hover:bg-amber-800 transition">
+        ← Volver al inicio
+    </a>
+</div>
 <div class="flex items-center justify-between px-6 md:px-12 lg:px-24 mb-6 mt-6">
+
     <div class="text-3xl font-bold text-amber-800">
         Efemérides de Atacama
-    </div>
-
-    <div>
-        <a href="{{ url('/') }}"
-            class="inline-flex items-center gap-2 px-4 py-2 bg-amber-700 text-white font-semibold rounded-full hover:bg-amber-800 transition">
-            ← Volver al inicio
-        </a>
     </div>
 </div>
 

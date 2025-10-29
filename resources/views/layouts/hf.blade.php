@@ -94,6 +94,14 @@
                     </li>
 
                     <li>
+                        <span class="block font-semibold text-amber-500">Sub Director</span>
+                        <span>Rodrigo Zalaquett Fuente Alba</span>
+                        <p class="text-stone-400 text-[13px]">
+                            Profesor · Magister en Historia y Estudios Latinoamericanos
+                        </p>
+                    </li>
+
+                    <li>
                         <span class="block font-semibold text-amber-500">Editor Área Historia</span>
                         <span>Francisco Berríos Drolett</span>
                         <p class="text-stone-400 text-[13px]">
