@@ -32,6 +32,18 @@
                 </a>
             </div>
 
+            <!-- Director -->
+            <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition border border-amber-800">
+                <h3 class="font-semibold text-amber-800  text-lg">Sub Director</h3>
+                <p class="mt-1 font-bold text-amber-700">Rodrigo Zalaquett Fuente Alba</p>
+                <p class="mt-1 text-neutral-700 text-[13px]">
+                    Profesor
+                </p>
+                <p class="mt-1 text-neutral-700 text-[13px] font-bold">
+                    Magister en Historia y Estudios Latinoamericanos 
+                </p>
+            </div>
+
             <!-- Editor Área Historia -->
             <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition border border-amber-800">
                 <h3 class="font-semibold text-amber-800  text-lg">Editor Área Historia</h3>
