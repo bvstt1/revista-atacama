@@ -17,7 +17,7 @@
         <a href="{{ url('/') }}" class="flex items-center space-x-3">
             <img src="{{ asset('img/logo.png') }}" alt="Logo Revista de Historia de Atacama" class="h-28 w-auto">
             <span class="pl-15 text-2xl font-bold text-amber-800 font-serif">
-                Revista de Historia de Atacama
+                Revista Historia de Atacama
             </span>
         </a>
 
