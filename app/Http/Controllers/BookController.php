@@ -30,7 +30,7 @@ class BookController extends Controller
             'author' => 'nullable|string|max:255',
             'publication_date' => 'nullable|date',
             'cover' => 'required|image|mimes:jpg,jpeg,png,webp|max:5120', // 5MB
-            'pdf_file' => 'required|file|mimes:pdf|max:10240', // 10MB
+            'pdf_file' => 'required|file|mimes:pdf|max:2097152', // 2GB
         ]);
 
         // Subir archivos
