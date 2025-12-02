@@ -80,7 +80,7 @@ class BookController extends Controller
             'author' => 'nullable|string|max:255',
             'publication_date' => 'nullable|date',
             'cover' => 'nullable|image|max:5120',
-            'pdf_file' => 'nullable|file|mimes:pdf|max:10240',
+            'pdf_file' => 'nullable|file|mimes:pdf|max:2097152',
         ]);
 
         if ($request->hasFile('cover')) {
