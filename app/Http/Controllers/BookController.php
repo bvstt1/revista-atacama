@@ -29,7 +29,7 @@ class BookController extends Controller
             'title' => 'required|string|max:255',
             'author' => 'nullable|string|max:255',
             'publication_date' => 'nullable|date',
-            'cover' => 'required|image|mimes:jpg,jpeg,png,webp|max:5120', // 5MB
+            'cover' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:20480', // 20 MB
             'pdf_file' => 'required|file|mimes:pdf|max:2097152', // 2GB
         ]);
 
@@ -79,7 +79,7 @@ class BookController extends Controller
             'title' => 'required|string|max:255',
             'author' => 'nullable|string|max:255',
             'publication_date' => 'nullable|date',
-            'cover' => 'nullable|image|max:5120',
+            'cover' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:20480', // 20 MB
             'pdf_file' => 'nullable|file|mimes:pdf|max:2097152',
         ]);
 
