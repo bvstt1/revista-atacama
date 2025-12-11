@@ -119,31 +119,31 @@
 
                 <!-- Título -->
                 <h1 class="text-4xl md:text-5xl font-serif font-bold text-amber-800 border-l-8 border-amber-600 pl-4">
-                    Editorial:  Copiapó: Doscientos ochenta y un años de Historia.
+                    Editorial:  Copiapó, Doscientos ochenta y un años de Historia.
                 </h1>
 
                 <!-- Contenido -->
                 <div class="prose prose-neutral max-w-none text-justify">
                     <p>
-                        El sol en Copiapó se alza una vez más sobre el valle, y con él, se cumple un nuevo aniversario de la fundación de San Francisco de la Selva de Copiapó, un hito que data del 8 de diciembre de 1744. Esta fecha no es un simple recuerdo en el calendario, sino el cimiento sobre el cual se erigió una de las ciudades más singulares y resistentes de Chile.
+                        El sol en Copiapó se alza una vez más sobre el valle, y con él, se cumple un nuevo aniversario de la fundación de San Francisco de la Selva de Copiapó, un hito que data del 8 de diciembre de 1744. Esta fecha no es un simple recuerdo en el calendario, sino el cimiento sobre el cual se erigió una de las ciudades más singulares y resistentes de Chile.<br>
                     </p>
 
                     <p>
-                        La historia de Copiapó es una crónica de contrastes: desde la promesa de la mítica Selva a la aridez circundante, desde un modesto asentamiento colonial hasta convertirse en el epicentro de la fiebre de la plata y el cobre que redefinió la economía del país. Fue aquí donde la minería no solo extrajo riqueza de la tierra, sino que también forjó el carácter de sus habitantes, dotándolos de una tenacidad a prueba de sequías y crisis económicas. Esta historia de Copiapó es, esencialmente, una crónica de resiliencia frente a las fuerzas de la naturaleza.
+                        La historia de Copiapó es una crónica de contrastes: desde la promesa de la mítica Selva a la aridez circundante, desde un modesto asentamiento colonial hasta convertirse en el epicentro de la fiebre de la plata y el cobre que redefinió la economía del país. Fue aquí donde la minería no solo extrajo riqueza de la tierra, sino que también forjó el carácter de sus habitantes, dotándolos de una tenacidad a prueba de sequías y crisis económicas. Esta historia de Copiapó es, esencialmente, una crónica de resiliencia frente a las fuerzas de la naturaleza.<br>
                     </p>
 
                     <p>
-                        Desde el siglo XVIII, el destino de la ciudad ha estado indisolublemente ligado a la escasa, pero vital, agua del Río Copiapó. Las mercedes de agua coloniales dictaron el pulso de la economía, primero agrícola y luego minera, generando tensiones por su uso que se arrastran hasta hoy. El río, columna vertebral del valle, ha sido testigo y protagonista de un conflicto histórico, donde la gestión del recurso define la supervivencia y la prosperidad de sus habitantes.
+                        Desde el siglo XVIII, el destino de la ciudad ha estado indisolublemente ligado a la escasa, pero vital, agua del Río Copiapó. Las mercedes de agua coloniales dictaron el pulso de la economía, primero agrícola y luego minera, generando tensiones por su uso que se arrastran hasta hoy. El río, columna vertebral del valle, ha sido testigo y protagonista de un conflicto histórico, donde la gestión del recurso define la supervivencia y la prosperidad de sus habitantes.<br>
                     </p>
 
                     <p>
-                        Pero la naturaleza ha desafiado a Copiapó no solo con la sequía, sino también con el movimiento de la tierra, tema que ha sido investigado por el Profesor y Magíster, Rodrigo Zalaquett Fuente-Alba, en su artículo “El Terremoto de 1918 en Copiapó y la fotografía instrumental de José Olivares Valdivia”, artículo que en esta edición se da a conocer a la comunidad. Eventos como los grandes terremotos de 1918 y 1922 marcaron profundas cicatrices en la infraestructura y en la memoria colectiva. Estas catástrofes del siglo XX no fueron solo episodios de destrucción; se convirtieron en hitos de reconstrucción y afirmación de la identidad local, recordándonos la vulnerabilidad constante y la capacidad inagotable de levantarse.
+                        Pero la naturaleza ha desafiado a Copiapó no solo con la sequía, sino también con el movimiento de la tierra, tema que ha sido investigado por el Profesor y Magíster, Rodrigo Zalaquett Fuente-Alba, en su artículo “El Terremoto de 1918 en Copiapó y la fotografía instrumental de José Olivares Valdivia”, artículo que en esta edición se da a conocer a la comunidad. Eventos como los grandes terremotos de 1918 y 1922 marcaron profundas cicatrices en la infraestructura y en la memoria colectiva. Estas catástrofes del siglo XX no fueron solo episodios de destrucción; se convirtieron en hitos de reconstrucción y afirmación de la identidad local, recordándonos la vulnerabilidad constante y la capacidad inagotable de levantarse.<br>
                     </p>
                     <p>
-                        Al rememorar el hito histórico de la fundación, no solo celebramos el acto administrativo del gobernador Manso de Velasco, a través de su Corregidor Francisco Cortés Cartavío y Santelices y Roldán, sino la persistencia de un asentamiento humano en un entorno desafiante. Es fundamental que, como educadores e historiadores, continuemos explorando las capas de este pasado. Debemos ir más allá de los próceres y las grandes minas, para rescatar las historias sociales de los arrieros, los mineros, las mujeres que sostuvieron el hogar y la cultura que floreció a la sombra de los yacimientos.                        
+                        Al rememorar el hito histórico de la fundación, no solo celebramos el acto administrativo del gobernador Manso de Velasco, a través de su Corregidor Francisco Cortés Cartavío y Santelices y Roldán, sino la persistencia de un asentamiento humano en un entorno desafiante. Es fundamental que, como educadores e historiadores, continuemos explorando las capas de este pasado. Debemos ir más allá de los próceres y las grandes minas, para rescatar las historias sociales de los arrieros, los mineros, las mujeres que sostuvieron el hogar y la cultura que floreció a la sombra de los yacimientos.<br>                     
                     </p>
                     <p>
-                        El aniversario es una invitación a la reflexión: ¿Qué significa ser copiapino hoy? Significa ser heredero de la tradición minera, custodio de la primera línea férrea de Chile, y testigo de la resiliencia ante los desafíos naturales. Nuestra revista se compromete a seguir iluminando estas narrativas, asegurando que la memoria histórica de la capital de Atacama permanezca tan viva y resplandeciente como el metal que la hizo grande.                        
+                        El aniversario es una invitación a la reflexión: ¿Qué significa ser copiapino hoy? Significa ser heredero de la tradición minera, custodio de la primera línea férrea de Chile, y testigo de la resiliencia ante los desafíos naturales. Nuestra revista se compromete a seguir iluminando estas narrativas, asegurando que la memoria histórica de la capital de Atacama permanezca tan viva y resplandeciente como el metal que la hizo grande.<br>                       
                     </p>
                 </div>
 
