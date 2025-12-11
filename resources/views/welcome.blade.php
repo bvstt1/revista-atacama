@@ -119,51 +119,39 @@
 
                 <!-- Título -->
                 <h1 class="text-4xl md:text-5xl font-serif font-bold text-amber-800 border-l-8 border-amber-600 pl-4">
-                    Editorial: Nacimiento de una Revista Digital
+                    Editorial:  Copiapó: Doscientos ochenta y un años de Historia.
                 </h1>
 
                 <!-- Contenido -->
                 <div class="prose prose-neutral max-w-none text-justify">
                     <p>
-                        A lo largo del tiempo, la difusión del conocimiento, la reflexión crítica y el pensamiento analítico 
-                        han dado lugar a numerosas publicaciones en diversas partes del mundo, orientadas a la socialización 
-                        del saber y al fortalecimiento de una conciencia histórica y ciudadana. En los últimos años, la región 
-                        de Atacama ha sido testigo de un notable desarrollo en los ámbitos de la investigación científica, la 
-                        creación artística, el fortalecimiento de las disciplinas históricas y la consolidación del patrimonio 
-                        cultural. Un ejemplo relevante de este proceso es la reciente construcción del Nuevo Museo Regional de 
-                        Atacama, espacio que simboliza el avance en la valorización y preservación de la memoria regional.
+                        El sol en Copiapó se alza una vez más sobre el valle, y con él, se cumple un nuevo aniversario de la fundación de San Francisco de la Selva de Copiapó, un hito que data del 8 de diciembre de 1744. Esta fecha no es un simple recuerdo en el calendario, sino el cimiento sobre el cual se erigió una de las ciudades más singulares y resistentes de Chile.
                     </p>
 
                     <p>
-                        La historia de Atacama se remonta a los antiguos grupos cazadores-recolectores, conocidos como paleoindios, 
-                        que habitaron este territorio hace aproximadamente 12 mil años. Posteriormente, la llegada de los conquistadores 
-                        españoles en el siglo XVI —hecho enmarcado en un contexto de expansión del capitalismo comercial europeo— marcó 
-                        el inicio de un proceso de mestizaje cultural. El 26 de octubre de 1540 constituye, en ese sentido, un hito 
-                        fundacional para la historia mestiza de Chile y, como ha planteado el historiador Francisco Berríos, también 
-                        para el surgimiento de la historia del derecho en el territorio nacional.
+                        La historia de Copiapó es una crónica de contrastes: desde la promesa de la mítica Selva a la aridez circundante, desde un modesto asentamiento colonial hasta convertirse en el epicentro de la fiebre de la plata y el cobre que redefinió la economía del país. Fue aquí donde la minería no solo extrajo riqueza de la tierra, sino que también forjó el carácter de sus habitantes, dotándolos de una tenacidad a prueba de sequías y crisis económicas. Esta historia de Copiapó es, esencialmente, una crónica de resiliencia frente a las fuerzas de la naturaleza.
                     </p>
 
                     <p>
-                        En este contexto, la revista <span class="italic">Historia: Ciencia, Política y Educación</span> surge como 
-                        una plataforma académica orientada a la reflexión crítica y al debate informado. Su objetivo principal es 
-                        contribuir al fortalecimiento del pensamiento histórico, científico y pedagógico, promoviendo una ciudadanía 
-                        activa y comprometida con los desafíos contemporáneos.
+                        Desde el siglo XVIII, el destino de la ciudad ha estado indisolublemente ligado a la escasa, pero vital, agua del Río Copiapó. Las mercedes de agua coloniales dictaron el pulso de la economía, primero agrícola y luego minera, generando tensiones por su uso que se arrastran hasta hoy. El río, columna vertebral del valle, ha sido testigo y protagonista de un conflicto histórico, donde la gestión del recurso define la supervivencia y la prosperidad de sus habitantes.
                     </p>
 
                     <p>
-                        La revista abordará también temáticas vinculadas a la ciencia, la política y la educación, con un enfoque 
-                        interdisciplinario que permita enriquecer el análisis y la producción de conocimiento. Asimismo, incluirá 
-                        reseñas y recomendaciones bibliográficas que fomenten la lectura crítica y el diálogo académico, con el fin 
-                        de aportar a la construcción de una comunidad intelectual plural, reflexiva y comprometida con el desarrollo 
-                        regional y nacional.
+                        Pero la naturaleza ha desafiado a Copiapó no solo con la sequía, sino también con el movimiento de la tierra, tema que ha sido investigado por el Profesor y Magíster, Rodrigo Zalaquett Fuente-Alba, en su artículo “El Terremoto de 1918 en Copiapó y la fotografía instrumental de José Olivares Valdivia”, artículo que en esta edición se da a conocer a la comunidad. Eventos como los grandes terremotos de 1918 y 1922 marcaron profundas cicatrices en la infraestructura y en la memoria colectiva. Estas catástrofes del siglo XX no fueron solo episodios de destrucción; se convirtieron en hitos de reconstrucción y afirmación de la identidad local, recordándonos la vulnerabilidad constante y la capacidad inagotable de levantarse.
+                    </p>
+                    <p>
+                        Al rememorar el hito histórico de la fundación, no solo celebramos el acto administrativo del gobernador Manso de Velasco, a través de su Corregidor Francisco Cortés Cartavío y Santelices y Roldán, sino la persistencia de un asentamiento humano en un entorno desafiante. Es fundamental que, como educadores e historiadores, continuemos explorando las capas de este pasado. Debemos ir más allá de los próceres y las grandes minas, para rescatar las historias sociales de los arrieros, los mineros, las mujeres que sostuvieron el hogar y la cultura que floreció a la sombra de los yacimientos.                        
+                    </p>
+                    <p>
+                        El aniversario es una invitación a la reflexión: ¿Qué significa ser copiapino hoy? Significa ser heredero de la tradición minera, custodio de la primera línea férrea de Chile, y testigo de la resiliencia ante los desafíos naturales. Nuestra revista se compromete a seguir iluminando estas narrativas, asegurando que la memoria histórica de la capital de Atacama permanezca tan viva y resplandeciente como el metal que la hizo grande.                        
                     </p>
                 </div>
 
                 <!-- Firma -->
                 <div class="pt-6 border-t border-neutral-200">
-                    <p class="italic text-amber-700 font-semibold">— Guillermo Cortés Lutz</p>
-                    <p class="italic font-medium opacity-60">Doctor en Historia</p>
-                    <p class="italic font-medium opacity-60">Director Revista de Historia de Atacama</p>
+                    <p class="italic text-amber-700 font-semibold">— Prof. Francisco Berríos Drolett </p>
+                    <p class="italic font-medium opacity-60">Magister en Educación Superior </p>
+                    <p class="italic font-medium opacity-60">Editor Historia RHA</p>
                 </div>
             </article>
 
@@ -187,7 +175,7 @@
 
                 @if(isset($editionDate))
                     <p class="text-sm text-neutral-500 mb-6">
-                        Edición N°1 — {{ \Carbon\Carbon::parse($editionDate)->locale('es')->isoFormat('D [de] MMMM YYYY') }}
+                        Edición N°2 — {{ \Carbon\Carbon::parse($editionDate)->locale('es')->isoFormat('D [de] MMMM YYYY') }}
                     </p>
                 @endif
 
