@@ -77,38 +77,68 @@
     <!-- Efeméride Crítica Semanal -->
     <section 
         class="mt-10 md:mt-14 px-6 md:px-12 lg:px-24"
-        x-data="{efemeride: @js($efemeride)}"
-        >
+        x-data="{ 
+            efemeride: @js($efemeride),
+            open: false
+        }">
         <div class="bg-amber-50 border border-amber-200 rounded-xl p-6 md:p-8 shadow-sm flex flex-col md:flex-row items-start md:items-center gap-6 hover:shadow-md transition">
-            
-            <!-- Fecha + etiqueta -->
-            <div class="shrink-0 text-center md:text-left">
-                <span class="inline-block px-3 py-1 text-xs font-semibold bg-amber-700 text-white tracking-wide rounded-lg">
-                    <span 
-                        class="text-2xl md:text-3xl font-bold"
-                        x-text="(() => {
-                            const [y, m, d] = efemeride.date.split('-');
-                            const date = new Date(y, m - 1, d);
-                            const day = date.getDate();
-                            const month = date.toLocaleString('es-ES', { month: 'long' });
-                            return `${day} de ${month.charAt(0).toUpperCase() + month.slice(1)}`;
-                        })()">
-                    </span>
-                </span>
-                <!-- Efeméride crítica semanal -->
-                <p class="mt-3 text-center md:text-left text-base md:text-lg font-bold text-amber-800">
-                    Efeméride crítica semanal
-                </p>
-            </div>
-
-
-
-            <!-- Contenido principal -->
             <div class="flex-1">
-            <h3 class="font-serif text-3xl font-bold text-stone-900 leading-snug" x-text="efemeride.title"></h3>
-            <p class="mt-2 text-stone-700 font-bold text-[15px] leading-relaxed" x-text="efemeride.description"></p>
+                <!-- Fecha + etiqueta -->
+                <div class="mb-6 flex flex-wrap items-center gap-3">
+
+                    <!-- Sello editorial -->
+                    <span class="inline-flex items-center px-4 py-1.5 text-sm md:text-base font-semibold 
+                                bg-amber-700 text-white rounded-full tracking-wide shadow-sm">
+                        Efeméride crítica semanal
+                    </span>
+
+                    <!-- Fecha -->
+                    <span class="inline-flex items-center px-3 py-1 text-sm font-semibold 
+                                bg-amber-100 text-amber-800 rounded-lg border border-amber-200">
+                        <span 
+                            class="text-lg md:text-xl font-bold"
+                            x-text="(() => {
+                                const [y, m, d] = efemeride.date.split('-');
+                                const date = new Date(y, m - 1, d);
+                                const day = date.getDate();
+                                const month = date.toLocaleString('es-ES', { month: 'long' });
+                                return `${day} de ${month.charAt(0).toUpperCase() + month.slice(1)}`;
+                            })()">
+                        </span>
+                    </span>
+
+                </div>
+                <!-- Título -->
+                <h3 class="font-serif text-3xl font-bold text-stone-900 leading-snug">
+                    <span x-text="efemeride.title"></span>
+                </h3>
+
+                <!-- Contenido con CKEditor -->
+                <div class="relative mt-3">
+                    <div
+                        class="prose prose-stone max-w-none transition-all duration-500 overflow-hidden"
+                        :class="open ? 'max-h-[5000px]' : 'max-h-40'"
+                        x-html="efemeride.description">
+                    </div>
+
+                    <!-- Degradado inferior -->
+                    <div 
+                        x-show="!open"
+                        class="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-amber-50 to-transparent pointer-events-none">
+                    </div>
+                </div>
+
+                <!-- Botón -->
+                <button
+                    @click="open = !open"
+                    class="mt-4 text-amber-700 font-semibold hover:underline focus:outline-none"
+                    x-text="open ? 'Leer menos' : 'Leer más'">
+                </button>
+
             </div>
+        </div>
     </section>
+
 
     <!-- Índice estilo revista -->
     <section class="bg-white text-neutral-900 py-20 px-6 md:px-12 lg:px-24">
