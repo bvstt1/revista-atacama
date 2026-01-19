@@ -51,8 +51,8 @@
                 <!-- Descripción -->
                 <div>
                     <label for="description" class="block text-sm font-semibold text-gray-800 dark:text-gray-200 mb-2">Descripción</label>
-                    <textarea id="description" name="description" rows="4">
-                    {{ old('description') }}
+                    <textarea id="editor" name="content">
+                        {{ old('content', $model->content ?? '') }}
                     </textarea>
                 </div>
 

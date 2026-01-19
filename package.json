@@ -30,5 +30,8 @@
   "bugs": {
     "url": "https://github.com/bvstt1/revista-atacama/issues"
   },
-  "homepage": "https://github.com/bvstt1/revista-atacama#readme"
+  "homepage": "https://github.com/bvstt1/revista-atacama#readme",
+  "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^41.4.2"
+  }
 }

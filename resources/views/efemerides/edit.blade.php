@@ -50,8 +50,9 @@
                 <!-- Descripción -->
                 <div>
                     <label for="description" class="block text-sm font-semibold text-gray-800 dark:text-gray-200 mb-2">Descripción</label>
-                    <textarea id="description" name="description" rows="4"
-                        class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-amber-600 transition">{{ old('description', $efemeride->description) }}</textarea>
+                    <textarea id="editor" name="content">
+                        {{ old('content', $model->content ?? '') }}
+                    </textarea>
                 </div>
 
                 <!-- Imagen -->
