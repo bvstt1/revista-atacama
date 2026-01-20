@@ -69,12 +69,11 @@ class EfemerideController extends Controller
      */
     public function show($id)
     {
-        $efemeride = Efemeride::where('id', $id)
-            ->where('is_published', true)
-            ->firstOrFail();
+        $efemeride = Efemeride::findOrFail($id);
 
         return view('efemerides.show', compact('efemeride'));
     }
+
 
 
     /**
