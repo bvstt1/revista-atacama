@@ -67,9 +67,13 @@ class EfemerideController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        $efemeride = Efemeride::where('id', $id)
+            ->where('is_published', true)
+            ->firstOrFail();
+
+        return view('efemerides.show', compact('efemeride'));
     }
 
     /**
@@ -119,8 +123,9 @@ class EfemerideController extends Controller
 
     public function indexPublic()
     {
-        // Traemos todas las efemérides, sin filtrar por is_published
-        $efemerides = Efemeride::orderBy('date', 'asc')->get();
+        $efemerides = Efemeride::select('id', 'title', 'date')
+            ->orderBy('date')
+            ->get();
 
         if ($efemerides->isEmpty()) {
             return view('efemerides.public_index', [
@@ -130,35 +135,22 @@ class EfemerideController extends Controller
 
         $today = now();
 
-        // Buscamos el índice de la efeméride más próxima (solo mes y día)
         $activeIndex = $efemerides->search(function ($efemeride) use ($today) {
-            $efemerideDate = \Carbon\Carbon::parse($efemeride->date)
-                ->setYear($today->year); // ponemos el año actual para comparar solo mes/día
-            return $efemerideDate->gte($today); // próxima o hoy
+            return \Carbon\Carbon::parse($efemeride->date)
+                ->setYear($today->year)
+                ->gte($today);
         });
 
         if ($activeIndex === false) {
-            $activeIndex = 0; // si todas pasaron, empezamos desde la primera
+            $activeIndex = 0;
         }
 
-        // Reordenamos para que la efemeride más próxima quede al inicio
         $ordered = $efemerides->slice($activeIndex)
-            ->merge($efemerides->slice(0, $activeIndex));
-
-        // Formateamos las fechas y guardamos mes/día para la comparación
-        foreach ($ordered as $efemeride) {
-            $date = \Carbon\Carbon::parse($efemeride->date);
-            $efemeride->formatted_day_month = $date->format('d/m');
-            $efemeride->formatted_year = $date->format('Y');
-        }
+            ->merge($efemerides->slice(0, $activeIndex))
+            ->values();
 
         return view('efemerides.public_index', [
-            'efemerides' => $efemerides->map(function($e) {
-                return [
-                    'title' => $e->title,
-                    'date' => $e->date,
-                ];
-            })->values(), // aseguramos indices numéricos
+            'efemerides' => $ordered
         ]);
     }
 

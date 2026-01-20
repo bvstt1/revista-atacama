@@ -44,6 +44,8 @@ Route::get('/featured', [PublicationController::class, 'featured']);
 Route::get('/articulos', [PublicationController::class, 'indexPublic'])->name('publications.public_index');
 
 Route::get('/efemerides-public', [EfemerideController::class, 'indexPublic'])->name('efemerides.public_index');
+Route::get('/efemerides/{id}', [EfemerideController::class, 'show'])
+    ->name('efemerides.show');
 
 Route::get('/editions', [EditionController::class, 'index'])->name('editions.index');
 Route::get('/editions/{edition}', [EditionController::class, 'show'])->name('editions.show');
