@@ -29,7 +29,7 @@ Route::middleware(['auth', 'verified', 'admin'])->group(function () {
     Route::resource('publications', PublicationController::class);
     Route::resource('reviews', ReviewController::class);
     Route::resource('books', BookController::class);
-    Route::resource('efemerides', EfemerideController::class);
+    Route::resource('efemerides', EfemerideController::class)->except(['show']);
     Route::view('/contacto', 'info.contacto')->name('contacto');
 });
 
