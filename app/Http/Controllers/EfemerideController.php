@@ -76,6 +76,7 @@ class EfemerideController extends Controller
         return view('efemerides.show', compact('efemeride'));
     }
 
+
     /**
      * Show the form for editing the specified resource.
      */
