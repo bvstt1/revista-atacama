@@ -164,7 +164,7 @@ class EfemerideController extends Controller
         $efemeride = Efemeride::findOrFail($id);
         $efemeride->delete();
 
-        return redirect()->route('efemerides.index')
+        return redirect()->route('efemerides.public_index')
                          ->with('success', 'Efeméride eliminada correctamente.');
     }
 }
