@@ -35,6 +35,7 @@
                     <tr class="bg-gray-100 dark:bg-gray-700">
                         <th class="border px-4 py-2 text-left">Fecha</th>
                         <th class="border px-4 py-2 text-left">Título</th>
+                        <th class="border px-4 py-2 text-left">Autor/a</th>
                         <th class="border px-4 py-2 text-left">Descripción</th>
                         <th class="border px-4 py-2 text-left">Imagen</th>
                         <th class="border px-4 py-2 text-left">Publicado</th>
@@ -46,6 +47,7 @@
                         <tr class="hover:bg-gray-50 dark:hover:bg-gray-700">
                             <td class="border px-4 py-2">{{ \Carbon\Carbon::parse($e->date)->format('d/m/Y') }}</td>
                             <td class="border px-4 py-2">{{ $e->title }}</td>
+                            <td class="border px-4 py-2">{{ $e->author }}</td>
                             <td class="border px-4 py-2">{{ Str::limit($e->description, 50) }}</td>
                             <td class="border px-4 py-2">
                                 @if($e->image_url)

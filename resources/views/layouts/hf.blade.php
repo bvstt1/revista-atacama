@@ -13,19 +13,28 @@
 <body class="min-h-screen flex flex-col bg-neutral-50 text-neutral-900 roboto-slab">
 
     <!-- Header -->
-    <header class="flex items-center justify-between px-6 py-4 bg-white shadow-md">
-        <a href="{{ url('/') }}" class="flex items-center space-x-3">
-            <img src="{{ asset('img/logo3.png') }}" alt="Logo Revista de Historia de Atacama" class="w-auto">
-            <span class="pl-15 text-2xl font-bold text-amber-800 font-serif">
+    <header class="flex items-center justify-between px-4 py-3 md:px-6 md:py-4 bg-white shadow-md">
+        <a href="{{ url('/') }}" class="flex items-center gap-3">
+            <img 
+                src="{{ asset('img/logo3.png') }}" 
+                alt="Logo Revista de Historia de Atacama"
+                class="h-15 w-auto md:h-20 lg:h-30"
+            >
+
+            <span class="hidden ml-10 mr-10 md:block text-lg lg:text-xl font-semibold text-amber-800 font-serif leading-tight text-center">
                 Revista Historia de Atacama
             </span>
-        </a>
 
+        </a>
         <!-- Navegación principal -->
-        <nav class="hidden md:flex space-x-6 text-stone-700 font-medium">
+        <nav class="hidden md:flex space-x-6 text-stone-700 font-medium ml-auto">
             <a href="{{ url('/editions') }}" 
             class="px-4 py-2 hover:bg-amber-700 hover:text-white rounded transition">
                 Ediciones Publicadas
+            </a>
+            <a href="#biblioteca" 
+            class="px-4 py-2 hover:bg-amber-700 hover:text-white rounded transition">
+                Biblioteca
             </a>
             <a href="{{ url('/nosotros') }}" 
             class="px-4 py-2 hover:bg-amber-700 hover:text-white rounded transition">
@@ -40,16 +49,30 @@
             
         </div>
         <!-- Botón menú móvil -->
-        <button class="md:hidden text-2xl text-amber-800" id="mobile-menu-button">☰</button>
+        <button 
+            class="md:hidden text-2xl text-amber-800 focus:outline-none"
+            id="mobile-menu-button"
+        >
+            ☰
+        </button>
     </header>
 
     <!-- Menú móvil -->
-    <div class="md:hidden hidden flex-col space-y-2 bg-white px-6 py-4 shadow-md" id="mobile-menu">
-        <a href="{{ url('/') }}" class="block py-2 text-stone-700 hover:text-amber-700">Inicio</a>
-        <a href="{{ url('/editions') }}" class="block py-2 text-stone-700 hover:text-amber-700">Ediciones Publicadas</a>
-        <a href="{{ url('/nosotros') }}" class="block py-2 text-stone-700 hover:text-amber-700">Nosotros</a>
-        <a href="{{ url('/efemerides-public') }}" class="block py-2 text-amber-700 font-semibold">Efemérides</a>
+    <div 
+        id="mobile-menu"
+        class="md:hidden hidden bg-white border-t border-neutral-200 shadow-lg"
+    >
+        <nav class="flex flex-col px-6 py-4 space-y-3 text-stone-700 font-medium">
+            <a href="{{ url('/') }}" class="py-2 hover:text-amber-700">Inicio</a>
+            <a href="{{ url('/editions') }}" class="py-2 hover:text-amber-700">Ediciones Publicadas</a>
+            <a href="#biblioteca" class="py-2 hover:text-amber-700">Biblioteca</a>
+            <a href="{{ url('/nosotros') }}" class="py-2 hover:text-amber-700">Nosotros</a>
+            <a href="{{ url('/efemerides-public') }}" class="py-2 text-amber-700 font-semibold">
+                Efemérides
+            </a>
+        </nav>
     </div>
+
 
     @yield('content')
 

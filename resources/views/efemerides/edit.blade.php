@@ -47,8 +47,15 @@
                         class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-amber-600 transition">
                 </div>
 
-                <!-- Descripción -->
                 <div>
+                    <label for="author" class="block text-sm font-semibold text-gray-800 dark:text-gray-200 mb-2">Autor</label>
+                    <input type="text" id="author" name="author" required
+                        class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-amber-600"
+                        value="{{ old('author', $efemeride->author) }}"
+                </div>
+
+                <!-- Descripción -->
+                <div class="mt-5">
                     <label for="description" class="block text-sm font-semibold text-gray-800 dark:text-gray-200 mb-2">Descripción</label>
                     <textarea id="description" name="description">
                     {!! old('description', $efemeride->description) !!}
@@ -56,7 +63,7 @@
                 </div>
 
                 <!-- Publicado -->
-                <div class="flex items-center gap-2">
+                <div class="flex items-center gap-2 mt-5">
                     <input type="checkbox" id="is_published" name="is_published" value="1" 
                         {{ old('is_published', $efemeride->is_published) ? 'checked' : '' }}
                         class="h-5 w-5 text-amber-700 focus:ring-amber-600 border-gray-300 dark:border-gray-600 rounded dark:bg-gray-700">

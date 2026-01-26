@@ -2,8 +2,6 @@
 
 @section('content')
     <!-- Carrusel Principal -->
- 
-
     <section 
             x-data="{
                 current: 0,
@@ -41,7 +39,7 @@
             x-init="start()" 
             @mouseenter="stop()" 
             @mouseleave="start()" 
-            class="relative w-full h-[50vh] overflow-hidden group"
+            class="relative w-full h-[40vh] md:h-[50vh]"
             >
         <template x-for="(slide, index) in slides" :key="index">
             <div 
@@ -55,8 +53,8 @@
                     class="w-full h-full object-cover" 
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex flex-col justify-end p-8 text-white">
-                    <h2 class="text-3xl md:text-5xl font-bold" x-text="slide.title"></h2>
-                    <p class="mt-2 text-lg md:text-xl" x-text="slide.description"></p>
+                    <h2 class="text-2xl md:text-5xl font-bold" x-text="slide.title"></h2>
+                    <p class="mt-2 text-base md:text-xl" x-text="slide.description"></p>
                 </div>
             </div>
         </template>
@@ -74,9 +72,10 @@
         </button>
     </section>
 
+
     <!-- Efeméride Crítica Semanal -->
     <section 
-        class="mt-10 md:mt-14 px-6 md:px-12 lg:px-24"
+        class="mt-14 mb-14 md:mt-14 px-6 md:px-12 lg:px-24"
         x-data="{ 
             efemeride: @js($efemeride),
             open: false
@@ -329,7 +328,7 @@
         </section>
 
         <!-- Biblioteca -->
-        <section class="mt-16">
+        <section id="biblioteca" class="mt-16">
             <div class="bg-neutral-900 text-white rounded-md px-4 md:px-6 py-6">
                 <!-- Título -->
                 <h2 class="inline-flex items-center gap-3 text-xl md:text-2xl font-extrabold tracking-wide uppercase">

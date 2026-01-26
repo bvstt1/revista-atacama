@@ -37,8 +37,8 @@ class EfemerideController extends Controller
         $request->validate([
             'date' => 'required|string', // cambiamos de 'date' a 'string' porque escribes dd/mm/yyyy
             'title' => 'required|string|max:255',
+            'author' => 'required|string|max:255',            
             'description' => 'nullable|string',
-            'image_url' => 'nullable|url',
             'is_published' => 'nullable|boolean',
         ]);
 
@@ -54,8 +54,8 @@ class EfemerideController extends Controller
         Efemeride::create([
             'date' => $formattedDate,
             'title' => $request->title,
+            'author' => $request->author,
             'description' => $request->description,
-            'image_url' => $request->image_url,
             'is_published' => $request->has('is_published'),
         ]);
 
@@ -93,8 +93,8 @@ class EfemerideController extends Controller
         $request->validate([
             'date' => 'required|string', // cambia de 'date' a 'string'
             'title' => 'required|string|max:255',
+            'author' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'image_url' => 'nullable|url',
             'is_published' => 'nullable|boolean',
         ]);
 
@@ -112,6 +112,7 @@ class EfemerideController extends Controller
         $efemeride->update([
             'date' => $formattedDate,
             'title' => $request->title,
+            'author' => $request->author,
             'description' => $request->description,
             'image_url' => $request->image_url,
             'is_published' => $request->has('is_published'),
@@ -124,7 +125,8 @@ class EfemerideController extends Controller
     public function indexPublic()
     {
         $efemerides = Efemeride::select('id', 'title', 'date')
-            ->orderBy('date')
+            ->orderByRaw('MONTH(date) DESC')
+            ->orderByRaw('DAY(date) DESC')
             ->get();
 
         if ($efemerides->isEmpty()) {
