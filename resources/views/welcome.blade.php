@@ -204,7 +204,7 @@
 
                 @if(isset($editionDate))
                     <p class="text-sm text-neutral-500 mb-6">
-                        Edición N°2 — {{ \Carbon\Carbon::parse($editionDate)->locale('es')->isoFormat('D [de] MMMM YYYY') }}
+                        Edición N°3 — {{ \Carbon\Carbon::parse($editionDate)->locale('es')->isoFormat('D [de] MMMM YYYY') }}
                     </p>
                 @endif
 
