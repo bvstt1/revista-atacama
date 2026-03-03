@@ -148,39 +148,51 @@
 
                 <!-- Título -->
                 <h1 class="text-4xl md:text-5xl font-serif font-bold text-amber-800 border-l-8 border-amber-600 pl-4">
-                    Editorial:  Copiapó, Doscientos ochenta y un años de Historia.
+                    Editorial:  Revista N° 3 – Historia de Atacama.
                 </h1>
 
                 <!-- Contenido -->
                 <div class="prose prose-neutral max-w-none text-justify">
                     <p>
-                        El sol en Copiapó se alza una vez más sobre el valle, y con él, se cumple un nuevo aniversario de la fundación de San Francisco de la Selva de Copiapó, un hito que data del 8 de diciembre de 1744. Esta fecha no es un simple recuerdo en el calendario, sino el cimiento sobre el cual se erigió una de las ciudades más singulares y resistentes de Chile.<br>
+                        La importancia del Museo Regional de Atacama radica en su consolidación como pilar fundamental para el estudio de la historia y el patrimonio de nuestra región. No se trata únicamente de un edificio que resguarda objetos: es, ante todo, un laboratorio vivo de la memoria histórica atacameña, un espacio donde el pasado dialoga con el presente y proyecta el futuro.<br>
                     </p>
-
-                    <p>
-                        La historia de Copiapó es una crónica de contrastes: desde la promesa de la mítica Selva a la aridez circundante, desde un modesto asentamiento colonial hasta convertirse en el epicentro de la fiebre de la plata y el cobre que redefinió la economía del país. Fue aquí donde la minería no solo extrajo riqueza de la tierra, sino que también forjó el carácter de sus habitantes, dotándolos de una tenacidad a prueba de sequías y crisis económicas. Esta historia de Copiapó es, esencialmente, una crónica de resiliencia frente a las fuerzas de la naturaleza.<br>
+                    <p></p>
+                    <br>
+                        El nuevo museo trasciende lo arquitectónico para posicionarse como un motor de desarrollo integral. En él convergen identidad, investigación y comunidad. Su existencia impulsa el rescate y la valoración del patrimonio cultural, fortaleciendo la conciencia regional y el sentido de pertenencia.<br>
                     </p>
-
+                    <br>
                     <p>
-                        Desde el siglo XVIII, el destino de la ciudad ha estado indisolublemente ligado a la escasa, pero vital, agua del Río Copiapó. Las mercedes de agua coloniales dictaron el pulso de la economía, primero agrícola y luego minera, generando tensiones por su uso que se arrastran hasta hoy. El río, columna vertebral del valle, ha sido testigo y protagonista de un conflicto histórico, donde la gestión del recurso define la supervivencia y la prosperidad de sus habitantes.<br>
+                        Esta edición nos permite recorrer la cronología crítica de su gestación: desde el año 2007, cuando comenzó la búsqueda de un espacio que acogiera a la comunidad en torno a su patrimonio, hasta marzo de 2026, momento en que aquel anhelo histórico comenzó a materializarse. Detrás de cada etapa hay voluntades, debates, esfuerzos técnicos y convicciones profundas sobre la necesidad de un museo a la altura de la historia de Atacama.<br>
                     </p>
-
+                    <br>
                     <p>
-                        Pero la naturaleza ha desafiado a Copiapó no solo con la sequía, sino también con el movimiento de la tierra, tema que ha sido investigado por el Profesor y Magíster, Rodrigo Zalaquett Fuente-Alba, en su artículo “El Terremoto de 1918 en Copiapó y la fotografía instrumental de José Olivares Valdivia”, artículo que en esta edición se da a conocer a la comunidad. Eventos como los grandes terremotos de 1918 y 1922 marcaron profundas cicatrices en la infraestructura y en la memoria colectiva. Estas catástrofes del siglo XX no fueron solo episodios de destrucción; se convirtieron en hitos de reconstrucción y afirmación de la identidad local, recordándonos la vulnerabilidad constante y la capacidad inagotable de levantarse.<br>
+                        En sus salas, los especialistas plasman su conocimiento a través del guion museográfico, transformando la investigación académica en relato accesible, pedagógico y significativo. Porque la ciencia —hija de la curiosidad humana— encuentra en el museo uno de sus espacios más nobles de difusión. Allí se publica y se socializa el saber científico vinculado a los estudios patrimoniales de nuestra región.<br>
                     </p>
+                    <br>
                     <p>
-                        Al rememorar el hito histórico de la fundación, no solo celebramos el acto administrativo del gobernador Manso de Velasco, a través de su Corregidor Francisco Cortés Cartavío y Santelices y Roldán, sino la persistencia de un asentamiento humano en un entorno desafiante. Es fundamental que, como educadores e historiadores, continuemos explorando las capas de este pasado. Debemos ir más allá de los próceres y las grandes minas, para rescatar las historias sociales de los arrieros, los mineros, las mujeres que sostuvieron el hogar y la cultura que floreció a la sombra de los yacimientos.<br>                     
+                        Este número amplía la mirada. Nos invita a reflexionar sobre los primeros indicios de vida comunitaria organizada y el surgimiento de estructuras sociales complejas, recordándonos que la historia de la humanidad es también la historia de la cooperación y la construcción colectiva.<br>
                     </p>
+                    <br>
                     <p>
-                        El aniversario es una invitación a la reflexión: ¿Qué significa ser copiapino hoy? Significa ser heredero de la tradición minera, custodio de la primera línea férrea de Chile, y testigo de la resiliencia ante los desafíos naturales. Nuestra revista se compromete a seguir iluminando estas narrativas, asegurando que la memoria histórica de la capital de Atacama permanezca tan viva y resplandeciente como el metal que la hizo grande.<br>                       
+                        Desde la ciencia natural, se presenta un estudio sobre recientes observaciones del comportamiento reproductivo de Liolaemus fabiani, con ejemplares observados tanto en su medio natural como en cautiverio, aportando valiosa información al conocimiento de la herpetología atacameña y a la conservación de su biodiversidad.<br>
+                    </p>
+                    <br>
+                    <p>
+                        Finalmente, revisitamos la figura de Pedro León Gallo, destacando la vigencia de su pensamiento y la trascendencia de su lucha por la región. Su legado continúa dialogando con las nuevas generaciones, recordándonos que la historia regional está hecha de ideas, convicciones y compromiso.<br>
+                    </p>
+                    <br>
+                    <p>
+                        Así, este tercer número reafirma nuestra convicción: la historia no es únicamente memoria; es conciencia, identidad y responsabilidad. Y el Museo Regional de Atacama se erige como uno de los espacios más significativos donde esa conciencia se cultiva y se proyecta.<br>
                     </p>
                 </div>
 
                 <!-- Firma -->
                 <div class="pt-6 border-t border-neutral-200">
-                    <p class="italic text-amber-700 font-semibold">— Prof. Francisco Berríos Drolett </p>
-                    <p class="italic font-medium opacity-60">Magister en Educación Superior </p>
-                    <p class="italic font-medium opacity-60">Editor Historia RHA</p>
+                    <p class="italic text-amber-700 font-bold">Con estima y compromiso histórico</p>
+                    <p class="italic text-amber-700 font-bold mt-4">Francisco Berrios Drolett</p>
+                    <p class="italic font-bold text-neutral-900">Profesor de Historia y Geografía</p>
+                    <p class="italic font-bold text-neutral-900">Magister en Educación Superior</p>
+                    <p class="italic font-bold text-neutral-900">Editor Histórico RHA</p>
                 </div>
             </article>
 
