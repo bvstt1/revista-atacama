@@ -4,7 +4,14 @@
 <div class="flex items-center justify-between px-6 md:px-6 lg:px-24 mb-6 mt-6">
     @if(isset($editionDate))
         <div class="text-3xl font-bold text-amber-800">
-            <p class="italic">Edición del {{ \Carbon\Carbon::parse($editionDate)->format('d \d\e F \d\e\l Y') }}</p>
+            <p class="italic">
+                @php
+                    $date = \Carbon\Carbon::parse($editionDate)->locale('es');
+                    $formattedDate = $date->isoFormat('D [de] ') . ucfirst($date->isoFormat('MMMM YYYY'));
+                @endphp
+
+                Edición del {{ $formattedDate }}
+            </p>
         </div>
     @endif
 
