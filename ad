@@ -1,0 +1,53 @@
+[33m28d88ee[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m Sr actuliza mes de ingles a español
+[33mc97cbfa[m Actualizacion editorial 3
+[33m9f381da[m Actualización del indice de la revista numero 3
+[33m34e501e[m Mejoras en el vista welcome responsive, se editan oreden de las fechas en public index de las efemerides y se agrega opción de añadir autor a las mismas
+[33meab428d[m Ahora si xd
+[33m293dbc3[m Ahora si que si
+[33mc45e333[m Ahora si
+[33m450d718[m Solución error show
+[33md217c8f[m Se mejora la vista de efemerides, agregando metodo show
+[33mb8702c5[m Se cambia edit por description para el ckeditor en app.js 2
+[33m3e2a417[m Se cambia edit por description para el ckeditor en app.js
+[33mc8c7e83[m Fix CKEditor open source build
+[33m545bee4[m Implementación de ckeditor para la creación de efemerides y mejora visual de las mismas en el welcome
+[33mc6e1096[m Edición 2
+[33m558fb96[m Edición 2
+[33mca4be27[m Se permiten subir libros hasta 2g ahora si xd xd
+[33md0d79e1[m Se permiten subir libros hasta 2g ahora si xd
+[33m23dee7c[m Se permiten subir libros hasta 2g
+[33mb1f9df0[m Se cambia logo
+[33mf398055[m Se modifica el titulo del header
+[33m799ff2e[m Se agrega sub director a footer
+[33m311c505[m Se agrega a sub director
+[33m38f9fe0[m Atualización del logo y favicon
+[33m4a9dfae[m correccion ico
+[33me80fe35[m correccion ico
+[33med9eae8[m Actualizacion welcome
+[33m1d6d66b[m Se agrega logica de borrar libros
+[33md2f275d[m Se cambian las imagenes del carrusel a public/img/slides
+[33m9812b03[m Actualización de vista welcome, carrusel con fotos propias y elimación de vistas no ocupables en el front
+[33mbbb1c93[m Actualización de vista welcome, carrusel con fotos propias y elimación de vistas no ocupables en el front
+[33mb519ffd[m Modificación del HomeSeed 3
+[33m1f3aaf0[m Modificación del HomeSeed 2
+[33m5ef9877[m Merge branch 'master' of https://github.com/bvstt1/revista-atacama
+[33m94233b0[m Actualización de la seed
+[33m955061f[m Deploy
+[33m0db6739[m Deploy
+[33me7360ba[m Deploy
+[33md93a356[m Se agrega archivo dockerfile
+[33m6939396[m Se actualiza la editorial
+[33m6c9b633[m Se agrega lógica de creación y muestra de efémerides
+[33mfcce30e[m Se agrega lógica de ediciones para mostrar edición preferible
+[33m8ccd94e[m Se agrega vite.config
+[33me447184[m Se agregan el index publico de los articulos junto a la vista de ediciones pasadas
+[33mdb0942e[m Se agrega vista de ver todos los articulos, se define el rol de admin para crear y editar secciones
+[33m443dadb[m Se agrega inicio de sesión y panel para el administrador
+[33me6827bb[m Solución conflicto con tailwind por creación de rama ui
+[33m03e8e61[m Solución conflicto con tailwind por creación de rama login
+[33m57569e2[m Se añade subida de imagen a las publicaciones y se agrega sección de Articulos Destacados junto a la nueva arquitectura de la bd de publications
+[33m408c531[m Se modifica sección sectionitems -> publications. Se permite la subida de archivos y comienza se inicaliza crud de publications
+[33mbd84c20[m Creación de base de datos para la biblioteca y se agregan las vistas: contaco & nosotros. Ademas se realiza el layout app
+[33m75c88d2[m Modificaciones leves pero importantes de vista home y bases de datos
+[33ma22e9a2[m Se define el diseño de la primera plantilla de welcome.blade y se crean las bases de datos para los archivos/documentos/imagenes
+[33m278965b[m Creación de primera plantilla

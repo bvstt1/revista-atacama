@@ -3,19 +3,18 @@
 @section('content')
 <div class="flex items-center justify-between px-6 md:px-6 lg:px-24 mb-6 mt-6">
     <div class="text-3xl font-bold text-amber-800">
-        <p class="italic">{{ $edition->title }}</h1>
-    </div>
-
-    <div>
-        <a href="{{ route('editions.index') }}"
-            class="inline-flex items-center gap-2 px-4 py-2 bg-amber-700 text-white font-semibold rounded-full hover:bg-amber-800 transition">
-            ← Volver a ediciones
-        </a>
+        <p class="italic">
+            @php
+                $date = \Carbon\Carbon::parse($edition->publication_date)->locale('es');
+                $formattedDate = $date->isoFormat('D [de] ') . ucfirst($date->isoFormat('MMMM YYYY'));
+            @endphp
+            Edición del {{ $formattedDate }}
+        </p>
     </div>
 </div>
-<section class="bg-white ppx-6 md:px-12 lg:px-24">
+<section class="bg-white px-6 md:px-12 lg:px-24">
     @foreach($sections as $sectionName => $articles)
-        <h2 class="text-2xl pt-6 font-semibold text-amber-700 mb-6">{{ $sectionName }}</h2>
+        <h2 class="text-2xl pt-6 font-bold text-amber-700 mb-6">{{ $sectionName }}</h2>
 
         @if($articles->isEmpty())
             <p class="text-neutral-500 italic">No hay artículos para esta sección en esta edición.</p>
@@ -30,8 +29,8 @@
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                         </a>
                         <div class="p-4">
-                            <h3 class="font-semibold text-lg text-neutral-900">{{ $article->title }}</h3>
-                            <p class="text-sm text-neutral-500">{{ $article->author ?? 'Equipo Editorial' }}</p>
+                            <h3 class="font-bold text-lg text-neutral-900">{{ $article->title }}</h3>
+                            <p class="text-sm text-neutral-700 font-bold">{{ $article->author ?? 'Equipo Editorial' }}</p>
                         </div>
                     </div>
                 @endforeach

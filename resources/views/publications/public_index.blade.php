@@ -15,12 +15,6 @@
         </div>
     @endif
 
-    <div>
-        <a href="{{ url('/') }}" 
-            class="inline-flex items-center gap-2 px-4 py-2 bg-amber-700 text-white font-semibold rounded-full hover:bg-amber-800 transition">
-            ← Volver
-        </a>
-    </div>
 </div>
 <section class="bg-white px-6 md:px-12 lg:px-24">
         @foreach ($sections as $section)
@@ -41,11 +35,10 @@
                                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                                 </a>
                                 <div class="p-4">
-                                    <h3 class="font-serif text-xl font-bold text-neutral-900 group-hover:text-amber-800 transition" title="{{ $item->title }}">
+                                    <h3 class="font-bold text-lg text-neutral-900">
                                         {{ $item->title }}
                                     </h3>
-                                    <p class="text-sm text-neutral-500 mt-1 line-clamp-2">{{ $item->author ?? 'Equipo Editorial' }}</p>
-                                    <p class="text-xs text-neutral-400 mt-1">{{ $item->publication_date ? \Carbon\Carbon::parse($item->publication_date)->format('d M Y') : '' }}</p>
+                                    <p class="text-sm text-neutral-700 font-bold">{{ $item->author ?? 'Equipo Editorial' }}</p>
                                 </div>
                             </article>
                         @endforeach

@@ -1,48 +1,49 @@
 @extends('layouts.hf')
 
 @section('content')
-<div class="mt-12 text-right px-6 lg:px-24 mb-6">
-    <a href="{{ url('/') }}"
-       class="inline-flex items-center gap-2 px-4 py-2 bg-amber-700 text-white font-semibold rounded-full hover:bg-amber-800 transition">
-        ← Volver al inicio
-    </a>
-</div>
+    <section class="bg-white text-neutral-900 py-16 px-6 md:px-12 lg:px-24 mt-2">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center">
+                <h1 class="text-3xl md:text-5xl font-serif font-extrabold text-amber-800 drop-shadow-sm">
+                    Efemérides de la Región de Atacama
+                </h1>
 
-<div class="px-6 lg:px-24 mb-6">
-    <h1 class="text-3xl font-bold text-amber-800">
-        Efemérides de Atacama
-    </h1>
-</div>
 
-<section class="bg-white px-6 lg:px-24 pb-12">
-    <div class="pt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-
-        @foreach($efemerides as $efemeride)
-            <div class="bg-amber-50 rounded-xl shadow-sm p-4 flex flex-col items-center">
-                <div class="text-center mb-2">
-                    <p class="text-3xl font-bold text-amber-900 leading-none mb-2">
-                        @php
-                            $date = \Carbon\Carbon::parse($efemeride->date);
-                        @endphp
-
-                        {{ $date->format('d') }} de {{ ucfirst($date->translatedFormat('F')) }}
-                    </p>
-                    <p class="text-xs text-neutral-500">
-                        {{ \Carbon\Carbon::parse($efemeride->date)->year }}
-                    </p>
-                </div>
-
-                <h3 class="font-semibold text-md text-stone-900 text-center mt-2">
-                    {{ $efemeride->title }}
-                </h3>
-
-                <a href="{{ route('efemerides.show', $efemeride->id) }}"
-                   class="font-semibold text-md text-stone-900 text-center mt-2 hover:text-amber-900">
-                    Ver más
-                </a>
+                <p class="mt-4 text-neutral-600 md:text-lg max-w-3xl mx-auto leading-relaxed">
+                    Conoce de las efemérides históricas más relevantes de la región de Atacama, con eventos que marcaron
+                    hitos importantes en su historia.
+                </p>
             </div>
-        @endforeach
 
-    </div>
-</section>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
+                @foreach ($efemerides as $efemeride)
+                    <div
+                        class="bg-neutral-50 border border-neutral-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col">
+                        <div class="p-5 flex flex-col flex-1 text-center">
+                            <p class="text-2xl font-bold text-neutral-900 mb-2">
+                                @php
+                                    $date = \Carbon\Carbon::parse($efemeride->date);
+                                @endphp
+
+                                {{ $date->format('d') }} de {{ ucfirst($date->translatedFormat('F')) }}
+                            </p>
+                            <p class="text-xs text-neutral-600 font-bold">
+                                {{ \Carbon\Carbon::parse($efemeride->date)->year }}
+                            </p>
+
+                            <h3 class="font-semibold text-md text-stone-900 text-center mt-2">
+                                {{ $efemeride->title }}
+                            </h3>
+
+                            <a href="{{ route('efemerides.show', $efemeride->id) }}"
+                                class="mt-4 inline-flex items-center justify-center gap-2 px-4 py-2 bg-amber-700 text-white font-semibold rounded-full hover:bg-amber-800 transition">
+                                Ver más
+                            </a>
+                        </div>
+                    </div>
+                @endforeach
+
+            </div>
+        </div>
+    </section>
 @endsection

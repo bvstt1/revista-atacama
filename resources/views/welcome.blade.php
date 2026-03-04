@@ -83,11 +83,11 @@
         <div class="bg-amber-50 border border-amber-200 rounded-xl p-6 md:p-8 shadow-sm flex flex-col md:flex-row items-start md:items-center gap-6 hover:shadow-md transition">
             <div class="flex-1">
                 <!-- Fecha + etiqueta -->
-                <div class="mb-6 flex flex-wrap items-center gap-3">
+                <div class="mb-6 flex flex-wrap justify-center sm:justify-start items-center gap-3">
 
                     <!-- Sello editorial -->
-                    <span class="inline-flex items-center px-4 py-1.5 text-sm md:text-base font-semibold 
-                                bg-amber-700 text-white rounded-full tracking-wide shadow-sm">
+                    <span class="inline-flex items-center justify-center px-4 py-1.5 text-sm md:text-base font-semibold 
+                                bg-amber-700 text-white rounded-full tracking-wide shadow-sm w-full sm:w-auto">
                         Efeméride crítica semanal
                     </span>
 
@@ -231,7 +231,7 @@
                             >
                                 <span class="font-semibold" x-text="sec.title"></span>
                                 <div class="flex items-center gap-3">
-                                    <span class="text-xs bg-white/10 px-2 py-0.5 rounded"
+                                    <span class="hidden sm:inline-flex text-xs bg-white/10 px-2 py-0.5 rounded"
                                         x-text="sec.items.length + ' artículos'"></span>
                                     <span class="transition-transform duration-300 text-lg"
                                         :class="sec.open ? 'rotate-45' : ''">+</span>
@@ -277,6 +277,12 @@
     <!-- Main Content -->
     <main class="flex-1 p-6 lg:p-8">
 
+        <div class="mb-12 text-center">
+            <a href="{{ url('/articulos') }}" class="inline-block w-full sm:w-auto px-4 sm:px-6 md:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg bg-amber-700 rounded-2xl text-white font-semibold hover:bg-amber-800 transition-colors">
+                Presiona para Ver Todos los Artículos Publicados de la Edición
+            </a>
+        </div>
+
         <!-- Artículos destacados -->
         <section x-data="{ 
                     posts: @js($featured),
@@ -290,9 +296,6 @@
             >
             <div class="flex items-end justify-between mb-6">
                 <h2 class="text-3xl font-bold text-amber-800">Artículos Populares de la edición: </h2>
-                <a href="{{ url('/articulos') }}" class="text-sm font-semibold text-amber-700 hover:text-amber-900">
-                Ver todos →
-                </a>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <template x-for="(p, i) in posts" :key="i">
@@ -305,7 +308,7 @@
                         <div class="p-4">
                             <a :href="p.url" target="_blank" class="block">
                                 <h3 class="font-serif text-xl font-bold leading-tight text-neutral-900 group-hover:text-amber-800 transition" x-text="p.title"></h3>
-                                <p class="mt-2 text-neutral-600 line-clamp-2" x-text="p.desc"></p>
+                                <p class="mt-2 text-neutral-600 line-clamp-2" x-html="p.desc"></p>
                             </a>
         
                             <div class="mt-4 flex items-center justify-between text-sm text-neutral-500">
@@ -353,7 +356,7 @@
 
                 <!-- Carrusel horizontal -->
                 <div class="mt-6 overflow-x-auto no-scrollbar">
-                    <ul class="flex gap-6 min-w-max snap-x snap-mandatory">
+                    <ul class="flex gap-6 min-w-max snap-x snap-mandatory mb-4">
                         @foreach ($books as $book)
                             <li class="snap-start">
                                 <a href="{{ asset('storage/' . $book->pdf_file) }}" target="_blank" class="group block w-[150px] md:w-[180px]">

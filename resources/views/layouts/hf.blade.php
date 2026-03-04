@@ -16,7 +16,7 @@
     <header class="flex items-center justify-between px-4 py-3 md:px-6 md:py-4 bg-white shadow-md">
         <a href="{{ url('/') }}" class="flex items-center gap-3">
             <img 
-                src="{{ asset('img/logo3.png') }}" 
+                src="{{ asset('img/logo4.png') }}" 
                 alt="Logo Revista de Historia de Atacama"
                 class="h-15 w-auto md:h-20 lg:h-30"
             >
@@ -32,10 +32,12 @@
             class="px-4 py-2 hover:bg-amber-700 hover:text-white rounded transition">
                 Ediciones Publicadas
             </a>
+            @if(Route::currentRouteName() === 'home')
             <a href="#biblioteca" 
             class="px-4 py-2 hover:bg-amber-700 hover:text-white rounded transition">
                 Biblioteca
             </a>
+            @endif
             <a href="{{ url('/nosotros') }}" 
             class="px-4 py-2 hover:bg-amber-700 hover:text-white rounded transition">
                 Nosotros
@@ -65,7 +67,9 @@
         <nav class="flex flex-col px-6 py-4 space-y-3 text-stone-700 font-medium">
             <a href="{{ url('/') }}" class="py-2 hover:text-amber-700">Inicio</a>
             <a href="{{ url('/editions') }}" class="py-2 hover:text-amber-700">Ediciones Publicadas</a>
+            @if(Route::currentRouteName() === 'home')
             <a href="#biblioteca" class="py-2 hover:text-amber-700">Biblioteca</a>
+            @endif
             <a href="{{ url('/nosotros') }}" class="py-2 hover:text-amber-700">Nosotros</a>
             <a href="{{ url('/efemerides-public') }}" class="py-2 text-amber-700 font-semibold">
                 Efemérides
@@ -167,7 +171,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url('/efemerides') }}" class="hover:text-amber-500 transition">
+                        <a href="{{ url('/efemerides-public') }}" class="hover:text-amber-500 transition">
                             Efemérides
                         </a>
                     </li>
