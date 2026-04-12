@@ -286,49 +286,45 @@
             <div class="bg-white rounded-2xl shadow-md overflow-hidden ring-1 ring-neutral-200">
 
                 <!-- Header -->
-                <div class="px-6 py-4 border-b border-neutral-200 flex items-center justify-between">
-                    <h2 class="text-3xl font-bold text-amber-800">
+                <div class="px-4 sm:px-6 py-4 border-b border-neutral-200">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-amber-800">
                         Video Destacado de la Edición
                     </h2>
                 </div>
 
                 <!-- Contenido -->
-                <div class="grid lg:grid-cols-2 gap-6 p-6">
+                <div class="flex flex-col lg:flex-row gap-6 p-4 sm:p-6">
 
                     <!-- Video -->
-                    <div class="aspect-video rounded-xl overflow-hidden shadow">
-                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/RjT8pIoXvis"
-                            title="Video destacado" frameborder="0" allowfullscreen>
-                        </iframe>
+                    <div class="w-full lg:w-1/2">
+                        <div class="aspect-video rounded-xl overflow-hidden shadow">
+                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/RjT8pIoXvis"
+                                title="Video destacado" frameborder="0" allowfullscreen>
+                            </iframe>
+                        </div>
                     </div>
 
                     <!-- Descripción -->
-                    <div class="flex flex-col justify-center">
-                        <h3 class="text-2xl font-serif font-bold text-neutral-900">
+                    <div class="w-full lg:w-1/2 flex flex-col justify-center">
+                        <h3 class="text-xl sm:text-2xl font-serif font-bold text-neutral-900">
                             Tesoros de mi ciudad: CChC Atacama presenta el nuevo Museo Regional de Atacama
                         </h3>
 
-                        <p class="mt-4 text-neutral-600 leading-relaxed">
+                        <p class="mt-3 sm:mt-4 text-neutral-600 leading-relaxed text-sm sm:text-base">
                             Este video presenta un recorrido por el nuevo Museo Regional de Atacama, destacando su diseño
-                            moderno y su enfoque en la preservación del patrimonio histórico y cultural de la región. A
-                            través de sus distintas salas, se aborda la evolución del territorio atacameño desde los pueblos
-                            originarios hasta la actualidad, incorporando recursos audiovisuales y propuestas educativas que
-                            buscan acercar la historia a la comunidad.
-                            <br>
-                            Este espacio se proyecta como un punto de encuentro
-                            para la memoria, la investigación y la identidad regional, fortaleciendo el vínculo entre
-                            pasado, presente y futuro de Atacama.
+                            moderno y su enfoque en la preservación del patrimonio histórico y cultural de la región.
+                            A través de sus distintas salas, se aborda la evolución del territorio atacameño desde los
+                            pueblos originarios hasta la actualidad, incorporando recursos audiovisuales y propuestas
+                            educativas.
+                            <br><br>
+                            Este espacio se proyecta como un punto de encuentro para la memoria, la investigación y la
+                            identidad regional.
                         </p>
 
-                        <div class="mt-6">
-                            <a href="https://youtube.com" target="_blank"
+                        <div class="mt-5">
+                            <a href="https://www.youtube.com/watch?v=RjT8pIoXvis" target="_blank"
                                 class="inline-flex items-center gap-2 text-amber-700 font-semibold hover:gap-3 transition-all">
                                 Ver en YouTube
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20"
-                                    fill="currentColor">
-                                    <path
-                                        d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 01-1.414 1.414L12 6.414V17a1 1 0 11-2 0V6.414L6.707 9.707A1 1 0 015.293 8.293l5-5z" />
-                                </svg>
                             </a>
                         </div>
                     </div>
@@ -376,13 +372,13 @@
                                 <p x-text="p.date"></p>
                             </div>
                             <!--
-                                        <span class="inline-flex items-center gap-1">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6l4 2" />
-                                            </svg>
-                                            <span x-text="p.clicks"></span>
-                                    </div>
-                                    -->
+                                                    <span class="inline-flex items-center gap-1">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6l4 2" />
+                                                        </svg>
+                                                        <span x-text="p.clicks"></span>
+                                                </div>
+                                                -->
 
 
                             <div class="mt-4">
