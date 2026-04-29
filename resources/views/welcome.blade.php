@@ -128,73 +128,50 @@
 
                 <!-- Título -->
                 <h1 class="text-4xl md:text-5xl font-serif font-bold text-amber-800 border-l-8 border-amber-600 pl-4">
-                    Editorial: Revista N° 3 – Historia de Atacama.
+                    Editorial: Revista N° 4 – Historia de Atacama.
                 </h1>
 
                 <!-- Contenido -->
                 <div class="prose prose-neutral max-w-none text-justify">
                     <p>
-                        La importancia del Museo Regional de Atacama radica en su consolidación como pilar fundamental para
-                        el estudio de la historia y el patrimonio de nuestra región. No se trata únicamente de un edificio
-                        que resguarda objetos: es, ante todo, un laboratorio vivo de la memoria histórica atacameña, un
-                        espacio donde el pasado dialoga con el presente y proyecta el futuro.<br>
+                        El cuarto número de la <b>Revista de Historia de Atacama</b>, centrado en el descubrimiento del
+                        mineral de plata de Chañarcillo, incorpora por primera vez una colaboración internacional: la del
+                        historiador venezolano Tomás Straka, con el artículo “Cómo Marc Bloch cambió el mundo”. Straka es
+                        director del Instituto de Investigaciones Históricas «Hermann González Oropeza, sj» de la
+                        Universidad Católica Andrés Bello y miembro de número de la Academia Nacional de la Historia de
+                        Venezuela. Doctor en Historia, ha desarrollado una destacada trayectoria académica en Venezuela y en
+                        el ámbito internacional.<br>
                     </p>
                     <p></p>
                     <br>
-                    El nuevo museo trasciende lo arquitectónico para posicionarse como un motor de desarrollo integral. En
-                    él convergen identidad, investigación y comunidad. Su existencia impulsa el rescate y la valoración del
-                    patrimonio cultural, fortaleciendo la conciencia regional y el sentido de pertenencia.<br>
+                    Asimismo, esta edición cuenta con el trabajo pictórico del artista Julio Alarcón Muñoz, quien ha
+                    dedicado parte de su obra a personajes de la historia regional. Se mantiene la sección “La pequeña
+                    historia del mundo, desde Mesopotamia hasta Persia”, junto al análisis internacional del sociólogo
+                    Cristian Cortés Olivares.<br>
                     </p>
                     <br>
                     <p>
-                        Esta edición nos permite recorrer la cronología crítica de su gestación: desde el año 2007, cuando
-                        comenzó la búsqueda de un espacio que acogiera a la comunidad en torno a su patrimonio, hasta marzo
-                        de 2026, momento en que aquel anhelo histórico comenzó a materializarse. Detrás de cada etapa hay
-                        voluntades, debates, esfuerzos técnicos y convicciones profundas sobre la necesidad de un museo a la
-                        altura de la historia de Atacama.<br>
+                        Se incluye también la efeméride crítica sobre el descubrimiento de Chañarcillo, a cargo del profesor
+                        e historiador Francisco Berríos Drolett. En la sección de videodocumentales se integra la producción
+                        <b>Chañarcillo</b>, de Rodrigo Chirino, y se incorpora a la biblioteca digital la obra <b>Altoandino
+                            de la
+                            Región de Atacama: antecedentes sobre historia, paisaje y ecología</b>, editada por los doctores
+                        Yery
+                        Marambio Alfaro y Jorge Valdés Saavedra.<br>
                     </p>
                     <br>
                     <p>
-                        En sus salas, los especialistas plasman su conocimiento a través del guion museográfico,
-                        transformando la investigación académica en relato accesible, pedagógico y significativo. Porque la
-                        ciencia —hija de la curiosidad humana— encuentra en el museo uno de sus espacios más nobles de
-                        difusión. Allí se publica y se socializa el saber científico vinculado a los estudios patrimoniales
-                        de nuestra región.<br>
-                    </p>
-                    <br>
-                    <p>
-                        Este número amplía la mirada. Nos invita a reflexionar sobre los primeros indicios de vida
-                        comunitaria organizada y el surgimiento de estructuras sociales complejas, recordándonos que la
-                        historia de la humanidad es también la historia de la cooperación y la construcción colectiva.<br>
-                    </p>
-                    <br>
-                    <p>
-                        Desde la ciencia natural, se presenta un estudio sobre recientes observaciones del comportamiento
-                        reproductivo de Liolaemus fabiani, con ejemplares observados tanto en su medio natural como en
-                        cautiverio, aportando valiosa información al conocimiento de la herpetología atacameña y a la
-                        conservación de su biodiversidad.<br>
-                    </p>
-                    <br>
-                    <p>
-                        Finalmente, revisitamos la figura de Pedro León Gallo, destacando la vigencia de su pensamiento y la
-                        trascendencia de su lucha por la región. Su legado continúa dialogando con las nuevas generaciones,
-                        recordándonos que la historia regional está hecha de ideas, convicciones y compromiso.<br>
-                    </p>
-                    <br>
-                    <p>
-                        Así, este tercer número reafirma nuestra convicción: la historia no es únicamente memoria; es
-                        conciencia, identidad y responsabilidad. Y el Museo Regional de Atacama se erige como uno de los
-                        espacios más significativos donde esa conciencia se cultiva y se proyecta.<br>
+                        Como siempre, aspiramos a consolidarnos como un espacio accesible en la red, comprometido con el
+                        rigor científico y orientado a la comprensión de nuestra historia<br>
                     </p>
                 </div>
 
                 <!-- Firma -->
                 <div class="pt-6 border-t border-neutral-200">
-                    <p class="italic text-amber-700 font-bold">Con estima y compromiso histórico</p>
-                    <p class="italic text-amber-700 font-bold mt-4">Francisco Berrios Drolett</p>
-                    <p class="italic font-bold text-neutral-900">Profesor de Historia y Geografía</p>
-                    <p class="italic font-bold text-neutral-900">Magister en Educación Superior</p>
-                    <p class="italic font-bold text-neutral-900">Editor Histórico RHA</p>
+                    <p class="italic text-amber-700 font-bold mt-4">Prof. Guillermo Cortés Lutz</p>
+                    <p class="italic font-bold text-neutral-900">Doctor en Historia</p>
+                    <p class="italic font-bold text-neutral-900">Director de la Revista de Historia de Atacama <b>RHA</b>
+                    </p>
                 </div>
             </article>
 
@@ -372,13 +349,13 @@
                                 <p x-text="p.date"></p>
                             </div>
                             <!--
-                                                    <span class="inline-flex items-center gap-1">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6l4 2" />
-                                                        </svg>
-                                                        <span x-text="p.clicks"></span>
-                                                </div>
-                                                -->
+                                                                            <span class="inline-flex items-center gap-1">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6l4 2" />
+                                                                                </svg>
+                                                                                <span x-text="p.clicks"></span>
+                                                                        </div>
+                                                                        -->
 
 
                             <div class="mt-4">
@@ -395,6 +372,60 @@
                         </div>
                     </article>
                 </template>
+            </div>
+        </section>
+
+        <!-- 🎨 Galería de Pinturas -->
+        <section class="mt-16 px-6 md:px-12 lg:px-24">
+            <div class="max-w-7xl mx-auto">
+
+                <!-- Header -->
+                <div class="mb-10 text-center">
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-amber-800">
+                        Galería de Pinturas Históricas
+                    </h2>
+                    <p class="mt-2 text-neutral-600">
+                        Obras del artista <span class="font-semibold text-neutral-800">Julio Alarcón Muñoz</span>
+                    </p>
+                </div>
+
+                <!-- Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                    <!-- Imagen 1 -->
+                    <div class="group">
+                        <div class="overflow-hidden rounded-xl shadow-md ring-1 ring-neutral-200">
+                            <img src="/img/pinturas/pintura1.jpg" alt="Retrato histórico 1"
+                                class="w-full h-[500px]  object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                    </div>
+
+                    <!-- Imagen 2 -->
+                    <div class="group">
+                        <div class="overflow-hidden rounded-xl shadow-md ring-1 ring-neutral-200">
+                            <img src="/img/pinturas/pintura2.jpg" alt="Retrato histórico 2"
+                                class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                    </div>
+
+                    <!-- Imagen 3 -->
+                    <div class="group">
+                        <div class="overflow-hidden rounded-xl shadow-md ring-1 ring-neutral-200">
+                            <img src="/img/pinturas/pintura3.jpg" alt="Retrato histórico 3"
+                                class="w-full h-[500px]  object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                    </div>
+
+                    <!-- Imagen 4 -->
+                    <div class="group">
+                        <div class="overflow-hidden rounded-xl shadow-md ring-1 ring-neutral-200">
+                            <img src="/img/pinturas/pintura4.jpg" alt="Retrato histórico 4"
+                                class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
         </section>
 
