@@ -298,7 +298,7 @@
                             recuas de mulas para transportar la plata al puerto de Caldera— y la construcción de fundiciones
                             . Asimismo, el mineral fue escenario de importantes procesos sociales, como la <b>primera
                                 gran protesta obrera de Chile en 1838</b> y la aplicación del <b>Código Melgarejo en
-                                1841</b> para regular el trabajo en las minas .
+                                1841</b> para regular el trabajo en las minas.
                         </p>
                     </div>
 
