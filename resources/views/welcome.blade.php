@@ -261,11 +261,10 @@
         <!-- Video Destacado -->
         <section class="mb-16">
             <div class="bg-white rounded-2xl shadow-md overflow-hidden ring-1 ring-neutral-200">
-
                 <!-- Header -->
                 <div class="px-4 sm:px-6 py-4 border-b border-neutral-200">
                     <h2 class="text-2xl sm:text-3xl font-bold text-amber-800">
-                        Video Destacado de la Edición
+                        Video Destacado: El Descubrimiento de Chañarcillo
                     </h2>
                 </div>
 
@@ -275,38 +274,119 @@
                     <!-- Video -->
                     <div class="w-full lg:w-1/2">
                         <div class="aspect-video rounded-xl overflow-hidden shadow">
-                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/RjT8pIoXvis"
-                                title="Video destacado" frameborder="0" allowfullscreen>
-                            </iframe>
+                            <video class="w-full h-full object-cover" controls>
+                                <source src="/videos/chanarcillo.mp4" type="video/mp4">
+                                Tu navegador no soporta la reproducción de video.
+                            </video>
                         </div>
-                    </div>
+                    </div>>
 
                     <!-- Descripción -->
                     <div class="w-full lg:w-1/2 flex flex-col justify-center">
                         <h3 class="text-xl sm:text-2xl font-serif font-bold text-neutral-900">
-                            Tesoros de mi ciudad: CChC Atacama presenta el nuevo Museo Regional de Atacama
+                            Chañarcillo: El motor de la industrialización chilena
                         </h3>
 
                         <p class="mt-3 sm:mt-4 text-neutral-600 leading-relaxed text-sm sm:text-base">
-                            Este video presenta un recorrido por el nuevo Museo Regional de Atacama, destacando su diseño
-                            moderno y su enfoque en la preservación del patrimonio histórico y cultural de la región.
-                            A través de sus distintas salas, se aborda la evolución del territorio atacameño desde los
-                            pueblos originarios hasta la actualidad, incorporando recursos audiovisuales y propuestas
-                            educativas.
+                            El 16 de mayo de 1832, <b>Juan Godoy descubrió el mineral de plata en Chañarcillo</b>, un evento
+                            que marcó el punto inicial de la historia minera de Atacama e impulsó el desarrollo económico de
+                            todo Chile. Este hallazgo generó una "vorágine capitalista" que atrajo a trabajadores de
+                            países vecinos y a expertos europeos y norteamericanos, quienes introdujeron las tecnologías
+                            necesarias para la <b>industrialización nacional</b>.
                             <br><br>
-                            Este espacio se proyecta como un punto de encuentro para la memoria, la investigación y la
-                            identidad regional.
+                            El impacto de Chañarcillo incluyó hitos como el desarrollo del ferrocarril —que reemplazó a las
+                            recuas de mulas para transportar la plata al puerto de Caldera— y la construcción de fundiciones
+                            . Asimismo, el mineral fue escenario de importantes procesos sociales, como la <b>primera
+                                gran protesta obrera de Chile en 1838</b> y la aplicación del <b>Código Melgarejo en
+                                1841</b> para regular el trabajo en las minas .
                         </p>
+                    </div>
 
-                        <div class="mt-5">
-                            <a href="https://www.youtube.com/watch?v=RjT8pIoXvis" target="_blank"
-                                class="inline-flex items-center gap-2 text-amber-700 font-semibold hover:gap-3 transition-all">
-                                Ver en YouTube
-                            </a>
+                </div>
+            </div>
+        </section>
+
+        <!--Galería de Pinturas -->
+        <section class="mt-16 mb-16 px-6 md:px-12 lg:px-24">
+            <div class="max-w-7xl mx-auto">
+
+                <!-- Header -->
+                <div class="mb-5 text-center">
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-amber-800">
+                        Trazos de la Historia: Atacama a través del arte y sus personajes
+                    </h2>
+                    <p class="mt-2 text-neutral-600">
+                        Obras del artista <span class="font-semibold text-neutral-800">Julio Alarcón Muñoz</span>
+                    </p>
+                </div>
+
+                <!-- Descripción -->
+                <div class="max-w-4xl mx-auto mb-12 text-neutral-700 leading-relaxed text-justify">
+                    <p>
+                        <strong>Año de ejecución:</strong> 2015–2016
+                    </p>
+
+                    <p class="mt-4">
+                        <em>Trazos de la Historia</em> es un proyecto artístico-patrimonial orientado a la creación de una
+                        serie de obras pictóricas que retratan a figuras ilustres que han dejado una huella significativa en
+                        la historia y la cultura de la región de Atacama.
+                    </p>
+
+                    <p class="mt-4">
+                        Las obras, realizadas íntegramente a mano en técnica de óleo sobre lienzo y con materiales de alta
+                        calidad, presentan un formato estándar de 90 x 75 cm, con excepciones de mayor escala como los
+                        retratos de Eladio Rojas (220 x 180 cm) y Pedro León Gallo (160 x 110 cm).
+                    </p>
+
+                    <p class="mt-4">
+                        El proyecto se estructura en dos etapas. La primera, ya concluida, comprende una serie de 26 obras
+                        actualmente exhibidas en el Centro Cultural de Atacama. La segunda etapa, en desarrollo, contempla
+                        la realización de 24 nuevas piezas. En conjunto, la iniciativa proyecta una colección total de 50
+                        obras, constituyéndose como una de las más importantes colecciones pictóricas de personajes ilustres
+                        de la región.
+                    </p>
+
+                    <p class="mt-4">
+                        Desde sus inicios, el proyecto contó con el respaldo del alcalde Maglio Cicardini Neyra, así como
+                        con la colaboración de destacados historiadores regionales, entre ellos Guillermo Cortés Lutz,
+                        Alejandro Aracena y Vidal Naveas. Asimismo, se establecieron vínculos de colaboración con el Museo
+                        Histórico Nacional de Chile, fortaleciendo su base investigativa y patrimonial.
+                    </p>
+                </div>
+
+                <!-- Grid de imágenes -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                    <div class="group">
+                        <div class="overflow-hidden rounded-xl shadow-md ring-1 ring-neutral-200">
+                            <img src="/img/pinturas/pintura1.jpg"
+                                class="w-full h-[420px] object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                    </div>
+
+                    <div class="group">
+                        <div class="overflow-hidden rounded-xl shadow-md ring-1 ring-neutral-200">
+                            <img src="/img/pinturas/pintura2.jpg"
+                                class="w-full h-[420px] object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                    </div>
+
+                    <div class="group">
+                        <div class="overflow-hidden rounded-xl shadow-md ring-1 ring-neutral-200">
+                            <img src="/img/pinturas/pintura3.jpg"
+                                class="w-full h-[420px] object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                    </div>
+
+                    <div class="group">
+                        <div class="overflow-hidden rounded-xl shadow-md ring-1 ring-neutral-200">
+                            <img src="/img/pinturas/pintura4.jpg"
+                                class="w-full h-[420px] object-cover transition-transform duration-500 group-hover:scale-105">
                         </div>
                     </div>
 
                 </div>
+
             </div>
         </section>
 
@@ -349,13 +429,13 @@
                                 <p x-text="p.date"></p>
                             </div>
                             <!--
-                                                                            <span class="inline-flex items-center gap-1">
-                                                                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6l4 2" />
-                                                                                </svg>
-                                                                                <span x-text="p.clicks"></span>
-                                                                        </div>
-                                                                        -->
+                                                                                            <span class="inline-flex items-center gap-1">
+                                                                                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6l4 2" />
+                                                                                                </svg>
+                                                                                                <span x-text="p.clicks"></span>
+                                                                                        </div>
+                                                                                        -->
 
 
                             <div class="mt-4">
@@ -375,59 +455,7 @@
             </div>
         </section>
 
-        <!-- 🎨 Galería de Pinturas -->
-        <section class="mt-16 px-6 md:px-12 lg:px-24">
-            <div class="max-w-7xl mx-auto">
 
-                <!-- Header -->
-                <div class="mb-10 text-center">
-                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-amber-800">
-                        Galería de Pinturas Históricas
-                    </h2>
-                    <p class="mt-2 text-neutral-600">
-                        Obras del artista <span class="font-semibold text-neutral-800">Julio Alarcón Muñoz</span>
-                    </p>
-                </div>
-
-                <!-- Grid -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-
-                    <!-- Imagen 1 -->
-                    <div class="group">
-                        <div class="overflow-hidden rounded-xl shadow-md ring-1 ring-neutral-200">
-                            <img src="/img/pinturas/pintura1.jpg" alt="Retrato histórico 1"
-                                class="w-full h-[500px]  object-cover transition-transform duration-500 group-hover:scale-105">
-                        </div>
-                    </div>
-
-                    <!-- Imagen 2 -->
-                    <div class="group">
-                        <div class="overflow-hidden rounded-xl shadow-md ring-1 ring-neutral-200">
-                            <img src="/img/pinturas/pintura2.jpg" alt="Retrato histórico 2"
-                                class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-105">
-                        </div>
-                    </div>
-
-                    <!-- Imagen 3 -->
-                    <div class="group">
-                        <div class="overflow-hidden rounded-xl shadow-md ring-1 ring-neutral-200">
-                            <img src="/img/pinturas/pintura3.jpg" alt="Retrato histórico 3"
-                                class="w-full h-[500px]  object-cover transition-transform duration-500 group-hover:scale-105">
-                        </div>
-                    </div>
-
-                    <!-- Imagen 4 -->
-                    <div class="group">
-                        <div class="overflow-hidden rounded-xl shadow-md ring-1 ring-neutral-200">
-                            <img src="/img/pinturas/pintura4.jpg" alt="Retrato histórico 4"
-                                class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-105">
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
 
         <!-- Biblioteca -->
         <section id="biblioteca" class="mt-16">
