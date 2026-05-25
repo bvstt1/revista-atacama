@@ -118,7 +118,6 @@
         </div>
     </section>
 
-
     <!-- Índice estilo revista -->
     <section class="bg-white text-neutral-900 py-20 px-6 md:px-12 lg:px-24">
         <div class="max-w-7xl mx-auto grid gap-16 lg:grid-cols-2 items-start">
@@ -302,6 +301,18 @@
                         </p>
                     </div>
 
+                </div>
+            </div>
+        </section>
+
+        <!-- Mapa de la Provincia de Atacama -->
+        <section class="md:px-12 lg:px-24 text-center">
+                <div class="max-w-lg mx-auto">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-amber-800 mb-8">
+                    Mapa de la Provincia de Atacama
+                </h2>
+                <div class="rounded-xl overflow-hidden shadow-lg ring-1 ring-neutral-200">
+                    <img src="/img/mapa.jpeg" alt="Mapa de la Provincia de Atacama" class="w-full h-auto" />
                 </div>
             </div>
         </section>
