@@ -257,6 +257,88 @@
             </a>
         </div>
 
+        <!-- Noticias sobre historia -->
+        <section class="mb-16 px-6 md:px-12 lg:px-24">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-amber-800 mb-8 text-center">
+                    Noticias sobre historia
+                </h2>
+
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden ring-1 ring-neutral-200 p-6 sm:p-8">
+<div class="prose prose-neutral max-w-none text-justify space-y-6">
+                        <p>
+                            <strong>Marc Bloch: la historia como ciencia de los hombres en el tiempo</strong>
+                        </p>
+
+                        <p>
+                            Marc Bloch (1886–1944) fue en mi opinión, y diría que de gran parte de la comunidad historiográfica, uno de los historiadores más influyentes y prestigioso del siglo XX, y una figura fundamental en la renovación de la ciencia histórica. Junto a Lucien Febvre fundó en 1929 la revista Annales, dando origen a la célebre Escuela de los Annales, corriente historiográfica que transformó profundamente la disciplina al ampliar tanto las fuentes como los métodos de investigación histórica.
+                        </p>
+
+                        <div class="float-none md:float-right md:w-1/2 lg:w-1/3 ml-0 md:ml-6 mb-4 group">
+                            <div class="overflow-hidden rounded-xl shadow-md ring-1 ring-neutral-200">
+                                <img src="/img/noticias/marc.jpeg" alt="Marc Bloch"
+                                    class="w-full transition-transform duration-500 group-hover:scale-105">
+                            </div>
+                        </div>
+
+                        <p>
+                            Bloch cuestionó una historiografía centrada exclusivamente en reyes, guerras, acontecimientos políticos y efemérides. Para él, la historia debía dialogar con otras ciencias sociales —como la geografía, la sociología, la economía y la antropología— para comprender mejor la complejidad de la experiencia humana. Así, cualquier huella dejada por el ser humano podía convertirse en fuente histórica, ya no estamos sujetos solo a fuentes escritas. Bloch, comprendido y propuso que la historia no debía reducirse a una acumulación vacía de fechas, efemérides o datos, como advirtió de ser así, el historiador no sería más que un anticuario, y sabemos que de esos hay muchos. La labor histórica exigía algo mucho más profundo: formación intelectual rigurosa, formación profesional, sensibilidad crítica y un compromiso activo con el tiempo presente. Para Bloch, el historiador debía educarse, interrogar su realidad e involucrarse con los problemas de su época para formular preguntas significativas sobre el pasado. Esta visión quedó sintetizada en una de sus definiciones más célebres:
+                        </p>
+
+                        <blockquote>
+                            <p class="font-bold">
+                                “La historia es la ciencia de los hombres en el tiempo.”
+                            </p>
+                        </blockquote>
+
+                        <p>
+                            Con ello, Bloch desplazó el centro de la disciplina desde el pasado siempre complejo e incluso abstracto hacia los seres humanos y sus procesos históricos. Del mismo modo, dejó otra reflexión de enorme vigencia:
+                        </p>
+
+                        <blockquote>
+                            <p class="font-bold">
+                                “La incomprensión del presente nace fatalmente de la ignorancia del pasado.”
+                            </p>
+                        </blockquote>
+
+                        <p>
+                            Pero añadía algo igualmente importante: tampoco es posible comprender el pasado si se ignora el presente. Comenzaba la ciencia de la historia que problematiza, que dialoga con otras ciencias, que acusa y propone a las sociedades.
+                        </p>
+
+                        <p>
+                            Además de su inmenso legado intelectual, Marc Bloch fue un ejemplo de coraje moral y de lucha. Durante la ocupación nazi de Francia se integró a la Resistencia. Fue capturado, torturado por la Gestapo y fusilado el año 1944, sin delatar jamás a sus compañeros. Hasta el final mantuvo fidelidad a sus principios democráticos y humanistas.
+                        </p>
+
+                        <p>
+                            Su obra, Apología para la historia o el oficio de historiador, escrita al fragor de la guerra y de la resistencia frente a la violencia nazi, posee por ello una narrativa profunda, didáctica y urgente. Bloch sabía que su tiempo se extinguía y, consciente de ello, proyectó en esas páginas su legado intelectual y moral. Hasta hoy, su obra sigue siendo una lectura indispensable para comprender el sentido profundo del trabajo historiográfico. En tiempos marcados por la relativización de la verdad, la codicia sin límites, los discursos de odio, la superficialidad informativa, el presentismo de las redes sociales y los riesgos asociados al uso acrítico de la inteligencia artificial por parte de una nueva élite tecnológica —junto a la persistencia de los complacientes acomodaticios, aquellos "buenos" que por conveniencia callan o miran hacia un costado, sobre los cuales ya nos advirtió el músico chileno Jorge González—, el profesor Marc Bloch continúa yendo a contracorriente. Su voz nos recuerda que la historia no consiste en memorizar, agradar, ni repetir dogmáticamente datos; menos aún en exaltar personajes opacos o supremacistas. La historia, en cambio, consiste en conocer y comprender críticamente a los seres humanos en el tiempo, para contribuir a la construcción de sociedades más conscientes, libres y justas.
+                        </p>
+                    </div>
+
+                    <!-- Imágenes de libros centradas al final -->
+                    <div class="flex flex-wrap justify-center gap-10 mt-8">
+                        <div class="group w-56">
+                            <div class="overflow-hidden rounded-lg shadow-xl ring-2 ring-amber-700/30 bg-white p-2">
+                                <div class="overflow-hidden rounded-md">
+                                    <img src="/img/noticias/libro1.jpeg" alt="Libro Apología para la historia"
+                                        class="w-full transition-transform duration-500 group-hover:scale-105">
+                                </div>
+                            </div>
+                            <p class="mt-2 text-center text-sm text-neutral-500 italic">Los reyes taumaturgos</p>
+                        </div>
+                        <div class="group w-56">
+                            <div class="overflow-hidden rounded-lg shadow-xl ring-2 ring-amber-700/30 bg-white p-2">
+                                <div class="overflow-hidden rounded-md">
+                                    <img src="/img/noticias/libro2.jpeg" alt="Libro sobre historia"
+                                        class="w-full transition-transform duration-500 group-hover:scale-105">
+                                </div>
+                            </div>
+                            <p class="mt-2 text-center text-sm text-neutral-500 italic">Apología para la historia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Video Destacado -->
         <section class="mb-16">
             <div class="bg-white rounded-2xl shadow-md overflow-hidden ring-1 ring-neutral-200">
