@@ -127,47 +127,48 @@
 
                 <!-- Título -->
                 <h1 class="text-4xl md:text-5xl font-serif font-bold text-amber-800 border-l-8 border-amber-600 pl-4">
-                    Editorial: Revista N° 4 – Historia de Atacama.
+                    Editorial: Revista N° 5 – Historia, memoria y devenir de nuestros territorios.
                 </h1>
 
                 <!-- Contenido -->
                 <div class="prose prose-neutral max-w-none text-justify">
                     <p>
-                        El cuarto número de la <b>Revista de Historia de Atacama</b>, centrado en el descubrimiento del
-                        mineral de plata de Chañarcillo, incorpora por primera vez una colaboración internacional: la del
-                        historiador venezolano Tomás Straka, con el artículo “Cómo Marc Bloch cambió el mundo”. Straka es
-                        director del Instituto de Investigaciones Históricas «Hermann González Oropeza, sj» de la
-                        Universidad Católica Andrés Bello y miembro de número de la Academia Nacional de la Historia de
-                        Venezuela. Doctor en Historia, ha desarrollado una destacada trayectoria académica en Venezuela y en
-                        el ámbito internacional.<br>
+                        La historia, entendida como el conjunto de experiencias y creaciones humanas a través del tiempo,
+                        nos permite comprender nuestro devenir colectivo y construir nuestras identidades a partir de la
+                        memoria, y es también un elemento fundamental para el desarrollo democrático, equilibrado y
+                        sostenible de nuestros territorios.
                     </p>
-                    <p></p>
-                    <br>
-                    Asimismo, esta edición cuenta con el trabajo pictórico del artista Julio Alarcón Muñoz, quien ha
-                    dedicado parte de su obra a personajes de la historia regional. Se mantiene la sección “La pequeña
-                    historia del mundo, desde Mesopotamia hasta Persia”, junto al análisis internacional del sociólogo
-                    Cristian Cortés Olivares.<br>
-                    </p>
-                    <br>
                     <p>
-                        Se incluye también la efeméride crítica sobre el descubrimiento de Chañarcillo, a cargo del profesor
-                        e historiador Francisco Berríos Drolett. En la sección de videodocumentales se integra la producción
-                        <b>Chañarcillo</b>, de Rodrigo Chirino, y se incorpora a la biblioteca digital la obra <b>Altoandino
-                            de la
-                            Región de Atacama: antecedentes sobre historia, paisaje y ecología</b>, editada por los doctores
-                        Yery
-                        Marambio Alfaro y Jorge Valdés Saavedra.<br>
+                        La historia no está hecha solo de grandes acontecimientos ni de quienes ocuparon posiciones de
+                        poder. También la construyen los trabajadores, las organizaciones sociales, los pueblos originarios
+                        y hombres y mujeres que, desde su vida cotidiana, dieron forma a la sociedad que hoy conocemos.
                     </p>
-                    <br>
                     <p>
-                        Como siempre, aspiramos a consolidarnos como un espacio accesible en la red, comprometido con el
-                        rigor científico y orientado a la comprensión de nuestra historia<br>
+                        En un tiempo en que la paleontología y la historia natural concentran gran atención y recursos,
+                        hacemos un llamado a no olvidar la historia, a potenciar y fortalecer también el estudio de la
+                        historia de las comunidades humanas, sus experiencias, conflictos, luchas y esperanzas.
+                    </p>
+                    <p>
+                        En este propósito, la <b>Revista de Historia de Atacama</b> busca ser una ventana abierta a la
+                        diversidad de nuestro pasado: a su historia política, social, económica y cultural, y a las
+                        transformaciones que han dado forma a nuestra región.
+                    </p>
+                    <p>
+                        Este quinto número reafirma ese compromiso, incorporando a nuevos investigadores como Felipe López
+                        y Catalina Navea, junto a los trabajos de Cristian Cortés, Rodrigo Zalaquett Fuente-Alba y los
+                        profesores José Manuel Recio y Alfonso Ferrer, con el apoyo del doctor Guillermo Cortés Lutz, sobre
+                        la presencia del científico Fernando Amor y Mayor en la antigua Provincia de Atacama.
+                    </p>
+                    <p>
+                        Finalmente, incorporamos a nuestra <b>Biblioteca Digital</b> el libro <b>Puesta en Valor de las
+                            Casas Históricas de Caldera</b>, de Juan Ordaz Gajardo, contribuyendo así a preservar y
+                        difundir parte de nuestra memoria histórica y arquitectónica.
                     </p>
                 </div>
 
                 <!-- Firma -->
                 <div class="pt-6 border-t border-neutral-200">
-                    <p class="italic text-amber-700 font-bold mt-4">Prof. Guillermo Cortés Lutz</p>
+                    <p class="italic text-amber-700 font-bold mt-4">Guillermo Cortés Lutz</p>
                     <p class="italic font-bold text-neutral-900">Doctor en Historia</p>
                     <p class="italic font-bold text-neutral-900">Director de la Revista de Historia de Atacama <b>RHA</b>
                     </p>
@@ -334,6 +335,63 @@
                             </div>
                             <p class="mt-2 text-center text-sm text-neutral-500 italic">Apología para la historia</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Noticia sobre Mario Bunge -->
+        <section class="mb-16 px-6 md:px-12 lg:px-24">
+            <div class="max-w-7xl mx-auto">
+
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden ring-1 ring-neutral-200 p-6 sm:p-8">
+                    <div class="prose prose-neutral max-w-none text-justify space-y-6">
+
+                        <div class="float-none md:float-right md:w-1/3 lg:w-1/4 ml-0 md:ml-6 mb-4 group">
+                            <div class="overflow-hidden rounded-xl shadow-md ring-1 ring-neutral-200">
+                                <img src="/img/noticias/mario_bunge.png" alt="Mario Bunge"
+                                    class="w-full transition-transform duration-500 group-hover:scale-105">
+                            </div>
+                        </div>
+
+                        <p>
+                            <strong>Mario Bunge y la democracia integral</strong>
+                        </p>
+
+                        <blockquote>
+                            <p>
+                                “Argumentaré —escribe Mario Bunge— en favor de la socialización de todas las esferas. En
+                                otras palabras, romperé una lanza por lo que llamo democracia integral: ambiental,
+                                biológica, económica, política y cultural.
+                            </p>
+                            <p>
+                                Sostendré que la democracia parcial, aunque posible, no es plena, justa ni sostenible. En
+                                particular, la democracia política no puede ser plena mientras haya individuos que puedan
+                                comprar votos y puestos públicos. La democracia económica no es plena bajo una dictadura
+                                que imponga el gobierno sin consulta popular.
+                            </p>
+                            <p>
+                                La democracia cultural no es plena mientras el acceso a la cultura se limite a los
+                                privilegiados económicos o políticos. La democracia biológica no será plena mientras los
+                                hombres no compartan con sus compañeras las tareas domésticas y de crianza de los niños. Y
+                                la democracia ambiental no se cumplirá mientras haya empresas, sea privadas, cooperativas o
+                                estatales, que extraigan sin restricciones recursos naturales o los contaminen”.
+                            </p>
+                        </blockquote>
+
+                        <p class="font-bold">Mario Bunge</p>
+
+                        <p>
+                            Mario Bunge (Florida, Buenos Aires, 1919) es uno de los filósofos más reconocidos en todo el
+                            mundo. En la década de 1960 se estableció en Canadá, donde ha sido profesor de la Universidad
+                            McGill de Montreal, Quebec, la más antigua del país. Autor de más de 50 libros, casi todos en
+                            inglés, ha recibido 19 doctorados honoris causa. Fue Premio Príncipe de Asturias de
+                            Humanidades en 1982. Sus libros han sido traducidos a numerosas lenguas.
+                        </p>
+
+                        <p class="text-center font-bold text-amber-800 uppercase tracking-wide">
+                            La historia nos guía, la verdad nos libera
+                        </p>
                     </div>
                 </div>
             </div>
