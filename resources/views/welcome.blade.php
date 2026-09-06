@@ -57,6 +57,21 @@
         </button>
     </section>
 
+    <!-- Portada Edición N°5 -->
+    <section class="mt-14 mb-14 px-6 md:px-12 lg:px-24">
+        <div class="max-w-7xl mx-auto">
+            <div class="bg-white rounded-2xl shadow-md ring-1 ring-neutral-200 overflow-hidden">
+                <div class="flex flex-col items-center gap-4 p-8">
+                    <h2 class="text-2xl md:text-3xl font-serif font-bold text-amber-800 text-center">
+                        Portada de la Edición N° 5
+                    </h2>
+                    <img src="/img/PORTADA%20RHA%20%20n%C2%B0%205.jpeg" alt="Portada de la Revista de Historia de Atacama N° 5"
+                        class="w-full max-w-xl rounded-xl shadow-lg ring-1 ring-neutral-200" />
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- Efeméride Crítica Semanal -->
     <section class="mt-14 mb-14 md:mt-14 px-6 md:px-12 lg:px-24" x-data="{
@@ -418,7 +433,7 @@
                                 Tu navegador no soporta la reproducción de video.
                             </video>
                         </div>
-                    </div>>
+                    </div>
 
                     <!-- Descripción -->
                     <div class="w-full lg:w-1/2 flex flex-col justify-center">
