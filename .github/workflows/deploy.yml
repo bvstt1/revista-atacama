@@ -2,11 +2,26 @@ name: Verify Docker image
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master, security/october-2026 ]
   pull_request:
     branches: [ master ]
 
 jobs:
+  assets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.13.0'
+      - name: Match npm in the pinned Node build image
+        run: npm install --global npm@11.19.1
+      - name: Install from lockfile and build on Linux
+        run: |
+          node --version
+          npm --version
+          npm ci --no-audit --no-fund
+          npm run build
   test:
     runs-on: ubuntu-latest
     steps:
@@ -26,6 +41,7 @@ jobs:
           php artisan key:generate
           php artisan test --compact
   build:
+    needs: assets
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
