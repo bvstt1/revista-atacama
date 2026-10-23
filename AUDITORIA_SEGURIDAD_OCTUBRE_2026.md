@@ -51,6 +51,8 @@ No se cambió la `APP_KEY` de producción. La imagen FPM necesita un proxy HTTP 
 
 Una construcción de prueba en Linux con npm 11.19.1 devolvió `EUSAGE` por `@emnapi/core` y `@emnapi/runtime` ausentes del lockfile. `@tailwindcss/oxide-wasm32-wasi` es una dependencia **opcional** de Tailwind y trae esas bibliotecas incluidas (`bundleDependencies`); añadir `@emnapi/wasi-threads` directamente al proyecto no era necesario y dejó el lockfile inconsistente entre plataformas. Se eliminó esa dependencia directa con npm 11.19.1, que regeneró las entradas anidadas `inBundle` para core/runtime **1.11.1** y wasi-threads **1.2.2** dentro de Tailwind. `npm ci` sigue siendo obligatorio en Docker; no se usó `npm audit fix --force`. La CI ahora ejecuta una instalación limpia y `npm run build` en Ubuntu con Node 24.13.0/npm 11.19.1 antes del build Docker, y se activa también al publicar esta rama. Confirmar el resultado de CI antes de probar la imagen en el VPS.
 
+En la primera ejecución del workflow, el job de assets en Ubuntu pasó; el job de pruebas PHP falló en la fase de pruebas (los logs detallados requieren autenticación en GitHub). Una posible causa es la ausencia del manifest Vite: cada job tiene un checkout aislado sin los assets compilados. `tests/TestCase.php` ahora desactiva la resolución del manifest Vite **solo en las pruebas**; el job de assets sigue comprobando la construcción real. Comprobar el resultado de la siguiente ejecución del workflow antes de ensayar Docker en el VPS.
+
 ## Construcción y ensayo (en equipo con Docker, **sin tocar producción**)
 
 En un entorno aislado con Docker disponible, desde esta rama:
