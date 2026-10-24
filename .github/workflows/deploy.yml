@@ -59,3 +59,35 @@ jobs:
           docker run --rm --entrypoint php revista-atacama:ci -v
           docker run --rm --entrypoint php revista-atacama:ci -r 'exit(ini_get("session.upload_progress.enabled") === "0" ? 0 : 1);'
           docker run --rm --entrypoint php revista-atacama:ci artisan route:list
+      - name: Verify code and writable directory permissions as www-data
+        run: |
+          docker run --rm --user www-data --entrypoint sh revista-atacama:ci -ec '
+            test -x /var/www && test -x /var/www/public
+            test -r /var/www/public/index.php && test -r /var/www/vendor/autoload.php
+            test -r /var/www/public/build/manifest.json
+            test -w /var/www/storage && test -w /var/www/bootstrap/cache
+            test ! -w /var/www/public/index.php && test ! -w /var/www/composer.json
+            php artisan route:list > /dev/null
+          '
+      - name: Verify HTTP /up through isolated Nginx and PHP-FPM
+        run: |
+          network="revista-ci-${GITHUB_RUN_ID}"
+          volume="revista-ci-public-${GITHUB_RUN_ID}"
+          fpm="revista-ci-fpm-${GITHUB_RUN_ID}"
+          nginx="revista-ci-nginx-${GITHUB_RUN_ID}"
+          trap 'docker rm -f "$nginx" "$fpm" >/dev/null 2>&1 || true; docker volume rm "$volume" >/dev/null 2>&1 || true; docker network rm "$network" >/dev/null 2>&1 || true' EXIT
+          docker network create "$network"
+          docker volume create "$volume"
+          docker run -d --rm --name "$fpm" --network "$network" --network-alias fpm \
+            --mount "type=volume,src=$volume,dst=/var/www/public" revista-atacama:ci
+          docker run -d --rm --name "$nginx" --network "$network" \
+            --mount "type=volume,src=$volume,dst=/var/www/public,readonly" \
+            --mount "type=bind,src=$PWD/docker/nginx-ci.conf,dst=/etc/nginx/conf.d/default.conf,readonly" \
+            nginx:1.29-alpine@sha256:5616878291a2eed594aee8db4dade5878cf7edcb475e59193904b198d9b830de
+          for i in $(seq 1 20); do
+            if docker exec "$nginx" wget -qO- http://127.0.0.1/up | grep -q 'Application up'; then
+              exit 0
+            fi
+            sleep 1
+          done
+          exit 1

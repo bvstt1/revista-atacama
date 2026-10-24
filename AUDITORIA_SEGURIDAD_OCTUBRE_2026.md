@@ -53,6 +53,12 @@ Una construcción de prueba en Linux con npm 11.19.1 devolvió `EUSAGE` por `@em
 
 En la primera ejecución del workflow, el job de assets en Ubuntu pasó; el job de pruebas PHP falló en la fase de pruebas (los logs detallados requieren autenticación en GitHub). Una posible causa es la ausencia del manifest Vite: cada job tiene un checkout aislado sin los assets compilados. `tests/TestCase.php` ahora desactiva la resolución del manifest Vite **solo en las pruebas**; el job de assets sigue comprobando la construcción real. Comprobar el resultado de la siguiente ejecución del workflow antes de ensayar Docker en el VPS.
 
+### Corrección posterior: permisos de PHP-FPM
+
+La prueba en el VPS encontró `/var/www/public` y `public/index.php` copiados con permisos `0700`/`0600` de `root`; FPM (`www-data`) no podía atravesar/leer el código y Nginx devolvía 404. `chmod -R a+rX /var/www` permitió temporalmente obtener `200` en `/up`, pero no es una normalización suficiente para permisos de escritura heredados. El Dockerfile ahora aplica, **después de todas las copias**, `u=rwX,go=rX` al código completo: directorios atravesables y archivos legibles por `www-data`, sin escritura para grupo/otros ni activación indiscriminada de ejecución. Solo `storage` y `bootstrap/cache` pasan a `www-data` con escritura para propietario/grupo y ningún acceso para otros. Los secretos reales siguen fuera de la imagen; si se monta un `.env` como archivo, debe ser legible por el UID/GID de `www-data` mediante permisos restrictivos (por ejemplo, `root:www-data 0440`) y no modificarse dentro de la imagen; también pueden suministrarse variables mediante el mecanismo privado del despliegue. Los permisos de volúmenes montados se revisan por separado: los permisos del contenido de la imagen no cambian los del host.
+
+CI comprueba lectura de `index.php`, autoload y manifest, escritura únicamente en directorios Laravel y ausencia de escritura en código **como `www-data`**. También prueba `/up` por FastCGI desde Nginx con un volumen y red efímeros exclusivos de CI; no publica puertos ni imágenes y elimina solamente sus recursos de prueba. El Nginx de prueba comparte el árbol público de la imagen mediante un volumen inicializado a partir de ella; `docker/nginx-ci.conf` solo se usa en CI, no modifica la configuración del VPS.
+
 ## Construcción y ensayo (en equipo con Docker, **sin tocar producción**)
 
 En un entorno aislado con Docker disponible, desde esta rama:

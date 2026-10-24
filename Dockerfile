@@ -23,7 +23,8 @@ RUN mkdir -p storage/app/private storage/app/public storage/framework/cache/data
     storage/framework/sessions storage/framework/views storage/logs bootstrap/cache \
     && php artisan package:discover --ansi \
     && ln -s ../storage/app/public public/storage \
+    && chmod -R u=rwX,go=rX /var/www \
     && chown -R www-data:www-data storage bootstrap/cache \
-    && chmod -R u+rwX,g+rwX storage bootstrap/cache
+    && chmod -R u=rwX,g=rwX,o= storage bootstrap/cache
 EXPOSE 9000
 CMD ["php-fpm"]
