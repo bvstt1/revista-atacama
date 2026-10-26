@@ -57,15 +57,15 @@
         </button>
     </section>
 
-    <!-- Portada Edición N°5 -->
+    <!-- Portada Edición N°6 -->
     <section class="mt-14 mb-14 px-6 md:px-12 lg:px-24">
         <div class="max-w-7xl mx-auto">
             <div class="bg-white rounded-2xl shadow-md ring-1 ring-neutral-200 overflow-hidden">
                 <div class="flex flex-col items-center gap-4 p-8">
                     <h2 class="text-2xl md:text-3xl font-serif font-bold text-amber-800 text-center">
-                        Portada de la Edición N° 5
+                        Portada de la Edición N° 6
                     </h2>
-                    <img src="/img/PORTADA%20RHA%20%20n%C2%B0%205.jpeg" alt="Portada de la Revista de Historia de Atacama N° 5"
+                    <img src="/img/PORTADA%20RHA%20%20n%C2%B0%206.png" alt="Portada de la Revista de Historia de Atacama N° 6"
                         class="w-full max-w-xl rounded-xl shadow-lg ring-1 ring-neutral-200" />
                 </div>
             </div>
