@@ -142,50 +142,38 @@
 
                 <!-- Título -->
                 <h1 class="text-4xl md:text-5xl font-serif font-bold text-amber-800 border-l-8 border-amber-600 pl-4">
-                    Editorial: Revista N° 5 – Historia, memoria y devenir de nuestros territorios.
+                    Editorial: Revista N.º 6 – Atacama, memoria, territorio e identidad
                 </h1>
 
                 <!-- Contenido -->
                 <div class="prose prose-neutral max-w-none text-justify">
+                    <p><strong>Octubre de 2026 | Revista de Historia de Atacama</strong></p>
                     <p>
-                        La historia, entendida como el conjunto de experiencias y creaciones humanas a través del tiempo,
-                        nos permite comprender nuestro devenir colectivo y construir nuestras identidades a partir de la
-                        memoria, y es también un elemento fundamental para el desarrollo democrático, equilibrado y
-                        sostenible de nuestros territorios.
+                        Octubre representa un mes de especial significado para nuestra región. La conmemoración del Día de Atacama, cada 26 de octubre, nos invita a reflexionar sobre los acontecimientos, procesos históricos y protagonistas que han contribuido a construir nuestra identidad regional. Más que recordar fechas, esta celebración constituye una oportunidad para reconocer nuestro patrimonio, comprender las transformaciones del territorio y valorar la memoria colectiva de sus habitantes.
                     </p>
                     <p>
-                        La historia no está hecha solo de grandes acontecimientos ni de quienes ocuparon posiciones de
-                        poder. También la construyen los trabajadores, las organizaciones sociales, los pueblos originarios
-                        y hombres y mujeres que, desde su vida cotidiana, dieron forma a la sociedad que hoy conocemos.
+                        En esta sexta edición de la <em>Revista de Historia de Atacama</em>, reafirmamos nuestro compromiso con la investigación, la educación y la divulgación histórica, ofreciendo una mirada amplia sobre el pasado y el presente de nuestra región. Presentamos un recorrido por los ocho hitos históricos asociados al Día de Atacama, destacando acontecimientos que han marcado el desarrollo político, social, cultural y económico de nuestras tres provincias.
                     </p>
                     <p>
-                        En un tiempo en que la paleontología y la historia natural concentran gran atención y recursos,
-                        hacemos un llamado a no olvidar la historia, a potenciar y fortalecer también el estudio de la
-                        historia de las comunidades humanas, sus experiencias, conflictos, luchas y esperanzas.
+                        Asimismo, profundizamos en las raíces más antiguas de nuestro territorio mediante un estudio dedicado a los pueblos originarios de Atacama y su tránsito hacia la dominación hispana. Complementamos esta perspectiva con una selección de capítulos de la crónica de Jerónimo de Bibar, escrita en el siglo XVI, que permite aproximarnos a las primeras descripciones documentadas de los valles de Copiapó y Huasco, así como al proceso de conquista española iniciado en estas tierras.
                     </p>
                     <p>
-                        En este propósito, la <b>Revista de Historia de Atacama</b> busca ser una ventana abierta a la
-                        diversidad de nuestro pasado: a su historia política, social, económica y cultural, y a las
-                        transformaciones que han dado forma a nuestra región.
+                        Esta edición también incorpora reflexiones sobre los desafíos contemporáneos de Atacama. Desde la geografía, abordamos la importancia del ordenamiento territorial, la protección de nuestros ecosistemas y la necesidad de enfrentar los efectos del cambio climático mediante el conocimiento científico y la planificación responsable. Junto con ello, presentamos un análisis de las tensiones políticas y económicas de América Latina, ampliando el espacio de discusión hacia problemáticas que influyen en nuestras sociedades.
                     </p>
                     <p>
-                        Este quinto número reafirma ese compromiso, incorporando a nuevos investigadores como Felipe López
-                        y Catalina Navea, junto a los trabajos de Cristian Cortés, Rodrigo Zalaquett Fuente-Alba y los
-                        profesores José Manuel Recio y Alfonso Ferrer, con el apoyo del doctor Guillermo Cortés Lutz, sobre
-                        la presencia del científico Fernando Amor y Mayor en la antigua Provincia de Atacama.
+                        Creemos firmemente que la historia no debe limitarse a la contemplación del pasado. Su verdadero valor reside en permitirnos comprender el presente, cuestionar nuestras realidades y contribuir a la construcción de un futuro más consciente, democrático y sostenible.
                     </p>
                     <p>
-                        Finalmente, incorporamos a nuestra <b>Biblioteca Digital</b> el libro <b>Puesta en Valor de las
-                            Casas Históricas de Caldera</b>, de Juan Ordaz Gajardo, contribuyendo así a preservar y
-                        difundir parte de nuestra memoria histórica y arquitectónica.
+                        Invitamos a nuestros lectores, investigadores, docentes, estudiantes y a toda la comunidad atacameña a recorrer esta nueva edición, descubrir las múltiples dimensiones de nuestra historia y continuar fortaleciendo el conocimiento y la valoración de nuestro patrimonio.
                     </p>
+                    <p><strong>Porque conocer nuestra historia es también reconocer quiénes somos, de dónde venimos y hacia dónde queremos avanzar.</strong></p>
                 </div>
 
                 <!-- Firma -->
                 <div class="pt-6 border-t border-neutral-200">
                     <p class="italic text-amber-700 font-bold mt-4">Guillermo Cortés Lutz</p>
                     <p class="italic font-bold text-neutral-900">Doctor en Historia</p>
-                    <p class="italic font-bold text-neutral-900">Director de la Revista de Historia de Atacama <b>RHA</b>
+                    <p class="italic font-bold text-neutral-900">Director de la Revista de Historia de Atacama (RHA)
                     </p>
                 </div>
             </article>
