@@ -112,6 +112,12 @@
                     <span x-text="efemeride.title"></span>
                 </h3>
 
+                <figure class="mt-6">
+                    <img src="{{ asset('img/efemerides/octubre.2026.png') }}"
+                        alt="Ilustración histórica del mineral de plata de Agua Amarga, al sureste de Vallenar"
+                        class="w-full max-w-2xl h-auto rounded-xl shadow-sm ring-1 ring-amber-200" loading="lazy" />
+                </figure>
+
                 <!-- Contenido con CKEditor -->
                 <div class="relative mt-3">
                     <div class="prose prose-stone max-w-none transition-all duration-500 overflow-hidden"
