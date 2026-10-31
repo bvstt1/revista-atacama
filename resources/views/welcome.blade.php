@@ -72,6 +72,54 @@
         </div>
     </section>
 
+    <!-- Hito histórico: creación de la Provincia de Atacama -->
+    <section aria-labelledby="hito-atacama-title" class="mb-14 px-6 md:px-12 lg:px-24">
+        <div class="max-w-7xl mx-auto overflow-hidden rounded-2xl bg-stone-900 text-white shadow-xl">
+            <div class="grid lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
+                <div class="p-8 md:p-12 lg:p-14">
+                    <span class="inline-block rounded-full border border-amber-400/50 px-4 py-1 text-sm font-semibold tracking-wide text-amber-300">
+                        Un día para recordar
+                    </span>
+                    <p class="mt-8 text-lg font-medium text-amber-300">31 de octubre de 1843</p>
+                    <h2 id="hito-atacama-title" class="mt-3 font-serif text-3xl font-bold leading-tight md:text-4xl">
+                        El día en que Atacama se convirtió en provincia
+                    </h2>
+                    <p class="mt-6 text-lg leading-relaxed text-stone-200">
+                        ¿Sabías que el 31 de octubre es una fecha fundamental para la Región de Atacama?
+                        Ese día, bajo el gobierno de Manuel Bulnes, se creó la Provincia de Atacama al separarse
+                        de la Provincia de Coquimbo. Por primera vez fuimos provincia y Copiapó dejó de ser villa
+                        para adquirir el título de ciudad.
+                    </p>
+                    <p class="mt-6 border-l-4 border-amber-400 pl-5 leading-relaxed text-stone-300">
+                        Recordar este hito nos ayuda a conocer nuestro pasado y a construir nuestra identidad histórica regional.
+                    </p>
+                </div>
+                <div class="bg-amber-50 p-8 text-stone-900 md:p-12 lg:p-14">
+                    <h3 class="font-serif text-2xl font-bold text-amber-900">Una historia que nos une</h3>
+                    <div class="mt-8 space-y-8">
+                        <div class="border-l-2 border-amber-600 pl-5">
+                            <p class="text-sm font-bold uppercase tracking-wider text-amber-800">1843 · Nueva provincia</p>
+                            <p class="mt-2 leading-relaxed">
+                                La provincia quedó integrada por los departamentos de Copiapó, Vallenar, Freirina y Huasco.
+                            </p>
+                        </div>
+                        <div class="border-l-2 border-amber-600 pl-5">
+                            <p class="text-sm font-bold uppercase tracking-wider text-amber-800">Copiapó · Ciudad</p>
+                            <p class="mt-2 leading-relaxed">
+                                Su nuevo título marcó un momento importante en su desarrollo político y administrativo.
+                            </p>
+                        </div>
+                        <div class="border-l-2 border-amber-600 pl-5">
+                            <p class="text-sm font-bold uppercase tracking-wider text-amber-800">1974 · Región de Atacama</p>
+                            <p class="mt-2 leading-relaxed">
+                                Atacama dejó de ser provincia y se convirtió en región, abriendo una nueva etapa de su historia.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Efeméride Crítica Semanal -->
     <section class="mt-14 mb-14 md:mt-14 px-6 md:px-12 lg:px-24" x-data="{
